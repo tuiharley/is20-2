@@ -1,0 +1,6 @@
+Login		Password
+chairman		manager
+president		manager
+management	manager
+staff		staff
+admin		admin
