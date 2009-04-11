@@ -1,0 +1,46 @@
+<SCRIPT LANGUAGE="VBScript" RUNAT="Server">
+
+Sub Session_OnStart    '  Runs the first time a user runs any page in your application
+
+	dim CONN1, CONN2
+	set CONN1 = Server.CreateObject("adodb.connection")
+	set CONN2 = Server.CreateObject("adodb.connection")
+
+	CONN1.Open "DRIVER={SQL Server}; SERVER=172.20.93.240; DATABASE=crm2004; UID=boontas; PWD=12345;"
+	Session("Conn1") = CONN1
+	CONN2.Open "DRIVER={SQL Server}; SERVER=172.20.93.240; DATABASE=CRM; UID=boontas; PWD=12345;"
+	Session("Conn2") = CONN2
+
+	Session("Year_Thai") = "2545"
+	Session("Date_Now") = ""
+	if right(Date,4)<Session("Year_Thai") then
+		Session("Date_Now") = left(Date,len(Date)-4) & (right(Date,4)+543)
+	else
+		Session("Date_Now") = Date
+	end if
+	
+	Session("User_Name") = ""
+	Session("User_Comp") = ""
+	Session("User_Id") = ""
+	Session("User_Level") = ""
+	Session("User_Area") = ""
+	Session("User_Prov") = ""
+	
+	Session("Temp") = ""
+END Sub
+
+Sub Session_OnEnd    '   Runs when a user's session times out or quits your application
+
+	Session("Conn1") = ""
+	Session("Conn2") = ""
+	
+	Session("User_Name") = ""
+	Session("User_Comp") = ""
+	Session("User_Id") = ""
+	Session("User_Level") = ""
+	Session("User_Area") = ""
+	Session("User_Prov") = ""
+END Sub
+
+
+</SCRIPT>

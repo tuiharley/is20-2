@@ -1,0 +1,181 @@
+BODY
+{
+    BORDER-RIGHT: white 1px double;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: white 1px double;
+    PADDING-LEFT: 0px;
+    SCROLLBAR-FACE-COLOR: #ffffff;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    SCROLLBAR-HIGHLIGHT-COLOR: #000000;
+    BORDER-LEFT: white 1px double;
+    SCROLLBAR-SHADOW-COLOR: #000000;
+    SCROLLBAR-3DLIGHT-COLOR: #ffffcc;
+    SCROLLBAR-ARROW-COLOR: #000000;
+    PADDING-TOP: 0px;
+    SCROLLBAR-TRACK-COLOR: #ffffff;
+    BORDER-BOTTOM: white 1px double;
+    FONT-FAMILY: 'MS Sans Serif';
+    SCROLLBAR-DARKSHADOW-COLOR: #ffffcc
+}
+FONT
+{
+	font-family: 'MS Sans Serif';
+}
+.Menu
+{
+    BORDER-RIGHT: 1px;
+    PADDING-RIGHT: 5px;
+    BORDER-TOP: 1px;
+    PADDING-LEFT: 5px;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 3px;
+    BORDER-LEFT: 1px;
+    CURSOR: default;
+    COLOR: black;
+    PADDING-TOP: 3px;
+    BORDER-BOTTOM: 1px;
+    FONT-FAMILY: 'MS Sans Serif'
+}
+.MenuSelect
+{
+    BORDER-RIGHT: 1px outset;
+    PADDING-RIGHT: 4px;
+    BORDER-TOP: 1px outset;
+    PADDING-LEFT: 4px;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: 1px outset;
+    CURSOR: default;
+    COLOR: black;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: 1px outset;
+    FONT-FAMILY: 'MS Sans Serif'
+}
+.MenuSelected
+{
+    BORDER-RIGHT: 1px inset;
+    PADDING-RIGHT: 4px;
+    BORDER-TOP: 1px inset;
+    PADDING-LEFT: 4px;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: 1px inset;
+    CURSOR: default;
+    COLOR: black;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: 1px inset;
+    FONT-FAMILY: 'MS Sans Serif'
+}
+.SubMenu
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 10px;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 3px;
+    CURSOR: default;
+    COLOR: black;
+    PADDING-TOP: 1px;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #bfbfbf
+}
+.SubMenuSelect
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 10px;
+    FONT-SIZE: 12px;
+    PADDING-BOTTOM: 3px;
+    CURSOR: default;
+    COLOR: white;
+    PADDING-TOP: 1px;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #00007f
+}
+INPUT.button
+{
+    BORDER-RIGHT: white 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: white 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: white 1px solid;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: white 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #66ccff;
+    cursor:hand;
+}
+INPUT.buttonover
+{
+    BORDER-RIGHT: black 1px ridge;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: black 1px ridge;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: black 1px ridge;
+    COLOR: red;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: black 1px ridge;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #66ccff;
+    cursor:hand;
+}
+INPUT.hidden
+{
+    BORDER-RIGHT: white 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: white 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: white 1px solid;
+    COLOR: red;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: white 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white;
+}
+INPUT.text
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
+SELECT
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
+TEXTAREA
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}

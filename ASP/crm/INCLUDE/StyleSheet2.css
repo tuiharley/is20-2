@@ -1,0 +1,106 @@
+BODY
+{
+    BORDER-RIGHT: dodgerblue 1px ridge;
+    PADDING-RIGHT: 0px;
+    BORDER-TOP: dodgerblue 1px ridge;
+    PADDING-LEFT: 0px;
+    SCROLLBAR-FACE-COLOR: #ffffff;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    SCROLLBAR-HIGHLIGHT-COLOR: #000000;
+    BORDER-LEFT: dodgerblue 1px ridge;
+    SCROLLBAR-SHADOW-COLOR: #000000;
+    SCROLLBAR-3DLIGHT-COLOR: #ffffcc;
+    SCROLLBAR-ARROW-COLOR: #000000;
+    PADDING-TOP: 0px;
+    SCROLLBAR-TRACK-COLOR: #ffffff;
+    BORDER-BOTTOM: dodgerblue 1px ridge;
+    FONT-FAMILY: 'MS Sans Serif';
+    SCROLLBAR-DARKSHADOW-COLOR: #ffffcc
+}
+INPUT.button
+{
+    BORDER-RIGHT: white 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: white 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: white 1px solid;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: white 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #66ccff
+}
+INPUT.buttonover
+{
+    BORDER-RIGHT: black 1px ridge;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: black 1px ridge;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 2px;
+    BORDER-LEFT: black 1px ridge;
+    COLOR: red;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: black 1px ridge;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #66ccff
+}
+INPUT.hidden
+{
+    BORDER-RIGHT: white 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: white 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: white 1px solid;
+    COLOR: red;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: white 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
+INPUT.text
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
+SELECT
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
+TEXTAREA
+{
+    BORDER-RIGHT: #a4a4a4 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #a4a4a4 1px solid;
+    PADDING-LEFT: 2px;
+    FONT-SIZE: 8pt;
+    PADDING-BOTTOM: 1px;
+    BORDER-LEFT: #a4a4a4 1px solid;
+    PADDING-TOP: 1px;
+    BORDER-BOTTOM: #a4a4a4 1px solid;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: white
+}
