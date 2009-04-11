@@ -1,0 +1,110 @@
+.textBold1 {
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #820AD3;
+}
+.Box1 {
+	border: 1px solid #820AD3;
+}
+.bkNonrepeat {
+	background-image: url(image/left01_02.gif);
+	background-repeat: no-repeat;
+}
+.textnormal1 {
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+
+}
+.Box2 {
+	height: 18px;
+	width: 115px;
+	border: 1px solid #820AD3;
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	color: #FF6600;
+
+}
+.textBold2 {
+
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+.textBold3 {
+
+
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.textBold4 {
+
+
+
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FF6600;
+}
+.Box3 {
+
+	border: 1px solid #B57EE5;
+}
+.Box4 {
+	border: 1px solid #0099CC;
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+
+}
+.BDRight {
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #B57EE5;
+}
+.Box11 {
+
+	border: 1px solid #663399;
+}
+.textnormal2 {
+
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+.Box5under {
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	border-bottom: 1px solid #663399;
+
+}
+a.textnormal1:hover {
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FF0000;
+	text-decoration: underline;
+
+}
+.Box6RL {
+	font-family: "MS Sans Serif", Tahoma, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	border-right: 1px solid #9933CC;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #9933CC;
+
+
+}
