@@ -1,0 +1,418 @@
+body,td,th {
+	font-family: Microsoft Sans Serif;
+	font-size: 14px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.T_gray13 {
+	font: 13px "MS Sans Serif";
+	color: #7F7F7F;
+}
+.T_gray12 {
+	font: 12px "MS Sans Serif";
+	color: #7F7F7F;
+}
+.T_blue13 {
+	font: 13px "MS Sans Serif";
+	color: #0086DF;
+}
+.T_white13 {
+	font: 13px "MS Sans Serif";
+	color: #FFFFFF;
+}
+
+.T_gray7
+{
+	font: 6px "MS Sans Serif";
+	color: #333333;
+}
+
+.T_org13 {
+	font: 13px "MS Sans Serif";
+	color: #CE5300;
+}
+
+.T_black13 {
+	font: 13px "MS Sans Serif";
+}
+.T_blue12 {
+	font: 12px "MS Sans Serif";
+	color: #0099FF;
+}
+
+.T_white12 {
+	font: 12px "MS Sans Serif";
+	color: #FFFFFF;
+}
+a:link.T_gray13  {
+	font-family: "MS Sans Serif";
+	color: #7F7F7F;
+	text-decoration: none;
+}
+a:visited.T_gray13  {
+	font-family: "MS Sans Serif";
+	color: #7F7F7F;
+	text-decoration: none;
+}
+a:hover.T_gray13  {
+	font-family: "MS Sans Serif";
+	color: #0099FF;
+	text-decoration: underline;
+}
+a:active.T_gray13  {
+	font-family: "MS Sans Serif";
+	color: #7F7F7F;
+	text-decoration: none;
+}
+.T_green13 {
+	font: 13px "MS Sans Serif";
+	color: #519a00;
+}
+.T_gray12 {
+	font: 12px "MS Sans Serif";
+	color: #7F7F7F;
+}
+.T_org14 {
+    font-family: "MS Sans Serif";
+	color: #FF9900;
+	font-weight: bold;
+	font-size: 14px;
+}
+.T_blue14 {
+	font-family: "MS Sans Serif";
+	font-size: 14px;
+	font-weight: bold;
+	color: #0099CC;
+}
+.T_green10
+{
+	font: 10px "MS Sans Serif";
+	color: #519a00;
+}
+
+.T_pink14 {
+	font-family: "MS Sans Serif";
+	font-size: 14px;
+	font-weight: bold;
+	color: #CC3399;
+}
+.T_black11 {
+	font-family: "MS Sans Serif";
+	font-size: 10px;
+	font-weight: normal;
+	color: #000000;
+}
+.T_red13 {
+	font-family: "MS Sans Serif";
+	font-size: 13px;
+	font-weight: bold;
+	color: #CC6666;
+}
+.T_vior13 {
+	font-family: "MS Sans Serif";
+	font-size: 13px;
+	color: #CC66CC;
+}
+.T_green14
+{
+	font-weight: bold;
+	font-size: 14px;
+	color: #006666;
+	font-family: "MS Sans Serif";
+}
+.HeaderText 
+{
+	FONT: bold 15px Microsoft Sans Serif;
+} 
+.MenuText 
+{ 
+	FONT: bold 15px Microsoft Sans Serif;
+}
+.text_title_gray 
+{
+	font: 12px Microsoft Sans Serif;
+	color: #666666;
+}
+.text_title_white {
+	font: 13px Microsoft Sans Serif;
+	color: #FFFFFF;
+}
+a:link.text_title_white {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited.text_title_white {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover.text_title_white {
+	font-family: Microsoft Sans Serif;
+	color: #000000;
+	text-decoration: underline;
+}
+a:active.text_title_white {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.text_title_brown {
+	font: 14px Microsoft Sans Serif;
+	color: #CC6633;
+}
+.text_data_gray {
+	font: 12px Microsoft Sans Serif;
+	color: #666666;
+}
+.text_data_red {
+	font: 12px Microsoft Sans Serif;
+	color: #CC0000;
+}
+.text_user {
+	font: bold 12px Microsoft Sans Serif;
+	color: #000000;
+}
+a:link.text_user {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:visited.text_user {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a:hover.text_user {
+	font-family: Microsoft Sans Serif;
+	color: #FFFF00;
+	text-decoration: underline;
+}
+a:active.text_user {
+	font-family: Microsoft Sans Serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.text_title_blue
+{
+	font: bold 14px Microsoft Sans Serif;
+	color: #0033cc;
+}
+.TableHead
+{
+	font: bold 14px Microsoft Sans Serif;
+	color: #666666;
+	background-color: #AACBF0;
+}
+.TableItem
+{
+	font: 13px Microsoft Sans Serif;
+	background-color: #f5f5f5;
+}
+.TableAlternatingItem
+{
+	font: 13px Microsoft Sans Serif;
+	background-color: #e3efff;
+}
+.TableAltItem
+{
+	font: 13px Microsoft Sans Serif;
+	background-color: #e3efff;
+}
+.TableTotal
+{
+	font: 13px Microsoft Sans Serif;
+	background-color: #a7e5ff;
+}
+.TableSelectedItem
+{
+	font: 13px Microsoft Sans Serif;
+	background-color: #f0fff0;
+}
+.TablePagingItem
+{
+	font: 13px Microsoft Sans Serif;
+	color: #ffffff;
+	background-color: #999999;
+}
+
+.DataCell
+{
+	background-color: aliceblue;
+}
+.headConfig
+{
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #6699cc;
+}
+
+.GridHead1
+{
+	font: bold 14px Microsoft Sans Serif;
+	color: #ffffff;
+	padding-left:10px;
+	/*background-color: #1269C0;*/
+	background-color:#1370CC;
+}
+.NumberData
+{
+	text-align:right;
+}
+.criTableHead
+{
+	font: bold 15px Microsoft Sans Serif;
+	color: #ffffff;
+	background-color: #6699cc;
+}
+.criTableItem
+{
+	font: bold 13px Microsoft Sans Serif;
+	background-color: aliceblue;
+}
+.GroupHead
+{
+	font: bold 13px Microsoft Sans Serif;
+	background-color: #e9e9e9;
+}
+.GroupLine 
+{ 
+	background-color: Gray;
+}
+.ChangedItem
+{
+	background-color: #ffff99;
+}
+.txtsubject
+{
+	font: bold 13px Microsoft Sans Serif;
+}
+.GroupTitleHead
+{
+	font: bold 15px Microsoft Sans Serif;
+	color: #ffffff;
+	background-color: #6699cc;
+}
+.Head1
+{
+	font: bold 14px Microsoft Sans Serif;
+	color: indianred;
+}
+.HTitle
+{
+	background-image:url(../images/bg_toolbar.jpg);
+	background-position	:0px 0px;
+	FONT: bold 15px Microsoft Sans Serif;
+}
+.BtnBG
+{
+	background-color: #e0dfe3;
+	background-position	:0px 0px;
+	background-image:url(../images/bg_toolbar.jpg);	
+}
+.txtHead
+{
+	/*font-weight: bold;*/
+	font-size: 14px;
+	color: #000066;
+	font-family: Microsoft Sans Serif;
+}
+.HSubject
+{
+	font: bold 15px Microsoft Sans Serif;
+	color: #000099;
+	background-color: #99ccff;
+}
+.pnlBG
+{
+	background-color:#fdf5e6
+}
+.txtLogon
+{
+	font-size: 14px;
+	color: #f0ffff;
+	font-family: Microsoft Sans Serif;
+}
+.GHeadTable
+{
+	font: bold 12px Microsoft Sans Serif;
+
+}
+a:link.GHeadTable
+{
+	color: #024BA6;
+	text-decoration: none;
+}
+a:visited.GHeadTable {
+color: #024BA6;
+	text-decoration: none;
+}
+a:hover.GHeadTable
+{
+	COLOR: #00b1ff;
+    text-decoration:none;
+}
+a:active.GHeadTable {
+	COLOR: #00b1ff;
+    text-decoration:none;
+}
+A:link.MenuText
+{
+	color: #024BA6;
+	text-decoration: none;
+}
+A:visited.MenuText
+{
+    COLOR: #024BA6;
+    text-decoration:none;
+}
+A:hover.MenuText
+{
+    COLOR: #00b1ff;
+    text-decoration:none;
+}
+A:active.MenuText
+{
+    COLOR: #00b1ff;
+    text-decoration:none;
+}
+.text_user_blue
+{
+	font: bold 12px Microsoft Sans Serif;
+	color: #003399;
+}
+.ListLink
+{
+	font:  bold 14px Microsoft Sans Serif;
+
+}
+a:link.ListLink
+{
+	color: #024BA6;
+	text-decoration: none;
+}
+a:visited.ListLink {
+color: #024BA6;
+	text-decoration: none;
+}
+a:hover.ListLink
+{
+	COLOR: #00b1ff;
+    text-decoration:none;
+}
+a:active.ListLink {
+	COLOR: #00b1ff;
+    text-decoration:none;
+}
+.GridHead2
+{
+	padding-left: 10px;
+	font: bold 14px Microsoft Sans Serif;
+	color: #ffffff;
+	background-color: steelblue;
+}
