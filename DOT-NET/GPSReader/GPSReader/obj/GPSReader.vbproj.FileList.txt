@@ -1,0 +1,10 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\GPSReader.Form1.resources
+obj\Debug\GPSReader.Resources.resources
+obj\Debug\GPSReader.vbproj.GenerateResource.Cache
+bin\Debug\GPSReader.exe
+bin\Debug\GPSReader.pdb
+bin\Debug\GPSReader.xml
+obj\Debug\GPSReader.exe
+obj\Debug\GPSReader.xml
+obj\Debug\GPSReader.pdb
