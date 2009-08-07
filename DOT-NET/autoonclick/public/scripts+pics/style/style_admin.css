@@ -1,0 +1,649 @@
+#hn A.search {width:72px;}
+#hn A.admin {width:113px;}
+#admin #hn A.admin {background:url(../images/hn_bg_01.gif) repeat-x;}
+#hn A.so {width:107px;}
+#hn A.dealer {width:108px;}
+#hn A.magazine {width:91px;}
+#hn A.about {width:97px;}
+
+#offer_area #vn A.offer_area, #personal_datas #vn A.personal_datas, #payment #vn A.payment, #massage_box #vn A.massage_box, #search_list #vn A.search_list, #your_homepage #vn A.your_homepage {color:#ffffff; background:url(../images/vn_button_140x25_01.gif) no-repeat;}
+
+.admin_line {float:left; margin:0;}
+* html #inner_box IMG.admin_line {margin:0 0 0 -3px; /*/*/margi\n:0 0 0 0; /* */}
+
+DIV.date {float:left; width:691px; border:1px solid #b9c1cd; background-color:#ffffff; text-align:center;}
+DIV.date SPAN {font-weight:bold; line-height:17px; width:175px; text-align:center; margin:0 258px; background-color:#DDE0E3; float:left; border-top:5px solid #ffffff;}
+
+TABLE.head CAPTION {background:url(../images/h_m_o_admin.gif) no-repeat 0 10px; text-align:left; margin:0; padding:10px 0 0 0; width:100%;}
+TABLE.head CAPTION H1 {position:relative; left:25px; margin:0; padding:0; font-size:12px; line-height:21px; font-weight:bold; color:#ffffff; width:514px; height:21px; overflow:hidden;}
+TABLE.head CAPTION H2 {position:relative; left:549px; margin:-21px 10px 0 16px; padding:0; width:118px; height:21px; overflow:hidden;}
+TABLE.head CAPTION H2 A {position:absolute; left:10px; margin:0 0 0 5px; padding:0; text-decoration:none; line-height:21px; color:#ffffff; font-weight:bold;}
+TABLE.head CAPTION H2 A:hover, TABLE.head CAPTION H2 A:focus {color:#757575;}
+TABLE.head CAPTION H2 IMG {position:absolute; top:5px;}
+TABLE.head CAPTION H3 {position:relative; left:549px; margin:-21px 10px 0 10px; padding:0; width:124px; height:21px; overflow:hidden; line-height:21px; color:#ffffff; font-weight:bold; text-align:center; font-size:11px; color:#ffffff;}
+TABLE.head CAPTION H3 IMG {margin:5px 5px 0 0; position:relative; top:1px;}
+TABLE.head {padding:0; margin:0 0 15px 0; border-spacing:0 0; width:693px; table-layout:fixed; float:left;}
+TABLE.head TR {margin:0; padding:0;}
+TABLE.head THEAD TH {margin:0; padding:0; width:550px; background:url(../images/bg_h5_g_AEB4C0.gif) repeat-x; overflow:hidden;}
+TABLE.head THEAD TH UL {margin:0; padding:0; float:left; width:550px; overflow:hidden;}
+TABLE.head THEAD TH UL LI {list-style:none; float:left; margin:0; padding:4px 17px 3px 16px; border-left:1px solid #ffffff; border-right:1px solid #AEB4C0; text-align:center;}
+TABLE.head THEAD TH UL LI.first {border-left-color:#AEB4C0;}
+TABLE.head THEAD TH UL LI.last {border-right-color:#778497;}
+TABLE.head THEAD TH UL LI A {line-height:15px; text-decoration:underline;}
+TABLE.head THEAD TH UL LI A:hover, TABLE.head THEAD TH UL LI A:focus {color:#7487A2;}
+TABLE.head THEAD TD {margin:0; padding:4px 10px 3px 14px; width:117px; border-right:1px solid #778497; border-left:1px solid #b8c2d0; background:url(../images/bg_h5_g_778497.gif) repeat-x;}
+* html TABLE.head THEAD TD {width:143px; /*/*/widt\h:117px; /* */}
+TABLE.head THEAD TD IMG {margin:0 5px 0 0; padding:0;}
+TABLE.head THEAD TD A {line-height:15px; text-decoration:none; color:#ffffff; font-weight:bold;}
+TABLE.head THEAD TD A:hover, TABLE.head THEAD TD A:focus {color:#707070;}
+TABLE.head TBODY TH {margin:0; padding:0; width:548px; border:solid #b9c1cd; border-width:0 1px 1px 1px; height:112px; overflow:hidden; text-align:left;}
+* html TABLE.head TBODY TH {width:550px; /*/*/widt\h:548px; /* */}
+* html * html TABLE.head TBODY TH {height:113px; /*/*/heigh\t:112px; /* */}
+TABLE.head TBODY TH SPAN {position:absolute; line-height:15px; padding:2px 0; margin:5px; display:inline; width:123px; text-align:center; font-weight:bold; background-color:#DDE0E3;}
+TABLE.head TBODY TH UL {padding:0; margin:1px 0 1px 133px; width:414px; height:110px; overflow:auto; border-left:1px solid #b9c1cd}
+TABLE.head TBODY TH UL LI {line-height:15px; padding:5px 5px 2px 20px; margin:0 5px; list-style:none; display:block; background:url(../images/arrow_dv.gif) no-repeat 5px 5px;}
+TABLE.head TBODY TH UL LI.second {background-color:#DDE0E3;}
+* html TABLE.head TBODY TH UL LI {display:inline; /*/*/dis\play:block; /* */}
+* html TABLE.head TBODY TH UL LI {width:100%; /*/*/widt\h:auto; /* */}
+TABLE.head TBODY TH UL LI A:hover, TABLE.head TBODY TH UL LI A:focus {text-decoration:underline;}
+
+TABLE.head TBODY TD {margin:0; padding:5px; width:132px; border:solid #b9c1cd; border-width:0 1px 1px 0; background:url(../images/bg_bu_logo.gif) no-repeat 5px 5px; height:102px; overflow:hidden;}
+* html TABLE.head TBODY TD {width:143px; /*/*/widt\h:132px; /* */}
+* html TABLE.head TBODY TD {height:113px; /*/*/heigh\t:102px; /* */}
+TABLE.head TBODY TD SPAN {float:left; width:132px; line-height:102px; text-align:center; vertical-align:middle; margin:0; padding:0; position:relative; top:-1px;}
+* html > body TABLE.head TBODY TD SPAN {top:0;}
+TABLE.head TBODY TD IMG {padding:0; margin:0 auto; border:0; vertical-align:middle; position:relative;}
+
+ul.admin {float:left; padding:0 0 0 0; margin:0 0 15px 0; border-bottom:1px solid #b9c1cd; width:693px;}
+ul.admin li {float:left; display:inline; padding:0; margin:0; border-top:1px solid #b9c1cd; list-style:none;}
+ul.admin li.left {width:123px; border:solid #b9c1cd; border-width:1px 1px 0 1px; padding:5px 5px 0 5px;}
+* html ul.admin li.left {width:135px; /*/*/widt\h:123px; /* */}
+ul.admin li.left SPAN {float:left; width:123px; line-height:19px;  text-align:center; font-weight:bold; background-color:#DDE0E3; margin:0; padding:0;}
+ul.admin li.right {width:132px; border:solid #b9c1cd; border-width:1px 1px 0 1px; padding:5px 5px 0 5px; height:19px; overflow:hidden;}
+* html ul.admin li.right {width:144px; /*/*/widt\h:132px; /* */}
+* html ul.admin li.right {height:25px; /*/*/heigh\t:19px; /* */}
+ul.admin li.right A {float:left; width:127px; line-height:19px; font-weight:bold; background-color:#DDE0E3; margin:0; padding:0 2px 0 3px;}
+* html ul.admin li.right A {width:132px; /*/*/widt\h:127px; /* */}
+ul.admin li.right A:hover, ul.admin li.right A:focus {background-color:#f4ddba;}
+ul.admin li.center {width:414px; line-height:17px; padding:4px 0 3px 0; margin:0;}
+
+
+ul.admin2 {float:left; padding:0 0 0 0; margin:0 0 0 0; width:693px;}
+ul.admin2 li {float:left; display:inline; padding:0; margin:0; background:url(../images/bg_h2_o_e7b671.gif) repeat-x; list-style:none;}
+ul.admin2 li.left {width:123px; border:solid #e7b671; border-width:0 1px 0 1px; padding:2px 5px 2px 5px;}
+* html ul.admin2 li.left {width:135px; /*/*/widt\h:123px; /* */}
+ul.admin2 li.left IMG {position:relative; float:left; margin:0 0 0 3px; padding:0; top:1px;}
+* html ul.admin2 li.left IMG {margin:0 0 0 0px; /*/*/margi\n:0 0 0 3px; /* */}
+ul.admin2 li.left SPAN {float:left; width:118px; line-height:17px; text-align:center; font-weight:bold; margin:0 0 0 -29px; padding:0 0 0 5px;}
+* html ul.admin2 li.left SPAN {margin:0 0 0 -32px; /*/*/margi\n:0 0 0 -29px; /* */}
+* html ul.admin2 li.left SPAN {width:123px; /*/*/widt\h:118px; /* */}
+ul.admin2 li.right {width:131px; border:solid #e7b671; border-width:0 1px 0 1px; border-left-color:#ffffff; padding:2px 5px 2px 5px; line-height:17px; text-align:center; height:17px; overflow:hidden;}
+* html ul.admin2 li.right {width:143px; /*/*/widt\h:131px; /* */}
+* html ul.admin2 li.right {height:25px; /*/*/heigh\t:17px; /* */}
+ul.admin2 li.right IMG {margin:3px 5px 0 5px; padding:0;}
+ul.admin2 li.right IMG.first {margin-left:0;}
+ul.admin2 li.right A {font-weight:bold; margin:0; padding:0; text-decoration:underline;}
+ul.admin2 li.right A:hover, ul.admin2 li.right A:focus {color:#7487A2;}
+ul.admin2 li.center {width:413px; line-height:17px; padding:2px 0 2px 0; margin:0; text-align:center; height:17px; overflow:hidden; border-left:1px solid #ffffff; border-right:1px solid #e7b671; font-weight:bold;}
+* html ul.admin2 li.center {width:415px; /*/*/widt\h:413px; /* */}
+* html ul.admin2 li.center {height:25px; /*/*/heigh\t:17px; /* */}
+ul.admin2 li.center IMG {margin:-3px 5px 0 20px; padding:0; position:relative; top:4px;}
+ul.admin2 li.center IMG.first {margin-left:0;}
+ul.admin2 li.center A {font-weight:bold; margin:0; padding:0; text-decoration:underline;}
+ul.admin2 li.center A:hover, ul.admin2 li.center A:focus {color:#7487A2;}
+
+TABLE.admin {margin:0 0 15px 0; padding:0; width:693px; border-spacing:0 0; float:left;}
+TABLE.admin TH {font-weight:bold; line-height:15px; text-align:center; margin:0; padding:4px 5px 3px 5px; border-right:1px solid #AEB4C0; border-left:1px solid #ffffff; background:url(../images/bg_h5_g_AEB4C0.gif) repeat-x; width:71px;}
+TABLE.admin TH.name {width:123px; border-left-color:#AEB4C0;}
+TABLE.admin TH.button {width:131px;}
+TABLE.admin TD {word-wrap:break-word; vertical-align:middle; text-align:center; padding:6px 5px; margin:0; line-height:15px; background-color:#ffffff; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff; border-bottom:1px solid #b9c1cd; width:71px;}
+TABLE.admin TD SPAN.offline {color:red;}
+TABLE.admin TD SPAN.online {color:green;}
+TABLE.admin TD SPAN.online_near_standby {color:orange;}
+TABLE.admin TD.name {width:123px; border-left-color:#b9c1cd; text-align:left;}
+TABLE.admin TD.name IMG {margin:0 5px 0 5px; padding:0; float:left;}
+TABLE.admin TD A {margin:0; padding:0; text-decoration:underline; display:inline;}
+TABLE.admin TD.price {width:60px; text-align:left; padding-left:11px; padding-right:10px;}
+TABLE.admin TD.price SPAN {float:right; text-align:center; margin-top:-15px; width:50px;}
+TABLE.admin TD.price SPAN.offline, TABLE.admin TD.price SPAN.online, TABLE.admin TD.price SPAN.online_near_standby {margin-top:0; text-align:left; float:left; width:100%;}
+TABLE.admin TD.button {width:131px; padding:5px 5px 2px 5px; text-align:left;}
+TABLE.admin TD.button A.b55_3, TABLE.admin TD.button A.b55_3_inactive, TABLE.admin TD.button A.b55_3_on, TABLE.admin TD.button A.b55_3_off {margin:0 10px 3px 4px; float:left; display:inline; clear:left; text-decoration:none;}
+TABLE.admin TD.button SPAN {float:right; padding:1px 0 3px 0; border-bottom:1px solid #b9c1cd; width:57px; margin:0 5px 2px 0; clear:right}
+TABLE.admin TD.button SPAN.second {border-bottom:0; padding-bottom:2px;}
+TABLE.admin TD.button SPAN A {float:left; display:inline; text-decoration:none;}
+TABLE.admin TD.button SPAN A.undo_active, TABLE.admin TD.button SPAN A.undo_inactive {margin:0 10px 0 9px;}
+TABLE.admin TR {margin:0; padding:0;}
+TABLE.admin TR.second TD {background-color:#DDE0E3;}
+
+TABLE.admin_job {margin:0 0 15px 0; padding:0; width:693px; border-spacing:0 0; border-top:1px solid #b9c1cd; float:left;}
+TABLE.admin_job TH {font-weight:bold; line-height:15px; text-align:center; margin:0; padding:4px 5px 3px 5px; border-right:1px solid #AEB4C0; border-left:1px solid #ffffff; background:url(../images/bg_h5_g_AEB4C0.gif) repeat-x; width:126px;}
+TABLE.admin_job TH.delete {width:25px; border-left-color:#AEB4C0; padding:4px 0 3px 0;}
+TABLE.admin_job TH.name {width:96px;}
+TABLE.admin_job TH.term {width:127px;}
+TABLE.admin_job TH.button {width:131px;}
+TABLE.admin_job TD {word-wrap:break-word; vertical-align:middle; text-align:center; padding:6px 5px; margin:0; line-height:15px; background-color:#ffffff; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff; border-bottom:1px solid #b9c1cd; width:126px; vertical-align:top;}
+TABLE.admin_job TD SPAN.offline {color:red;}
+TABLE.admin_job TD SPAN.online {color:green;}
+TABLE.admin_job TD SPAN.online_near_standby {color:orange;}
+TABLE.admin_job TD.delete {width:25px; border-left-color:#b9c1cd; padding:6px 0; text-align:left;}
+TABLE.admin_job TD.delete INPUT {margin:1px 0 0 6px; padding:0; height:15px; width:14px; float:left; display:inline;}
+
+TABLE.admin_job TD.name {width:96px;}
+TABLE.admin_job TD.name SPAN {width:96px; float:left; line-height:15px;}
+TABLE.admin_job TD.name SPAN A {margin:0; padding:0; text-decoration:underline; display:inline;}
+TABLE.admin_job TD.name SPAN UL {position:relative; padding:0; margin:0;}
+* html TABLE.admin_job TD.name SPAN UL {left:-50%;}
+* html > body TABLE.admin_job TD.name SPAN UL {left:0;}
+*+html TABLE.admin_job TD.name SPAN UL {left:-50%;}
+TABLE.admin_job TD.name SPAN UL LI {position:absolute; top:7px; left:-6px; float:left; margin:0; padding:0 0 0 0; list-style:none; width:666px; border-top:1px solid #b9c1cd; overflow:hidden;}
+TABLE.admin_job TD.name SPAN UL LI SPAN {padding:7px 5px 6px 5px; margin:0 0 5px 0; border-bottom:1px solid #b9c1cd; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff; background-color:#ffffff;}
+TABLE.admin_job TD.name SPAN UL LI A {text-decoration:none;}
+TABLE.admin_job TD.name SPAN UL LI SPAN.job {width:96px; font-weight:bold;}
+* html TABLE.admin_job TD.name SPAN UL LI SPAN.job {width:108px; /*/*/widt\h:96px; /* */}
+TABLE.admin_job TD.name SPAN UL LI SPAN.job_name {width:403px; font-weight:bold; text-align:left;}
+* html TABLE.admin_job TD.name SPAN UL LI SPAN.job_name {width:415px; /*/*/widt\h:403px; /* */}
+TABLE.admin_job TD.name SPAN UL LI SPAN.detail {width:21px; font-weight:bold;}
+* html TABLE.admin_job TD.name SPAN UL LI SPAN.detail {width:33px; /*/*/widt\h:21px; /* */}
+TABLE.admin_job TD.name SPAN UL LI SPAN.detail A {margin:0 0 0 3px; float:left; display:inline;}
+TABLE.admin_job TD.name SPAN UL LI SPAN.edit {width:64px; font-weight:bold; padding:5px;}
+* html TABLE.admin_job TD.name SPAN UL LI SPAN.edit {width:76px; /*/*/widt\h:64px; /* */}
+TABLE.admin_job TD.name SPAN UL LI SPAN.edit A {margin:0 5px 0 4px; float:left; display:inline;}
+TABLE.admin_job TD.name SPAN UL LI SPAN.delete {width:22px; font-weight:bold; border-right:0;}
+* html TABLE.admin_job TD.name SPAN UL LI SPAN.delete {width:33px; /*/*/widt\h:22px; /* */}
+TABLE.admin_job TD.name SPAN UL LI SPAN.delete A {margin:0 0 0 3px; float:left; display:inline;}
+TABLE.admin_job TD.name SPAN UL LI SPAN.note {margin:-5px 0 0 0; padding:5px 0 4px 0; border:0; width:403px;}
+TABLE.admin_job TD.name SPAN UL LI LABEL {float:left; display:inline; line-height:19px; font-weight:bold; width:97px; margin:0 11px 0 5px; text-align:center;  background:url(../images/bg_h3_g_AEB4C0.gif) repeat-x 0 -4px;}
+TABLE.admin_job TD.name SPAN UL LI INPUT {float:left; width:400px; height:auto; margin:0; overflow:visible /* Needed for Opera */;}
+* html TABLE.admin_job TD.name SPAN UL LI INPUT {width:404px; /*/*/widt\h:398px; /* */}
+*+html TABLE.admin_job TD.name SPAN UL LI INPUT {width:398px;}
+* html TABLE.admin_job TD.name SPAN UL LI INPUT {overflow:hidden;}
+TABLE.admin_job TD.name SPAN UL LI A.b55_3 {float:left; display:inline; margin:0 10px 0 16px;}
+
+TABLE.admin_job TD.term {width:127px;}
+TABLE.admin_job TD.button {width:141px; padding:5px 0 57px 0; text-align:left;}
+TABLE.admin_job TD.button A.b55_3, TABLE.admin_job TD.button A.b55_3_inactive, TABLE.admin_job TD.button A.b55_3_on, TABLE.admin_job TD.button A.b55_3_off {margin:0 0 0 9px; float:left; display:inline;}
+TABLE.admin_job TD.button SPAN.undo {float:left; padding:7px 7px 6px 0; width:17px; margin:-5px 0 0 19px; border-bottom:1px solid #b9c1cd; border-right:1px solid #b9c1cd;}
+* html TABLE.admin_job TD.button SPAN.undo {width:25px; /*/*/widt\h:17px; /* */}
+TABLE.admin_job TD.button SPAN.undo A.undo_active, TABLE.admin_job TD.button SPAN.undo A.undo_inactive {margin:0 0 0 0; float:left; display:inline;}
+TABLE.admin_job TD.button SPAN.on_off {float:left; padding:7px 0 6px 3px; width:25px; margin:-5px 0 0 0; border-bottom:1px solid #b9c1cd; border-left:1px solid #ffffff;}
+* html TABLE.admin_job TD.button SPAN.on_off {width:29px; /*/*/widt\h:25px; /* */}
+TABLE.admin_job TD.button SPAN.on_off A.b_on, TABLE.admin_job TD.button SPAN.on_off A.b_off {margin:0 0 0 0; float:left; display:inline;}
+
+TABLE.admin_job TR {margin:0; padding:0;}
+TABLE.admin_job TR.second TD {background-color:#DDE0E3;}
+TABLE.admin_job TR.second TD.name SPAN UL LI SPAN {background-color:#DDE0E3;}
+
+TABLE.admin TD.button ul li, TABLE.admin_job TD.button ul li
+  { behavior:  url(../style/IEFixes.htc);
+  }
+TABLE.admin TD.button LI, TABLE.admin_job TD.button LI {padding:0; margin:0; list-style:none; width:55px; position:relative; z-index:200; clear:left; /* Needed for NS7.1 and IE5.0 */;}
+* html TABLE.admin TD.button LI, * html TABLE.admin_job TD.button LI {float:left;}
+*+html TABLE.admin TD.button LI, *+html TABLE.admin_job TD.button LI {float:left;}
+TABLE.admin TD.button UL {padding:0; margin:0; float:left;}
+TABLE.admin_job TD.button UL {padding:0; margin:0; float:none;}
+TABLE.admin TD.button li ul, TABLE.admin_job TD.button li ul { /* second-level lists */ position:absolute; left:-999em; margin-left:55px; margin-top :0; border:4px solid #c8ced8;}
+TABLE.admin_job TD.button li ul {margin-left:60px;}
+TABLE.admin TD.button li li, TABLE.admin_job TD.button li li {width:222px; float:left;}
+TABLE.admin TD.button li:hover ul, TABLE.admin TD.button li li:hover ul, TABLE.admin TD.button li li li:hover ul, TABLE.admin TD.button li.sfhover ul,
+TABLE.admin_job TD.button li:hover ul, TABLE.admin_job TD.button li li:hover ul, TABLE.admin_job TD.button li li li:hover ul, TABLE.admin_job TD.button li.sfhover ul { /* lists nested under hovered list items */ left:-291px;}
+TABLE.admin TD.button li li TABLE, TABLE.admin_job TD.button li li TABLE {padding:0; border-spacing:0 0; display:inline; table-layout:fixed; overflow:hidden; width:222px; float:left;}
+TABLE.admin TD.button li li TABLE TR, TABLE.admin_job TD.button li li TABLE TR {padding:0; margin:0;}
+TABLE.admin TD.button li li TABLE TH, TABLE.admin_job TD.button li li TABLE TH {width:99px; padding:0 5px; border:1px solid #a9b1bd; border-top:1px solid #DCE8F7; text-align:right; vertical-align:top; margin:0; line-height:15px; background:url(../images/bg_th_dv4.gif) no-repeat #D6DBE5 5px 0; font-weight:normal;}
+* html TABLE.admin TD.button li li TABLE TH, * html TABLE.admin_job TD.button li li TABLE TH {width:111px; /*/*/widt\h:99px; /* */}
+TABLE.admin TD.button li li TABLE TH.last, TABLE.admin_job TD.button li li TABLE TH.last {padding-bottom:4px; background:url(../images/bg_th_dv5.gif) no-repeat #D6DBE5 5px 100%;}
+TABLE.admin TD.button li li TABLE TH SPAN, TABLE.admin_job TD.button li li TABLE TH SPAN {display:block; padding:3px 5px 2px 5px; background:url(../images/bg_th_dv.gif) repeat-x 0 0; border-top:3px solid #D6DBE5; border-bottom:0; width:89px; margin:0;}
+TABLE.admin TD.button li li TABLE TD, TABLE.admin_job TD.button li li TABLE TD {padding:6px 10px 2px 5px; border:1px solid #b9c1cd; border-right:1px solid #a9b1bd; border-left:1px solid #ffffff; border-top:1px solid #ffffff; margin:0; line-height:15px; word-wrap:break-word; background-color:#EDF0F6; width:94px; text-align:left;}
+TABLE.admin TD.button li li TABLE TD.last, TABLE.admin_job TD.button li li TABLE TD.last {padding-bottom:4px; border-bottom-color:#a9b1bd;}
+* html TABLE.admin TD.button li li TABLE TD, * html TABLE.admin_job TD.button li li TABLE TD {width:111px; /*/*/widt\h:94px; /* */}
+TABLE.admin TD.button li li TABLE CAPTION, TABLE.admin_job TD.button li li TABLE CAPTION {width:100%; font-weight:bold; line-height:15px; font-size:11px; text-align:left; margin:0; background:url(../images/h_admin_hover.gif) no-repeat; padding:3px 10px 3px 25px;}
+TABLE.admin TD.button li li TABLE CAPTION SPAN, TABLE.admin_job TD.button li li TABLE CAPTION SPAN {float:none; font-weight:bold; padding:0 0 0 0; margin:-15px 0 0 0; border:0; width:187px; text-decoration:underline; display:block; text-align:right; background-color:transparent;}
+TABLE.admin TD.button li li TABLE CAPTION SPAN.confirmed, TABLE.admin_job TD.button li li TABLE CAPTION SPAN.confirmed {color:green;}
+TABLE.admin TD.button li li TABLE CAPTION SPAN.unconfirmed, TABLE.admin_job TD.button li li TABLE CAPTION SPAN.unconfirmed {color:red;}
+
+A.undo_active {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/undo_active.gif);}
+A.undo_inactive {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/undo_inactive.gif);}
+
+A.delete_active {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/delete_2.gif);}
+A.delete_inactive {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/delete_2_inactive.gif);}
+
+A.edit_active {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/edit_2.gif);}
+A.edit_inactive {display:block; text-align:center; height:15px; width:15px; background-image:url(../images/edit_2_inactive.gif);}
+
+A.b_detail {display:block; text-align:center; height:15px; width:16px; background-image:url(../images/lupe3.gif);}
+
+A.b_on {display:block; color:#ffffff; text-align:center; height:15px; width:25px;}
+A.b_on:link, A.b_on:visited {background-image:url(../images/button_on_3.gif);}
+A.b_on:hover, A.b_on:focus {background-image:url(../images/button_off_3.gif);}
+
+A.b_off {display:block; color:#ffffff; text-align:center; height:15px; width:25px;}
+A.b_off:link, A.b_off:visited {background-image:url(../images/button_off_3.gif);}
+A.b_off:hover, A.b_off:focus {background-image:url(../images/button_on_3.gif);}
+
+#il_t {width:693px; float:left; padding:10px 0 10px 0; margin:0;}
+#il_t DIV {float:left; padding:5px 7px 4px 0; background:url(../images/sort_t_2_o6.gif) no-repeat;}
+#il_b {width:693px; float:left; padding:0;}
+#il_b DIV {float:left; padding:10px 7px 10px 0; background:url(../images/sort_t_2_o6.gif) no-repeat 0 5px;}
+#il_t LABEL, #il_b LABEL {float:left; margin:0; padding:0; display:inline;}
+#il_t LABEL SPAN, #il_b LABEL SPAN {float:left; width:82px; text-align:center; padding:1px 0 1px 0; margin:2px 7px 0 0; line-height:15px; font-weight:bold; display:inline;}
+#il_t LABEL INPUT, #il_b LABEL INPUT {float:left; margin:3px 6px 0 7px; height:15px; width:14px; overflow:hidden;}
+#il_t SELECT, #il_b SELECT {float:left; width:110px; display:inline; margin:1px 5px 0 0;}
+#il_t A, #il_b A {float:left; font-weight:bold;}
+#il_t FIELDSET {background:url(../images/sort_t_2.gif) no-repeat; margin:0; padding:0; width:301px; height:30px; float:right; overflow:hidden; border:0;}
+#il_t FIELDSET UL {width:301px; float:left; padding:0; margin:0;}
+#il_t FIELDSET LI {padding:5px 10px 0 10px; width:281px; float:left; list-style:none; margin:0;}
+* html #il_t FIELDSET LI {width:301px; /*/*/widt\h:281px; /* */}
+#il_t FIELDSET LABEL {width:72px; line-height:20px; font-weight:bold; color:#2F3F55; height:auto; background-color:transparent;}
+#il_t FIELDSET SELECT {width:139px; margin:1px 5px 0 5px;}
+#il_t FIELDSET SELECT OPTION.inactive {color:#999999;}
+#il_t FIELDSET A {display:inline; margin-top:0;}
+
+SPAN.p_c {float:right; margin:0 0 6px 10px;}
+SPAN.p_c IMG {float:left; display:inline; border:0; margin-right:5px;}
+SPAN.p_c A {float:left; line-height:15px; padding-bottom:1px; text-decoration:underline;}
+SPAN.p_c A:hover, SPAN.p_c A:focus {color:#7487A2;}
+SPAN.p_c A.inactive {color:#7487A2;}
+
+.catlink_ail {float:left; width:693px; padding:0; margin:0;}
+.catlink_ail H1, .catlink_ail H2, .catlink_ail H3, .catlink_ail H4 {color:#ffffff; font-weight:bold; line-height:21px; margin:0 0 0 0; float:left; display:inline;}
+.catlink_ail H1 {width:511px; background:url(../images/h_m_o.gif) no-repeat; padding:0 10px 0 25px; font-size:12px;}
+* html .catlink_ail H1 {width:546px; /*/*/widt\h:511px; /* */}
+.catlink_ail H2, .catlink_ail H3, .catlink_ail H4 {width:137px; padding:0 5px; text-align:center; font-size:11px;}
+* html .catlink_ail H2, * html .catlink_ail H3, * html .catlink_ail H4 {width:147px; /*/*/widt\h:137px; /* */}
+.catlink_ail H2 {background:url(../images/status_red.gif) no-repeat;}
+.catlink_ail H3 {background:url(../images/status_green.gif) no-repeat;}
+.catlink_ail H4 {background:url(../images/status_orange.gif) no-repeat;}
+.catlink_ail DIV {float:left; width:691px; text-align:center; height:19px; line-height:19px; padding:10px 0 10px 0; margin:0; border:1px solid #b9c1cd; border-top:0;}
+* html .catlink_ail DIV {width:693px; /*/*/widt\h:691px; /* */}
+* html .catlink_ail DIV {height:40px; /*/*/heigh\t:19px; /* */}
+* html > body .catlink_ail DIV {overflow:hidden;}
+.catlink_ail DIV P {margin:0 15px 0 0; padding:3px 0; display:inline; line-height:13px; height:13px; font-weight:bold;}
+* html .catlink_ail DIV P {height:19px; /*/*/heigh\t:13px; /* */}
+.catlink_ail DIV A {margin:0 15px 0 0; display:inline; line-height:13px; height:13px /* Needed for IE5.0 */;}
+* html .catlink_ail DIV A {height:19px; /*/*/heigh\t:13px; /* */}
+.catlink_ail DIV A.last {margin:0;}
+.catlink_ail DIV A:link, .catlink_ail DIV A:visited {text-decoration:underline; padding:3px 5px;}
+.catlink_ail DIV A:hover, .catlink_ail DIV A:focus {text-decoration:none; background:url(../images/bg_catlink.gif) repeat-x; border:solid #AEB4C0; border-width:0 1px; padding:3px 4px;}
+#catlink_any .catlink_ail A.any, #catlink_top_offer .catlink_ail A.top_offer, #catlink_eyecatcher .catlink_ail A.eyecatcher, #catlink_offs .catlink_ail A.offs {text-decoration:none; background:url(../images/bg_catlink.gif) repeat-x; border:solid #AEB4C0; border-width:0 1px; padding:3px 4px;}
+
+#as {width:693px; float:left;}
+#as H1, #as H2, #as H3, #as H4 {color:#ffffff; font-weight:bold; line-height:21px; margin:0 0; float:left; display:inline;}
+#as H1 {width:511px; background:url(../images/h_m_o.gif) no-repeat; padding:0 10px 0 25px; font-size:12px;}
+* html #as H1 {width:546px; /*/*/widt\h:511px; /* */}
+#as H2, #as H3, #as H4 {width:137px; padding:0 5px; text-align:center; font-size:11px;}
+* html #as H2, * html #as H3, * html #as H4 {width:147px; /*/*/widt\h:137px; /* */}
+#as H2 {background:url(../images/status_red.gif) no-repeat;}
+#as H3 {background:url(../images/status_green.gif) no-repeat;}
+#as H4 {background:url(../images/status_orange.gif) no-repeat;}
+#as DIV {float:left; border:solid #b9c1cd; border-width:0 1px 1px 1px; width:691px;}
+* html #as DIV {width:693px; /*/*/widt\h:691px; /* */}
+
+#as FORM.cmxform {padding:10px 0 0;}
+#as FORM.cmxform FIELDSET LI {width:604px; padding:0 0 10px 67px;}
+* html #as FORM.cmxform FIELDSET LI {width:671px; /*/*/widt\h:604px; /* */}
+#as FORM.cmxform FIELDSET LI LABEL {width:67px; margin:0 0 0 -67px; background-color:transparent /* Needed for IE, wrong interpretation of width */;}
+#as FORM.cmxform FIELDSET LI LABEL SPAN {width:67px;}
+#as FORM.cmxform FIELDSET LI SELECT {float:left; width:294px; margin:0 5px 0 5px /* Needed for Safari= margin:0 0 0 0, command all sides */;}
+#as FORM.cmxform FIELDSET LI SELECT.big_right {width:295px; margin:0 0 0 5px;}
+#as FORM.cmxform FIELDSET LI SELECT.small_right {width:145px; margin:0 0 0 5px;}
+
+#as FORM.cmxform FIELDSET LI SPAN {float:left /* SPAN needed for correct INPUT position, wrong interpretation of ie5 and ie6 */;}
+#as FORM.cmxform FIELDSET LI SPAN INPUT {float:left; margin:0 0 0 5px; width:222px; padding-left:4px}
+* html #as FORM.cmxform FIELDSET LI SPAN INPUT{width:226px; /*/*/widt\h:220px; /* */}
+*+html #as FORM.cmxform FIELDSET LI SPAN INPUT {width:220px;}
+
+#as FORM.cmxform FIELDSET LI LABEL.metallic {width:80px; line-height:13px; margin:3px 0 0 0; padding:0;}
+#as FORM.cmxform FIELDSET LI LABEL.metallic INPUT {float:left; margin:0 5px; padding:0; height:14px; width:15px;}
+* html #as FORM.cmxform FIELDSET LI LABEL.metallic INPUT {margin:0 2px 0 5px;}
+
+#as FORM.cmxform FIELDSET LI A {float:right; display:inline;}
+
+DIV.inter_h {float:left; width:693px; font-weight:bold; background:url(../images/bg_inter_h.gif) no-repeat; margin:0;}
+DIV.inter_h IMG.list {float:left; display:inline; margin:6px 18px 0 9px;}
+DIV.inter_h P {float:left; width:47px; margin:0 5px 0 0; padding:0 0 0 0; display:inline; line-height:21px;}
+DIV.inter_h SPAN {float:left; margin:0; padding:0; width:466px; display:inline; line-height:21px;}
+DIV.inter_h IMG.add {float:left; margin:6px 5px 0 35px; display:inline;}
+DIV.inter_h A {line-height:21px; float:left; text-decoration:underline; font-weight:bold; margin:0 35px 0 0; padding:0; width:53px; display:inline;}
+DIV.inter_h A:hover, DIV.inter_h A:focus {color:#7487A2;}
+
+.sort_il {float:left; width:693px; padding:9px 0 9px 0; margin:0;}
+.sort_il P, .sort_il DIV {float:left; width:377px; text-align:center; padding:5px 0; margin:0;}
+.sort_il DIV {height:12px; line-height:12px;}
+.sort_il P {border-bottom:1px solid #b9c1cd; height:13px; line-height:13px;}
+* html .sort_il P {height:24px; /*/*/heigh\t:13px; /* */}
+* html .sort_il DIV {height:22px; /*/*/heigh\t:12px; /* */}
+* html > body .catlink_ail P, * html > body .catlink_ail DIV {overflow:hidden;}
+.sort_il P A, .sort_il DIV A {text-decoration:underline; display:inline; color:#7487A2; font-weight:bold;}
+.sort_il DIV A {margin:0 5px 0 5px; font-size:10px; line-height:12px; padding:0 5px; border:solid #384b66; border-width:0 1px; height:12px /* Needed for IE5.0 */;}
+.sort_il P A {margin:0 10px 0 10px; padding:0; line-height:13px; height:13px /* Needed for IE5.0 */;}
+.sort_il P A:hover, .sort_il P A:focus, .sort_il DIV A:hover, .sort_il DIV A:focus {color:#384b66;}
+#list_any_ads .sort_il A.any_ads, #list_search_result .sort_il A.search_result {text-decoration:none; border:solid #384b66; border-width:0 1px; padding:0 5px; font-weight:bold; color:#384b66;} 
+#sort_il_any .sort_il A.any, #sort_il_top_offer .sort_il A.top_offer, #sort_il_eyecatcher .sort_il A.eyecatcher, #sort_il_offs .sort_il A.offs {text-decoration:none; border:solid #384b66; border-width:0 1px; padding:0 5px; color:#384b66;}
+#list_any_ads .sort_il A.any_ads:hover, #list_search_result .sort_il A.search_result:hover, 
+#sort_il_any .sort_il A.any:hover, #sort_il_top_offer .sort_il A.top_offer:hover, #sort_il_eyecatcher .sort_il A.eyecatcher:hover, #sort_il_offs .sort_il A.offs:hover {text-decoration:underline;}
+
+.sort_il FIELDSET {background:url(../images/sort_t_4.gif) no-repeat; margin:-16px 0 0 0; padding:0; width:306px; height:30px; float:right; overflow:hidden; border:0;}
+.sort_il FIELDSET UL {width:306px; float:left; padding:0; margin:0;}
+.sort_il FIELDSET LI {padding:5px 10px 0 10px; width:286px; float:left; list-style:none; margin:0;}
+* html .sort_il FIELDSET LI {width:306px; /*/*/widt\h:286px; /* */}
+.sort_il FIELDSET LABEL {float:left; display:inline; width:72px; line-height:20px; margin:0; padding:0; font-weight:bold; color:#2F3F55;}
+.sort_il FIELDSET SELECT {float:left; width:144px; margin:1px 5px 0 5px;}
+.sort_il FIELDSET SELECT OPTION.inactive {color:#999999;}
+.sort_il FIELDSET A {display:inline; float:left;}
+
+#ail_t {width:693px; float:left; padding:15px 0 10px 0;}
+#ail_t DIV {float:left; padding:0 7px 1px 0; background:url(../images/sort_t_2_o6.gif) no-repeat 0 -5px;}
+#ail_b {width:693px; float:left; padding:10px 0 10px 0;}
+#ail_b DIV {float:left; padding:0 7px 1px 0; background:url(../images/sort_t_2_o6.gif) no-repeat 0 -5px;}
+#ail_t LABEL, #ail_b LABEL {float:left; margin:0; padding:0; display:inline;}
+#ail_t LABEL SPAN, #ail_b LABEL SPAN {float:left; width:82px; text-align:center; padding:1px 0 1px 0; margin:2px 7px 0 0; line-height:15px; font-weight:bold; display:inline; position:static;}
+#ail_t LABEL INPUT, #ail_b LABEL INPUT {float:left; margin:3px 6px 0 7px; height:15px; width:14px; overflow:hidden;}
+#ail_t SELECT, #ail_b SELECT {float:left; width:110px; display:inline; margin:1px 5px 0 0;}
+#ail_t A, #ail_b A {float:left; font-weight:bold;}
+#ail_t SPAN, #ail_b SPAN {float:right; position:relative; left:4px;}
+#ail_t LI, #ail_b LI {float:left; display:inline; list-style:none; padding:0; margin:0 1px;  line-height:20px; font-weight:bold;}
+#ail_t LI A, #ail_b LI A {margin:0 3px; line-height:20px; float:left; font-weight:normal;}
+* html #ail_t LI A, * html #ail_b LI A {line-height:19px; /*/*/line-heigh\t:20px; /* */}
+#ail_t LI A:hover, #ail_t LI A:focus, #ail_b LI A:hover, #ail_b LI A:focus {text-decoration:underline;}
+#ail_t LI.no A, #ail_b LI.no A {text-decoration:underline;}
+#no1 #ail_t A.numb1, #no2 #ail_t A.numb2, #no3 #ail_t A.numb3, #no4 #ail_t A.numb4, #no5 #ail_t A.numb5, #no6 #ail_t A.numb6, #no7 #ail_t A.numb7, #no8 #ail_t A.numb8, #no9 #ail_t A.numb9, #no10 #ail_t A.numb10, #no11 #ail_t A.numb11,
+#no1 #ail_b A.numb1, #no2 #ail_b A.numb2, #no3 #ail_b A.numb3, #no4 #ail_b A.numb4, #no5 #ail_b A.numb5, #no6 #ail_b A.numb6, #no7 #ail_b A.numb7, #no8 #ail_b A.numb8, #no9 #ail_b A.numb9, #no10 #ail_b A.numb10, #no11 #ail_b A.numb11 {font-weight:bold; text-decoration:none; color:#dd8800;}
+#ail_t UL, #ail_b UL {padding:0; margin:0;}
+
+TABLE.admin_ve {margin:0 0 0 0; padding:0; width:693px; border-spacing:0 0; float:left;}
+TABLE.admin_ve TH {font-weight:bold; line-height:15px; text-align:center; margin:0; padding:4px 0 3px 0; border-right:1px solid #AEB4C0; border-left:1px solid #ffffff; background:url(../images/bg_h5_g_AEB4C0.gif) repeat-x; border-top:1px solid #b9c1cd;}
+TABLE.admin_ve TH.delete {width:25px; border-left-color:#AEB4C0; padding:4px 0 3px 0;}
+TABLE.admin_ve TH.code {width:48px;}
+TABLE.admin_ve TH.date {width:71px;}
+TABLE.admin_ve TH.make {width:163px;}
+TABLE.admin_ve TH.cat {width:120px;}
+TABLE.admin_ve TH.year {width:34px;}
+TABLE.admin_ve TH.price {width:81px;}
+TABLE.admin_ve TH.button {width:135px;}
+TABLE.admin_ve TH A {margin:0; padding:0; text-decoration:underline; display:inline; font-weight:bold;}
+TABLE.admin_ve TD {word-wrap:break-word; vertical-align:middle; text-align:center; padding:6px 0 6px 0; margin:0; line-height:15px; background-color:#ffffff; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff; border-bottom:1px solid #b9c1cd; vertical-align:middle;}
+TABLE.admin_ve TD.delete {width:25px; border-left-color:#b9c1cd; text-align:left; border-bottom:0;}
+TABLE.admin_ve TD.delete INPUT {margin:1px 0 0 6px; padding:0; height:15px; width:14px; float:left; display:inline;}
+TABLE.admin_ve TD.code {width:48px;}
+TABLE.admin_ve TD.date {width:71px;}
+TABLE.admin_ve TD.make {width:153px; line-height:15px; padding:6px 5px;}
+TABLE.admin_ve TD.make A {margin:0; padding:0; text-decoration:underline; display:inline;}
+TABLE.admin_ve TD.cat {width:120px;}
+TABLE.admin_ve TD.year {width:34px;}
+TABLE.admin_ve TD.price {width:71px; text-align:left; padding-left:5px; padding-right:5px;}
+TABLE.admin_ve TD.price SPAN {float:right; text-align:center; margin-top:-15px; width:62px;}
+TABLE.admin_ve TD.button_1 {width:37px; padding:5px 5px 5px 4px;}
+TABLE.admin_ve TD.button_2 {width:16px; padding:7px 5px 6px 4px;}
+TABLE.admin_ve TD.button_3 {width:15px; padding:7px 5px 6px 4px;}
+TABLE.admin_ve TD.button_4 {width:25px; padding:7px 5px 6px 4px;}
+TABLE.admin_ve TD.button A {margin:0; float:left; display:inline;}
+TABLE.admin_ve TD.empty_left {width:25px; border-left-color:#b9c1cd;}
+TABLE.admin_ve TD.so {width:38px; padding:5px 5px 0 5px;}
+TABLE.admin_ve TD.so A {margin:0 0 0 0; padding:0; text-align:center; display:block;}
+TABLE.admin_ve TD.so A IMG {border:0; margin:0 auto 5px auto; padding:0 0 0 0; display:block}
+TABLE.admin_ve TD.pic {width:62px; padding:5px 5px 5px 4px;}
+TABLE.admin_ve TD.pic A {margin:0; padding:0 0 0 0; text-align:center; display:block;}
+TABLE.admin_ve TD.pic IMG {border:1px solid #333333; margin:0 auto; padding:0 0 0 0; display:block}
+TABLE.admin_ve TD.note {margin:0 0 0 0; padding:5px 0; width:404px;}
+TABLE.admin_ve TD.note LABEL {float:left; display:inline; line-height:19px; font-weight:bold; width:75px; padding:0; margin:0 5px 0 4px; text-align:center;  background:url(../images/bg_h3_g_AEB4C0.gif) repeat-x 0 -4px;}
+TABLE.admin_ve TD.note INPUT {float:left; width:311px; height:auto; margin:0; overflow:visible /* Needed for Opera */;}
+* html TABLE.admin_ve TD.note INPUT {width:315px; /*/*/widt\h:309px; /* */}
+*+html TABLE.admin_ve TD.note INPUT {width:309px;}
+* html TABLE.admin_ve TD.note INPUT {overflow:hidden;}
+TABLE.admin_ve TD.save_note {width:37px; padding:5px 5px 5px 4px;}
+TABLE.admin_ve TD.empty_right {width:87px;}
+TABLE.admin_ve TR {margin:0; padding:0;}
+TABLE.admin_ve TR.second TD {background-color:#DDE0E3;}
+
+TABLE.admin_ve.sort_date TH.code {border-right-color:#9096a2;}
+TABLE.admin_ve.sort_date TH.date {background:none; border-right-color:#9096a2; border-bottom:1px solid #9096a2; border-top:1px solid #9aa0ac; padding-bottom:2px}
+TABLE.admin_ve.sort_date TH.date A {text-decoration:none;}
+TABLE.admin_ve.sort_date TD.date {background-color:#ffdba3 !important; border-right-color:#9096a2; border-bottom-color:#9096a2; color:#10233e; border-left-color:#ffdba3;}
+TABLE.admin_ve.sort_date TD.code {border-right-color:#9096a2;}
+TABLE.admin_ve.sort_date TD.pic {border-bottom-color:#9096a2;}
+TABLE.admin_ve TD.pic.last {border-bottom-color:#b9c1cd;}
+
+TABLE.admin_pa {margin:0 0 0 0; padding:0; width:693px; border-spacing:0 0; border-top:1px solid #b9c1cd; float:left;}
+TABLE.admin_pa TH {font-weight:bold; line-height:15px; text-align:center; margin:0; padding:4px 0 3px 0; border-right:1px solid #AEB4C0; border-left:1px solid #ffffff; background:url(../images/bg_h5_g_AEB4C0.gif) repeat-x;}
+TABLE.admin_pa TH.delete {width:25px; border-left-color:#AEB4C0; padding:4px 0 3px 0;}
+TABLE.admin_pa TH.code {width:48px;}
+TABLE.admin_pa TH.date {width:71px;}
+TABLE.admin_pa TH.cat_one {width:84px;}
+TABLE.admin_pa TH.cat_two {width:235px;}
+TABLE.admin_pa TH.year_price {width:81px;}
+TABLE.admin_pa TH.button {width:135px;}
+TABLE.admin_pa TD {word-wrap:break-word; vertical-align:middle; text-align:center; padding:6px 0 6px 0; margin:0; line-height:15px; background-color:#ffffff; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff; border-bottom:1px solid #b9c1cd; vertical-align:middle;}
+TABLE.admin_pa TD.delete {width:25px; border-left-color:#b9c1cd; text-align:left; vertical-align:top;}
+TABLE.admin_pa TD.delete INPUT {margin:1px 0 0 6px; padding:0; height:15px; width:14px; float:left; display:inline;}
+TABLE.admin_pa TD.code {width:48px;}
+TABLE.admin_pa TD.date {width:71px;}
+TABLE.admin_pa TD.cat_one {width:84px; padding:5px 0}
+TABLE.admin_pa TD.make_one {width:84px; font-weight:bold; padding:7px 0 6px 0;}
+TABLE.admin_pa TD.cat_two {width:225px; padding:6px 5px;}
+TABLE.admin_pa TD.make_two {width:225px; padding:7px 5px 6px 5px;}
+TABLE.admin_pa TD.year {width:81px;}
+TABLE.admin_pa TD.price {width:81px; padding:7px 0 6px 0;}
+TABLE.admin_pa TD.button_1 {width:37px; padding:5px 5px 5px 4px;}
+TABLE.admin_pa TD.button_2 {width:16px; padding:7px 5px 6px 4px;}
+TABLE.admin_pa TD.button_3 {width:15px; padding:7px 5px 6px 4px;}
+TABLE.admin_pa TD.button_4 {width:25px; padding:7px 5px 6px 4px;}
+TABLE.admin_pa TD.button A {margin:0; float:left; display:inline;}
+TABLE.admin_pa TD.so {width:38px; padding:5px 5px 0 5px;}
+TABLE.admin_pa TD.so A {margin:0 0 0 0; padding:0; text-align:center; display:block;}
+TABLE.admin_pa TD.so A IMG {border:0; margin:0 auto 5px auto; padding:0 0 0 0; display:block}
+TABLE.admin_pa TD.pic {width:62px; padding:5px 5px 5px 4px;}
+TABLE.admin_pa TD.pic A {margin:0; padding:0 0 0 0; text-align:center; display:block;}
+TABLE.admin_pa TD.pic IMG {border:1px solid #333333; margin:0 auto; padding:0 0 0 0; display:block}
+TABLE.admin_pa TD.note_one {width:84px; padding:5px 0 4px 0; text-align:left;}
+TABLE.admin_pa TD.note_two {width:318px; padding:5px 0 4px 0; text-align:left;}
+TABLE.admin_pa TD.note_one LABEL {float:left; display:inline; line-height:19px; font-weight:bold; width:75px; padding:0; margin:0 5px 0 4px; text-align:center;  background:url(../images/bg_h3_g_AEB4C0.gif) repeat-x 0 -4px;}
+TABLE.admin_pa TD.note_two INPUT {float:left; width:305px; height:auto; margin:0 0 0 4px; overflow:visible /* Needed for Opera */;}
+* html TABLE.admin_pa TD.note_two INPUT {width:309px; /*/*/widt\h:303px; /* */}
+*+html TABLE.admin_pa TD.note_two INPUT {width:303px;}
+* html TABLE.admin_pa TD.note_two INPUT {overflow:hidden;}
+TABLE.admin_pa TD.save_note {width:37px; padding:5px 5px 5px 4px;}
+TABLE.admin_pa TR {margin:0; padding:0;}
+TABLE.admin_pa TR.second TD {background-color:#DDE0E3;}
+
+#buy_package {float:left; width:693px; padding:0; margin:0; overflow:hidden;}
+#buy_package H1 {color:#ffffff; font-size:12px; font-weight:bold; line-height:21px; margin:0; padding:0 10px 0 25px; width:658px; background:url(../images/h_m_o.gif) no-repeat;}
+* html #buy_package H1 {width:693px; /*/*/widt\h:658px; /* */}
+#buy_package DIV {float:left; border:1px solid #b9c1cd; border-top:0; width:691px; padding:0 0 10px 0; text-align:center;}
+* html #buy_package DIV {width:693px; /*/*/widt\h:691px; /* */}
+#buy_package DIV P {line-height:17px; padding:7px 0 7px 0; margin:0 10px 0 10px; width:671px;}
+#buy_package DIV H2 {margin:0 10px -7px 10px; padding:7px 0 0 0; line-height:17px; font-size:11px; width:671px;}
+#buy_package DIV P A {text-decoration:underline; margin:0; position:static; clear:none;}
+#buy_package DIV P A:hover, #buy_package DIV P A:focus {color:#dd8800; text-decoration:none;}
+
+#buy_package TABLE {margin:0 -1px 0 -1px; padding:0; width:693px; float:left; border-spacing:0 0; border-bottom:1px solid #b9c1cd;}
+#buy_package TABLE THEAD {margin:0; padding:0;}
+#buy_package TABLE THEAD TH, #buy_package TABLE THEAD TD {font-weight:bold; line-height:15px; text-align:center; margin:0; padding:3px 0; border-right:1px solid #B3B9C5; border-left:1px solid #ffffff; background:url(../images/bg_h2_g_B3B9C5.gif) repeat-x;}
+#buy_package TABLE THEAD TH {border-left-color:#B3B9C5;}
+#buy_package TABLE TBODY {margin:0; padding:0;}
+#buy_package TABLE TBODY TH, #buy_package TABLE TBODY TD {vertical-align:middle; text-align:center; padding:4px 0; margin:0; line-height:19px; border-right:1px solid #b9c1cd; border-left:1px solid #ffffff;}
+#buy_package TABLE TBODY TH {border-left-color:#b9c1cd;}
+#buy_package TABLE INPUT {margin:3px auto 2px auto; padding:0 0 0 0; height:14px; width:15px; overflow:visible /* Needed for Opera */; display:block;}
+* html #buy_package TABLE INPUT {margin:3px -3px 2px 0;}
+#buy_package TABLE TBODY TD.pr50 {text-align:right; padding-right:50px;}
+#buy_package TABLE TBODY TD.pr45 {text-align:right; padding-right:45px;}
+#buy_package TABLE TR {margin:0; padding:0;}
+#buy_package TABLE TR.second TH, #buy_package TABLE TR.second TD {background-color:#DDE0E3 !important;}
+
+#buy_package TABLE.package TH, #buy_package TABLE.package TD {width:20%;}
+#buy_package TABLE.package TBODY TH {background:url(../images/package_admin2.gif) no-repeat 36px 24px; text-align:left; padding-left:57px;}
+
+#buy_package TABLE.so TH, #buy_package TABLE.so TD {width:50%;}
+#buy_package TABLE.so TBODY TH, #buy_package TABLE.so TBODY TD {text-align:left; vertical-align:top; padding:9px 0 5px 0;}
+#buy_package TABLE.so TBODY TH  {background:url(../images/hand_admin2.gif) no-repeat 10px 10px;}
+#buy_package TABLE.so TBODY TD  {background:url(../images/eye_admin2.gif) no-repeat 10px 10px;}
+#buy_package TABLE.so H3 {float:left; font-size:11px; font-weight:normal; margin:0 0; padding:0 0 0 31px; line-height:19px; width:303px;}
+#buy_package TABLE.so LABEL {float:left; clear:left; width:100%; padding-top:5px; margin:0 0;}
+#buy_package TABLE.so LABEL.price {border-top:1px solid #b9c1cd; margin:5px 0 0 0; padding-top:5px; width:100%;}
+#buy_package TABLE.so LABEL SPAN {float:left; display:inline; font-weight:bold; margin:0 10px 0 21px;}
+#buy_package TABLE.so LABEL.price SPAN {font-weight:bold; margin-left:29px;}
+#buy_package TABLE.so LABEL SELECT {float:right; display:inline; width:90px; margin:0 21px 0 0;}
+#buy_package TABLE.so LABEL b {float:right; display:inline; width:90px; margin:0 21px 0 0; text-align:center; padding:0 0; background-color:#DDE0E3;}
+
+#buy_package UL {float:left; width:691px; border-bottom:1px solid #b9c1cd; padding:0; margin:0 0 0 0;}
+#buy_package UL H3 {font-size:11px; line-height:15px; margin:0 0; padding:3px 0 3px 0; width:100%; background:url(../images/bg_h2_g_B3B9C5.gif) repeat-x; text-align:center;}
+#buy_package UL LI {float:left; list-style:none; width:100%; margin:0; padding:0;}
+#buy_package UL LI LABEL {float:left; clear:left; width:252px; padding:0 246px 0 193px; margin:0 0 0 0; background-color:transparent /* Needed for IE6 */;}
+* html #buy_package UL LI LABEL {width:691px; /*/*/widt\h:252px; /* */}
+#buy_package UL LI LABEL IMG {float:left; display:inline; margin:5px 10px 0 0; padding:0;}
+#buy_package UL LI LABEL INPUT {float:left; margin:8px 5px 0 0; padding:0; height:14px; width:15px; overflow:visible /* Needed for Opera */;}
+#buy_package UL LI LABEL SPAN {float:left; text-align:center; width:198px; line-height:15px; padding:6px 0;}
+
+.bb0 {border-bottom:0 !important;}
+
+#buy_package DIV A {float:none; margin:0 auto 10px; clear:left; position:relative; top:10px;}
+#buy_package DIV SPAN.button {margin:0 0 0 -86px; float:left; width:172px; position:relative; left:50%; padding-top:10px;}
+#buy_package DIV SPAN.button A {margin:0 3px 0 3px; float:left; display:inline; clear:none; position:static;}
+
+#conclusion_dealer {float:left; width:693px; padding:0; margin:0; overflow:hidden;}
+#conclusion_dealer H1 {color:#ffffff; font-size:12px; font-weight:bold; line-height:21px; margin:0; padding:0 10px 0 25px; width:658px; background:url(../images/h_m_o.gif) no-repeat;}
+* html #conclusion_dealer H1 {width:693px; /*/*/widt\h:658px; /* */}
+#conclusion_dealer DIV {float:left; margin:0 0; padding:10px 10px 10px 10px; width:671px; border:1px solid #b9c1cd; border-top:0; text-align:center;}
+* html #conclusion_dealer DIV {width:693px; /*/*/widt\h:671px; /* */}
+#conclusion_dealer DIV P {font-size:12px; line-height:28px; font-weight:bold; padding:1px 10px 10px 10px; margin:0 0; float:left; width:651px; display:inline; text-align:center; background:url(../images/bg_congr.gif) no-repeat;}
+* html #conclusion_dealer DIV P {width:671px; /*/*/widt\h:651px; /* */}
+
+#conclusion_dealer UL {float:left; margin:0; padding:0; display:inline; width:663px; border:solid #d7dde7; border-width:4px;}
+* html #conclusion_dealer UL {width:671px; /*/*/widt\h:663px; /* */}
+#conclusion_dealer UL LI {float:left; padding:10px; line-height:17px; width:641px; list-style:none; border:1px solid #b9c1cd; border-top:1px solid #ffffff; background-color:#EDF0F6;}
+* html #conclusion_dealer UL LI {width:663px; /*/*/widt\h:641px; /* */}
+#conclusion_dealer UL H4 {width:451px; text-align:left; font-weight:bold; margin:0 0 0 0; padding:0 10px 0 25px; line-height:21px; font-size:11px; background:url(../images/bg_sub_h2_g_B3B9C5.gif) no-repeat; float:left; border-left:1px solid #B3B9C5;}
+* html #conclusion_dealer UL H4 {width:487px; /*/*/widt\h:451px; /* */}
+#conclusion_dealer UL H5 {width:155px; text-align:right; font-weight:bold; margin:0 0 0 0; padding:0 10px 0 10px; line-height:21px; font-size:11px; background:url(../images/bg_h2_g_B3B9C5.gif) repeat-x; float:left; border-right:1px solid #B3B9C5;}
+* html #conclusion_dealer UL H5 {width:176px; /*/*/widt\h:155px; /* */}
+#conclusion_dealer UL.second {margin-top:10px;}
+#conclusion_dealer UL.second LI {float:left; padding:5px 10px 5px 10px; width:641px; list-style:none; border:1px solid #b9c1cd; border-top:1px solid #ffffff; background-color:#EDF0F6; text-align:center;}
+* html #conclusion_dealer UL.second LI {width:663px; /*/*/widt\h:641px; /* */}
+#conclusion_dealer UL.second H2 {width:661px; text-align:center; font-weight:bold; margin:0 0 0 0; padding:3px 0 3px 0; line-height:15px; font-size:11px; background:url(../images/bg_sub_h2_g_B3B9C5.gif) no-repeat; float:left; border:1px solid #B3B9C5; border-width:0 1px;}
+* html #conclusion_dealer UL.second H2 {width:663px; /*/*/widt\h:661px; /* */}
+#conclusion_dealer UL.second LI IMG {padding:7px 0 5px; float:left;}
+
+#conclusion_dealer TABLE {margin:0; padding:0; width:100%; border-spacing:0 0;}
+#conclusion_dealer TABLE TH, #conclusion_dealer TABLE TD {text-align:center; margin:0; line-height:15px;}
+#conclusion_dealer TABLE THEAD {margin:0; padding:0;}
+#conclusion_dealer TABLE TBODY {margin:0; padding:0;}
+#conclusion_dealer TABLE THEAD TH, #conclusion_dealer TABLE THEAD TD {line-height:15px; padding:3px 5px; font-weight:bold; border-right:1px solid #e7b671; background:url(../images/bg_h2_o_e7b671.gif) repeat-x;}
+#conclusion_dealer TABLE THEAD TD {border-left:1px solid #ffffff;}
+#conclusion_dealer TABLE THEAD TH {border-left:1px solid #e7b671; padding:3px 29px 3px 8px;}
+#conclusion_dealer TABLE THEAD TH IMG {margin:0; padding:0; float:left;}
+#conclusion_dealer TABLE TR {margin:0; padding:0;}
+#conclusion_dealer TABLE TBODY TH {padding:0 5px; border:1px solid #a9b1bd; border-top:1px solid #DCE8F7; vertical-align:top; margin:0; background-color:#D6DBE5;}
+#conclusion_dealer TABLE TBODY TH SPAN {display:block; padding:6px 21px 2px 5px; background:url(../images/bg_th_dv.gif) repeat-x 0 3px; margin:0; float:none;}
+#conclusion_dealer TABLE TBODY TH IMG {margin:-1px 0 0 0; padding:0; float:left;}
+#conclusion_dealer TABLE TBODY TD {padding:6px 5px 2px 5px; border:1px solid #b9c1cd; border-left:1px solid #ffffff; border-top:1px solid #ffffff; margin:0; word-wrap:break-word; background-color:#E8EBF1;}
+#conclusion_dealer TABLE TBODY TD.term {text-align:right; padding-right:10px;}
+#conclusion_dealer TABLE TBODY TD.price {text-align:right; padding-right:14px;}
+#conclusion_dealer TABLE TBODY TH.last, #conclusion_dealer TABLE TBODY TD.last {padding-bottom:4px;}
+
+#conclusion_dealer OL {float:left; margin:10px 0 0 0; padding:0 0; display:inline; width:663px; border:solid #d7dde7; border-width:4px;}
+* html #conclusion_dealer OL {width:671px; /*/*/widt\h:663px; /* */}
+#conclusion_dealer OL LI {float:left; padding:0 10px 5px 10px; width:641px; list-style:none; border:1px solid #b9c1cd; border-top:1px solid #ffffff; background-color:#EDF0F6;}
+* html #conclusion_dealer OL LI {width:663px; /*/*/widt\h:641px; /* */}
+#conclusion_dealer OL H3 {width:661px; text-align:center; font-weight:bold; margin:0 0 0 0; padding:3px 0 3px 0; line-height:15px; font-size:11px; background:url(../images/bg_sub_h2_g_B3B9C5.gif) no-repeat; float:left; border:1px solid #B3B9C5; border-width:0 1px;}
+* html #conclusion_dealer OL H3 {width:663px; /*/*/widt\h:661px; /* */}
+#conclusion_dealer OL LI P {float:left; width:630px; padding:5px 0 0 11px; margin:0 0 0 0; background:url(../images/list_point_yellow.gif) no-repeat 0 10px; line-height:17px; text-align:left; background-color:transparent; font-weight:normal; text-decoration:none; border:0; font-size:11px;}
+* html #conclusion_dealer OL LI P {width:641px; /*/*/widt\h:630px; /* */}
+
+#conclusion_dealer OL LI TABLE {margin:7px 0 2px 0; padding:0; width:641px; border-spacing:0 0; float:left; table-layout:auto !important; background:url(../images/bg_bank.gif) repeat-x 0 21px;}
+#conclusion_dealer OL LI TABLE TH, #conclusion_dealer OL LI TABLE TD {width:auto !important; background-color:transparent;}
+#conclusion_dealer OL LI TABLE THEAD TH, #conclusion_dealer OL LI TABLE THEAD TD {background:url(../images/bg_h2_o_e7b671.gif) repeat-x; border-color:#e7b671; padding:3px 5px;}
+#conclusion_dealer OL LI TABLE THEAD TD {border-left-color:#ffffff;}
+#conclusion_dealer OL LI TABLE TBODY TH, #conclusion_dealer OL LI TABLE TBODY TD {padding:4px 0 4px 0; border-color:#cccccc; border-top:0; border-bottom:0;}
+#conclusion_dealer OL LI TABLE TBODY TD {border-left-color:#ffffff;}
+
+#conclusion_dealer DIV A {float:none; margin:0 auto 10px; clear:left; position:relative; top:10px;}
+
+#oj {width:693px; float:left;}
+#oj H1 {color:#ffffff; font-size:12px; font-weight:bold; line-height:21px; margin:0 0; padding:0 25px 0 25px; width:643px; background:url(../images/h_m_o.gif) no-repeat;}
+* html #oj H1 {width:693px; /*/*/widt\h:643px; /* */}
+#oj DIV {float:left; border:1px solid #b9c1cd; border-top:0; width:691px; text-align:center;}
+* html #oj DIV {width:693px; /*/*/widt\h:691px; /* */}
+#oj DIV P.intro, #op DIV P.intro {padding:7px 0 7px 0; margin:0 10px 0 10px; text-align:center; line-height:17px; width:671px; float:left; display:inline;}
+#oj DIV FORM.cmxform H2 {font-size:11px; line-height:15px; margin:0 0; padding:3px 0 3px 0; width:100%; background:url(../images/bg_h2_g_B3B9C5.gif) repeat-x; text-align:center; float:left;}
+#oj DIV FORM.cmxform H2 SPAN {color:#ff9900;}
+#oj DIV FORM.cmxform FIELDSET OL {margin:10px 10px 0 10px; float:left; display:inline; width:671px;}
+#oj DIV FORM.cmxform FIELDSET OL.section {border-top:1px solid #C3CBD7; padding:10px 0 0 0; margin:0 10px 0 10px;}
+#oj DIV FORM.cmxform {padding:0;}
+#oj DIV FORM.cmxform FIELDSET LI {width:100%;}
+#oj DIV FORM.cmxform FIELDSET LI LABEL {width:220px; text-align:right;}
+#oj DIV FORM.cmxform FIELDSET LI LABEL SPAN {width:220px;}
+#oj DIV FORM.cmxform FIELDSET LI SELECT {float:left; width:221px; margin:0 0 0 5px;}
+#oj DIV FORM.cmxform FIELDSET LI INPUT {float:left; width:217px; margin:0 0 0 5px;}
+* html #oj DIV FORM.cmxform FIELDSET LI INPUT {width:221px; /*/*/widt\h:215px; /* */}
+*+html #oj DIV FORM.cmxform FIELDSET LI INPUT {width:215px;}
+#oj DIV FORM.cmxform FIELDSET LI TEXTAREA {width:217px; margin:0 0 0 5px; line-height:15px; display:inline; float:left;}
+* html #oj DIV FORM.cmxform FIELDSET LI TEXTAREA {width:221px; /*/*/widt\h:215px; /* */}
+*+html #oj DIV FORM.cmxform FIELDSET LI TEXTAREA {width:215px;}
+#oj DIV FORM.cmxform FIELDSET LI TEXTAREA.address {height:30px;}
+#oj DIV FORM.cmxform FIELDSET LI TEXTAREA.more_info {height:75px;}
+#oj DIV FORM.cmxform SPAN.oj_comment {margin-left:5px; width:72px; line-height:19px; float:left; overflow:hidden;}
+#oj DIV FORM.cmxform FIELDSET LI LABEL.small {width:15px; margin-left:10px; display:inline;}
+#oj DIV FORM.cmxform FIELDSET LI LABEL.small SPAN {width:15px;}
+#oj DIV FORM.cmxform FIELDSET LI SELECT.small {width:57px;}
+#oj DIV FORM.cmxform FIELDSET LI INPUT.small {width:53px;}
+* html #oj DIV FORM.cmxform FIELDSET LI INPUT.small {width:57px; /*/*/widt\h:51px; /* */}
+*+html #oj DIV FORM.cmxform FIELDSET LI INPUT.small {width:51px;}
+
+#oj DIV A {float:none; margin:0 auto 10px;}
+
+
+
+
+
+span.nummer {word-wrap:break-word; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:38px ;}
+span.date_a {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:61px ;}
+span.date_b {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:56px ;}
+span.make {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width: ;}
+span.category {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:110px;}
+span.category BR {padding:0; margin:0;}
+span.year {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:24px ;}
+span.price {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:71px ;}
+span.druecker {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:55px;}
+span.category_two {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:44px;
+ font-weight:bold}
+span.test {word-wrap:break-word; overflow:hidden; background-color:#ff9900; float:left; padding:20px 0; margin:0 10px; display:inline; width:198px;
+ font-weight:normal}
+ 
+ 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+                
+                TABLE.admin_job TD.delete INPUT {width:15px; margin-top:0;}
+                TABLE.admin_job TD.name SPAN UL LI INPUT {width:398px;}
+                #as FORM.cmxform FIELDSET LI SPAN INPUT {width:220px;}
+                TABLE.admin_ve TD.delete INPUT {width:15px; margin-top:0;}
+                TABLE.admin_ve TD.note INPUT {width:309px;}
+                TABLE.admin_pa TD.delete INPUT {width:15px; margin-top:0;}
+                TABLE.admin_pa TD.note_two INPUT {width:303px;}
+                #as FORM.cmxform FIELDSET LI LABEL.metallic {margin:1px 0 0 0;}
+                #buy_package UL LI LABEL INPUT {margin:6px 5px 0 0;}
+                #oj DIV FORM.cmxform FIELDSET LI INPUT {width:215px;}
+                #oj DIV FORM.cmxform FIELDSET LI INPUT.small {width:51px;}
+                #oj DIV FORM.cmxform FIELDSET LI TEXTAREA {width:219px;}
+                
+
+}
+
+    @media all and (min-width: 0px) {
+             body:not(:root:root) TABLE.admin_job TD.delete INPUT {width:14px}
+             body:not(:root:root) TABLE.admin_job TD.delete INPUT {margin-top:3px}
+             body:not(:root:root) TABLE.admin_ve TD.delete INPUT {width:14px}
+             body:not(:root:root) TABLE.admin_ve TD.delete INPUT {margin-top:3px}
+             body:not(:root:root) TABLE.admin_pa TD.delete INPUT {width:14px}
+             body:not(:root:root) TABLE.admin_pa TD.delete INPUT {margin-top:3px}
+             body:not(:root:root) #il_t LABEL INPUT, body:not(:root:root) #il_t LABEL INPUT {margin-top:5px}
+             body:not(:root:root) #as FORM.cmxform FIELDSET LI LABEL.metallic {margin:3px 0 0 0;}
+             body:not(:root:root) #ail_t LABEL INPUT, body:not(:root:root) #ail_b LABEL INPUT {margin-top:5px}
+             body:not(:root:root) #buy_package UL LI LABEL INPUT {margin:8px 5px 0 0;}
+    }
+
+
+
+
+
+
+
+

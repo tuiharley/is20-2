@@ -1,0 +1,37 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0053)http://siit.net/members/art/thaiwrap-onload-test.html -->
+<HTML>
+<HEAD>
+<TITLE>ThaiWrap onload test</TITLE>
+<META http-equiv=content-type content="text/html; charset=utf-8">
+<script src="thaiwrap.js" type="text/javascript"></script>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+</HEAD>
+<BODY style="text-align:center">
+<table style="margin:0 auto 0 auto">
+     <tr>
+          <td style="width:250px; border:3px solid #ff0000"><H1>ThaiWrap onload test / ทดสอบตัดบรรทัดข้อความไทยอัตโนมัติ</H1>
+               <H2>Test / ทดสอบ</H2>
+               <P>ตอนนี้พอใจดีทุกอย่างกับFirefoxติดแค่อย่างเดียวคือเรื่องตัดคำข้อความภาษาไทยที่มันทำไม่ได้ทำให้เวลาอ่านหน้าเว็บบางหน้าที่เค้่าเขียนข้อความยาวติดกันเป็นพืดจะอ่านลำบากเพราะต้องเลื่อนซ้ายทีขวาทีและไม่สวยด้วยถึงแม้จะมี<B>ICU 
+                    patchสำหรับFirefox</B>ให้มันตัดคำไทยได้แล้วแต่ก็คงยุ่งยากไปสำหรับผู้ใช้ทั่วไป(จริงๆถ้าอยากลองก็ไม่ยากนะทำตามสเต็ปดูได้)คนใช้<U>Linux 
+                    TLE</U>โชคดีหน่อยMozilla/Firefoxที่จะมากับLinux TLEตัวหน้าจะแพตช์มาเรียบร้อยแล้วอย่างไรก็ตามทั้งหมดนั้นยังสำหรับLinuxเท่านั้น,Windowsอด.เห็นว่าbookmarkletน่าจะเป็นวิธีนึงที่ใช้(แก้ขัด)ได้เพราะว่ามันน่าจะใช้ได้ทุกแพลตฟอร์ม/เบราเซอร์(เป็นJavaScript)ไม่ต้องแพตช์ไม่ต้องคอมไพล์น่าจะโอเคสำหรับผู้ใช้ทั่วๆไปเลยลองทำดูเท่าที่ใช้ดูก็โอเคพออ่านได้ไม่ต้องเลื่อนซ้ายขวามากนักแต่มันไม่อัตโนมัตินะต้องกดปุ่มbookmarkletเพื่อสั่งให้มันwrapเอาเองโค้ดก็ไม่มีอะไรมากก็แค่แทรก 
+                    zero-width space (U+200B) (ก่อนหน้านี้ใช้&lt;WBR&gt;แต่ใช้กับOperaไม่ได้ 
+                    เลยเปลี่ยน) ไปตามจุดที่เห็นว่าน่าจะแบ่งพยางค์ได้แค่นั้นแหละใช้JavaScriptแทรกโค้ดผ่านDOMเป็นregexp+รายการคำประมาณสามสิบกว่าคำที่มักจะพบกลางประโยค(เช่น"เป็น|อยู่|จะ|ใช้|ได้|ให้")Note:ไม่ได้แทรกทุกๆจุดแบ่งจริงๆแค่บางจุดที่พอจะหาได้เท่านั้นแค่ให้มันตัดประโยคยาวๆลงได้บ้างก็พอจะได้อ่านเว็บง่ายหน่อยรายละเอียดลองดูตามโค้ดเอาละกันโค้ดยังช้าอยู่และยังใช้กับหน้าที่อยู่ในเฟรมได้ไม่สมบูรณ์ถ้าใครอยากเอาไปทำอะไรต่อ(เช่นให้มันเร็วขึ้นหรือว่าใช้กับframeซ้อนๆได้)ก็ตามสบายเลยครับ:)</P>
+               <P> 
+                    <SCRIPT type=text/javascript>
+<!--
+ document.writeln("navigator.platform = " + navigator.platform + "<br>");
+ document.writeln("navigator.userAgent = " + navigator.userAgent + "<br>");
+ document.writeln("navigator.appCodeName = " + navigator.appCodeName + "<br>");
+ document.writeln("navigator.appName = " + navigator.appName + "<br>");
+ document.writeln("navigator.vendor = " + navigator.vendor + "<br>");
+ document.writeln("navigator.product = " + navigator.product + "<br>");
+//-->
+</SCRIPT>
+               </P>
+               <P><A href="http://siit.net/members/art/thaiwrap.html">thaiWrap() 
+                    main page</A></P></td>
+     </tr>
+</table>
+</BODY>
+</HTML>
