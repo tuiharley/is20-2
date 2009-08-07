@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/PTT.Shared.Interface.Service/security" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/PTT.Shared.Interface.Service/security" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/PTT.Shared.Interface.Service/security">
+      <s:element name="IsAuthenticated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Domain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAuthenticatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAuthenticatedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApplicationError" type="tns:ApplicationError" />
+      <s:complexType name="ApplicationError">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EncryptData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsAuthenticatedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAuthenticated" />
+  </wsdl:message>
+  <wsdl:message name="IsAuthenticatedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAuthenticatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAuthenticatedApplicationError">
+    <wsdl:part name="ApplicationError" element="tns:ApplicationError" />
+  </wsdl:message>
+  <wsdl:message name="EncryptDataSoapIn">
+    <wsdl:part name="parameters" element="tns:EncryptData" />
+  </wsdl:message>
+  <wsdl:message name="EncryptDataSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecryptDataSoapIn">
+    <wsdl:part name="parameters" element="tns:DecryptData" />
+  </wsdl:message>
+  <wsdl:message name="DecryptDataSoapOut">
+    <wsdl:part name="parameters" element="tns:DecryptDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SecurityServiceSoap">
+    <wsdl:operation name="IsAuthenticated">
+      <wsdl:input message="tns:IsAuthenticatedSoapIn" />
+      <wsdl:output message="tns:IsAuthenticatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EncryptData">
+      <wsdl:input message="tns:EncryptDataSoapIn" />
+      <wsdl:output message="tns:EncryptDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DecryptData">
+      <wsdl:input message="tns:DecryptDataSoapIn" />
+      <wsdl:output message="tns:DecryptDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecurityServiceSoap" type="tns:SecurityServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="IsAuthenticated">
+      <soap:operation soapAction="http://tempuri.org/PTT.Shared.Interface.Service/security/IsAuthenticated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsAuthenticatedApplicationError" part="ApplicationError" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsAuthenticatedApplicationError" part="ApplicationError" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EncryptData">
+      <soap:operation soapAction="http://tempuri.org/PTT.Shared.Interface.Service/security/EncryptData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DecryptData">
+      <soap:operation soapAction="http://tempuri.org/PTT.Shared.Interface.Service/security/DecryptData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SecurityService">
+    <wsdl:port name="SecurityServiceSoap" binding="tns:SecurityServiceSoap">
+      <soap:address location="http://hq-web-s18.ptt.corp/PTT.Shared.Interface.Service/security.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
