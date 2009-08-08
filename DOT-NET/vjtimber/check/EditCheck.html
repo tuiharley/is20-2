@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>VJ TIMBER CO LTD</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en" />
+    <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+<body>
+    <div id="main">		
+        <div id="top">
+            <div id="logo">
+                <h1>วี.เจ.ทิมเบอร์ จำกัด</h1>
+                <h2></h2>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="../index.html">หน้าแรก</a></li>
+                    <li><a href="#">บันทึก check</a></li>
+                    <li><a href="#">สินค้า</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">จัดการข้อมูล</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="left">
+
+                <div id="left_bot">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li>&raquo; <a href="#">บันทึกรับ Check ใหม่</a></li>
+                        <li>&raquo; <a href="EditCheck.html">แก้ไข Check</a></li>
+                        <li>&raquo; <a href="check_records.html">ดูรายการรับ Check ทั้งหมด</a></li>
+                        <!--<li>&raquo; <a href="#">Suspendisse potenti</a></li>
+                        <li>&raquo; <a href="#">Morbi bibendum</a></li>
+                        <li>&raquo; <a href="#">Nulla facilisi</a></li>-->
+                    </ul>
+                </div>
+				
+            </div>		
+
+            <div id="right">
+                <div id="right_top">
+                    <h3 class="firsth3">เลือกธนาคาร</h3>
+					<table border="0">
+						<tr>
+							<td><input type="radio" id="bank" name="bank" value="1"/></td>
+							<td>K-Bank</td>
+						</tr>
+						<tr>
+							<td><input type="radio" id="bank" name="bank" value="1"/></td>
+							<td>Bangkok Bank</td>
+						</tr>
+						<tr>
+							<td><input type="radio" id="bank" name="bank" value="1"/></td>
+							<td>Krungsri Aydhaya Bank</td>
+						</tr>
+						<tr>
+							<td><input type="radio" id="bank" name="bank" value="1"/></td>
+							<td>Siam Commercial Bank</td>
+						</tr>
+					</table>
+                                    
+                    <h3>รายละเอียดของ Check</h3>
+                    <table border="0" cellspacing="10">
+						<tr>
+							<td>เช็คลงวันที่</td>
+							<td><select id="checkDay" name="checkDay">
+									<option value="01">01</option>
+									<option value="02">02</option>
+									<option value="03">03</option>																																									
+									<option value="04">04</option>
+								</select>
+								/
+								<select id="checkMonth" name="checkMonth">
+									<option value="01">ม.ค. (01)</option>
+									<option value="02">ก.พ. (02)</option>
+									<option value="03">มี.ค. (03)</option>
+									<option value="04">เม.ย. (04)</option>
+								</select>
+								/
+								<select id="checkYear" name="checkYear">
+									<option value="2009">2009</option>
+									<option value="2010">2010</option>
+									<option value="2011">2011</option>
+									<option value="2012">2012</option>
+								</select>				
+								(dd/mm/yyyy)				
+							</td>
+						</tr>
+						<tr>
+							<td>สั่งจ่ายโดย</td>
+							<td><select id="custID" name="custID">
+									<option value="0">ก.ภัทร</option>
+								</select>
+							</td>
+						</tr>
+					
+						<tr>
+							<td>เลขที่ Check</td>
+							<td><input type="text" name="checkNo" id="checkNo" /></td>
+						</tr>
+						<tr>
+							<td>จำนวนเงิน</td>
+							<td><input type="text" name="checkNo" id="checkNo" /></td>
+						</tr>
+						<tr>
+							<td>หมายเหตุ</td>
+							<td><input type="text" name="checkNo" id="checkNo" /></td>
+						</tr>
+						<tr>
+							<td>สถานะ</td>
+							<td><select id="custID" name="custID">
+									<option value="0">ใหม่</option>
+									<option value="0">คืน</option>
+									<option value="0">ยกเลิก</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="button" class="btn" value="Save" />
+							<input type="reset" class="btn" value="Clear" /></td>
+						</tr>
+					</table>
+					
+			  </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <p>Copyright &copy; VJTIMBER Co.,Ltd., Designed by Trimit Chanchotiyan</p>
+        </div>        
+    </div>
+</body>
+</html>
