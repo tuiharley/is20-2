@@ -133,47 +133,23 @@
 					<h1 class="intro"><!--Inroduction Headline--> - 
 						ทั้งบุคคลทั่วไปและผู้ประกอบการสามารถลงประกาศขายรถและอะไหล่/ประดับยนต์ได้ ที่นี่ 
 						-</h1>
-					<table class="index_ads" cellSpacing="0">
-						<!--Example Ads-->
-						<caption>
-							ฐานข้อมูลขนาดใหญ่ของรถ อะไหล่/ประดับยนต์ และโฆษณาพิเศษเกี่ยวกับยานยนต์ บน 
-							AUTO-ONCLICK</caption>
-						<thead>
-							<tr>
-								<th>
-									<A href="#">"รถยนต์"</A></th>
-								<td><A href="#">"รถจักรยานยนต์"</A></td>
-								<td><A href="#">"รถบรรทุก"</A></td>
-								<td><A href="#">"อะไหล่/ประดับยนต์"</A></td>
-								<td><A href="#">"ผู้ประกอบการ"</A></td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>
-									<span>
-										<A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
-									<p><A href="#">Toyota Camry,
-											<span>ใหม่</span>, ฿ 1,200,000</A></p>
-								</th>
-								<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
-									<p><A href="#">Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>
-								</td>
-								<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
-									<p><A href="#">Make Model,
-											<span>new</span>-year, price</A></p>
-								</td>
-								<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
-									<p><A href="#">Product Name,
-											<span>new</span>-used, price</A></p>
-								</td>
-								<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
-									<p><A href="#">Company Name, Province</A></p>
-								</td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tfoot>
+					<div id="randomShow">
+						<table class="index_ads" cellSpacing="0">
+							<!--Example Ads-->
+							<caption>
+								ฐานข้อมูลขนาดใหญ่ของรถ อะไหล่/ประดับยนต์ และโฆษณาพิเศษเกี่ยวกับยานยนต์ บน 
+								AUTO-ONCLICK</caption>
+							<thead>
+								<tr>
+									<th>
+										<A href="#">"รถยนต์"</A></th>
+									<td><A href="#">"รถจักรยานยนต์"</A></td>
+									<td><A href="#">"รถบรรทุก"</A></td>
+									<td><A href="#">"อะไหล่/ประดับยนต์"</A></td>
+									<td><A href="#">"ผู้ประกอบการ"</A></td>
+								</tr>
+							</thead>
+							<tbody>
 								<tr>
 									<th>
 										<span>
@@ -196,8 +172,34 @@
 										<p><A href="#">Company Name, Province</A></p>
 									</td>
 								</tr>
-							</tfoot>
-						</tbody></table>
+							</tbody>
+							<tbody>
+								<tfoot>
+									<tr>
+										<th>
+											<span>
+												<A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
+											<p><A href="#">Toyota Camry,
+													<span>ใหม่</span>, ฿ 1,200,000</A></p>
+										</th>
+										<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
+											<p><A href="#">Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>
+										</td>
+										<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
+											<p><A href="#">Make Model,
+													<span>new</span>-year, price</A></p>
+										</td>
+										<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
+											<p><A href="#">Product Name,
+													<span>new</span>-used, price</A></p>
+										</td>
+										<td><span><A href="#"><IMG alt="" src="../scripts+pics/images/pic_80x60.gif"></A></span>
+											<p><A href="#">Company Name, Province</A></p>
+										</td>
+									</tr>
+								</tfoot>
+							</tbody></table>
+					</div>
 					<div id="qs">
 						<!--Vehicle Quick Search-->
 						<h1>ค้นหารถ โดย Quick-Search บน AUTO-ONCLICK</h1>
@@ -381,14 +383,13 @@
 						<!--Sponsor Links-->
 						<h1>ผู้สนับสนุน</h1>
 						<ul>
-							<div id="s1">
+							<div id="sponsor">
 								<li>
 									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
 									<A class="text" href="#">Headline Text (only 1. line)</A>
 									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
 											Text (rest of line)</A></p>
 								</li>
-							
 								<li>
 									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
 									<A class="text" href="#">Headline Text (only 1. line)</A>
@@ -449,107 +450,32 @@
 			</div>
 			<!--		<start_footer:start_footer id="start_footer" ></start_footer:start_footer>--></div>
 		<script language="javascript">
-		startList();
 		
+		startSponsor();
 		
-		function startList(){
-			//autoonclick.startpage.showCust(txtBack);
-			document.getElementById("s1").innerHTML = ""
+		//startSponsor();
+		function startSponsor(){
+			autoonclick.index_start.showRamDom(txtBack);
 		}
 		function txtBack(response){
-		
-		var show1 = document.getElementById("s1");
-		var show11 = document.getElementById("s11");
-		var show12 = document.getElementById("s12");
-		var show2 = document.getElementById("s2");
-		var show21 = document.getElementById("s21");
-		var show22 = document.getElementById("s22");
-		var show3 = document.getElementById("s3");
-		var show31 = document.getElementById("s31");
-		var show32 = document.getElementById("s32");
-		var show4 = document.getElementById("s4");
-		var show41 = document.getElementById("s41");
-		var show42 = document.getElementById("s42");
-		var show5 = document.getElementById("s5");
-		var show51 = document.getElementById("s51");
-		var show52 = document.getElementById("s52");
-		
-		var x = response.value;
-		//alert(x);
-		var tmpdb;
-		var tmpdb2;
-		var tmpdb3;
-		var txt = x.split('!1!');
-		var pic1="";
-		
-				for (var i = 0; i < txt.length-1; i++) {
-				//alert(txt[i+1]);
-				//alert(i);
-						tmpdb = txt[i+1].split("!2!");
-						//alert(tmpdb[0] + "<-->" + tmpdb[1]);
-						switch(tmpdb[0]){
-							case "car" :
-								for(var n=0;n<tmpdb.length;n++){
-									tmpdb2 = tmpdb[1].split("!3!");
-									show1.innerHTML=tmpdb2[0];
-									for(var y=0;y<tmpdb2.length;y++){
-										tmpdb3=tmpdb2[1].split("!4!");
-										show11.innerHTML=tmpdb3[0];
-										show12.innerHTML=tmpdb3[1];
-									}
-								}
-								break;
-							case "part" :
-								for(var n=0;n<tmpdb.length;n++){
-									tmpdb2 = tmpdb[1].split("!3!");
-									show2.innerHTML=tmpdb2[0];
-									for(var y=0;y<tmpdb2.length;y++){
-										tmpdb3=tmpdb2[1].split("!4!");
-										show21.innerHTML=tmpdb3[0];
-										show22.innerHTML=tmpdb3[1];
-									}
-								}
-								break;
-							case "sv" :
-								for(var n=0;n<tmpdb.length;n++){
-									tmpdb2 = tmpdb[1].split("!3!");
-									show3.innerHTML=tmpdb2[0];
-									for(var y=0;y<tmpdb2.length;y++){
-										tmpdb3=tmpdb2[1].split("!4!");
-										show31.innerHTML=tmpdb3[0];
-										show32.innerHTML=tmpdb3[1];
-									}
-								}
-								break;
-							case "cl" :
-								for(var n=0;n<tmpdb.length;n++){
-									tmpdb2 = tmpdb[1].split("!3!");
-									show4.innerHTML=tmpdb2[0];
-									for(var y=0;y<tmpdb2.length;y++){
-										tmpdb3=tmpdb2[1].split("!4!");
-										show41.innerHTML=tmpdb3[0];
-										show42.innerHTML=tmpdb3[1];
-									}
-								}
-								break;
-							case "rent" :
-								for(var n=0;n<tmpdb.length;n++){
-									tmpdb2 = tmpdb[1].split("!3!");
-									show5.innerHTML=tmpdb2[0];
-									for(var y=0;y<tmpdb2.length;y++){
-										tmpdb3=tmpdb2[1].split("!4!");
-										show51.innerHTML=tmpdb3[0];
-										show52.innerHTML=tmpdb3[1];
-									}
-								}
-								break;
-						}
-						
-					}
-		
-		
-		//	show1.innerHTML = txt[1];
+			var show1 = document.getElementById("sponsor");
+			show1.innerHTML = response.value;
 		}
+		//Sponsor
+		
+		
+		
+		//startRandom();
+		function startRandom(){
+			autoonclick.index_start.showRamDom(txtRandom);
+		}
+		function txtRandom(response){
+			var show1 = document.getElementById("randomShow");
+			show1.innerHTML = response.value;
+		}
+		//Random
+		
+		
 		
 		/* Start Condition Interactive */
 		function showBrands(cat){

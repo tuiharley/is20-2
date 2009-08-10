@@ -484,6 +484,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "Class\RandomAds.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "Class\resize.vb"
                     SubType = "Code"
                     BuildAction = "Compile"

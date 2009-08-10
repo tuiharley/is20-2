@@ -38,7 +38,7 @@ Public Class index_start
 
 
         showBanner()
-        AjaxPro.Utility.RegisterTypeForAjax(GetType(startpage))
+        AjaxPro.Utility.RegisterTypeForAjax(GetType(index_start))
         AjaxPro.Utility.RegisterTypeForAjax(GetType(showBrands))
     End Sub
 
@@ -56,7 +56,7 @@ Public Class index_start
 
 
     <AjaxPro.AjaxMethod()> _
-    Public Function showCust() As String
+    Public Function showSponsor() As String
         Dim x As Random = New Random
         Dim ranCust As Integer
         Dim myCust As Queue
@@ -125,15 +125,7 @@ Public Class index_start
 
         Return ShowTxt
     End Function
-    Private Function getPicEmpty() As String
-        Dim show As String
-        Dim myCust As RandCustomer
-        Dim i As Integer = 1
-
-        show = "<IMG height='90' src='../../images/objects/no_image_120x90.gif' width='120' height='90' border='0'>"
-
-        Return show
-    End Function
+    
     Private Function getPic(ByVal ranCust As Queue, ByVal ranNo As Integer) As String
         Dim show As String
         Dim myCust As RandCustomer
@@ -191,6 +183,128 @@ Public Class index_start
     '									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
     '											Text (rest of line)</A></p>
     '</li>
+
+
+    <AjaxPro.AjaxMethod()> _
+    Public Function showRamDom() As String
+        Dim txt As String
+        Dim debugTxt As String
+        Dim myDS As DataSet
+        Dim x As Random = New Random
+        Dim xResult As Integer
+        Dim ArrAds(2, 5) As Ads
+        Dim myAds As Ads
+        Dim i As Integer
+
+        myDS = RandomAds.IndexPGRandom()
+        Try
+            'Car
+            If myDS.Tables("Car").Rows.Count > 1 Then
+                For i = 1 To 2
+                    xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
+                    myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
+                    myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
+                    ArrAds(i, 1) = myAds
+                Next
+            Else
+                myAds.id = myDS.Tables("Car").Rows(0).Item("Car_Id")
+                ArrAds(1, 1) = myAds
+            End If
+
+
+            'Bike
+            If myDS.Tables("Bike").Rows.Count > 1 Then
+                For i = 1 To 2
+                    xResult = x.Next(1, myDS.Tables("Bike").Rows.Count)
+                    myAds.id = myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Id")
+                    myDS.Tables("Bike").Rows.RemoveAt(xResult - 1)
+                    ArrAds(i, 2) = myAds
+                Next
+            Else
+                myAds.id = myDS.Tables("Bike").Rows(0).Item("Bike_Id")
+                ArrAds(1, 2) = myAds
+            End If
+
+        Catch ex As Exception
+            debugTxt = ex.Message
+        End Try
+        
+
+
+
+        txt = "<table class='index_ads' cellSpacing='0' >"
+        txt &= "	<caption>ฐานข้อมูลขนาดใหญ่ของรถ อะไหล่/ประดับยนต์ และโฆษณาพิเศษเกี่ยวกับยานยนต์ บน AUTO-ONCLICK</caption>"
+        txt &= " <thead>"
+        txt &= "		<tr>"
+        txt &= "			<th>"
+        txt &= "				<A href='#'>""รถยนต์""</A></th>"
+        txt &= "			<td><A href='#'>""รถจักรยานยนต์""</A></td>"
+        txt &= "			<td><A href='#'>""รถบรรทุก""</A></td>"
+        txt &= "			<td><A href='#'>""อะไหล่/ประดับยนต์""</A></td>"
+        txt &= "			<td><A href='#'>""ผู้ประกอบการ""</A></td>"
+        txt &= "		</tr>"
+        txt &= "	</thead>"
+        txt &= "	<tbody>"
+        txt &= "		<tr>"
+        txt &= "			<th>"
+        txt &= "				<span>"
+        txt &= "					<A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "				<p><A href='#'>Toyota Camry, <span>ใหม่</span>, ฿ 1,200,000</A></p>"
+        txt &= "			</th>"
+        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "				<p><A href='#'>Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>"
+        txt &= "			</td>"
+        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "				<p><A href='#'>Make Model, <span>new</span>-year, price</A></p>"
+        txt &= "			</td>"
+        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "				<p><A href='#'>Product Name, <span>new</span>-used, price</A></p>"
+        txt &= "			</td>"
+        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "				<p><A href='#'>Company Name, Province</A></p>"
+        txt &= "			</td>"
+        txt &= "		</tr>"
+        txt &= "	</tbody>"
+        txt &= "	<tbody>"
+        txt &= "		<tfoot>"
+        txt &= "			<tr>"
+        txt &= "				<th>"
+        txt &= "					<span>"
+        txt &= "						<A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "					<p><A href='#'>Toyota Camry, <span>ใหม่</span>, ฿ 1,200,000</A></p>"
+        txt &= "				</th>"
+        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "					<p><A href='#'>Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>"
+        txt &= "				</td>"
+        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "					<p><A href='#'>Make Model, <span>new</span>-year, price</A></p>"
+        txt &= "				</td>"
+        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "					<p><A href='#'>Product Name, <span>new</span>-used, price</A></p>"
+        txt &= "				</td>"
+        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
+        txt &= "					<p><A href='#'>Company Name, Province</A></p>"
+        txt &= "				</td>"
+        txt &= "			</tr>"
+        txt &= "		</tfoot>"
+        txt &= "	</tbody></table>"
+
+        Return txt
+    End Function
+
+
+    Private Function getPicEmpty() As String
+        Dim show As String
+
+        show = "<IMG alt='' src='../scripts+pics/images/pic_80x60.gif'>"
+
+        Return show
+    End Function
+
+
+
+
+
 
 
 
