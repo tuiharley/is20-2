@@ -203,6 +203,13 @@ Public Class index_start
                 For i = 1 To 2
                     xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
                     myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
+                    myAds.Brand = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
+                    myAds.Model = myDS.Tables("Car").Rows(xResult - 1).Item("Model_Name")
+                    myAds.Status = myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name")
+                    myAds.Price = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")
+                    myAds.Yearr = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year")
+                    myAds.Image1 = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
+
                     myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
                     ArrAds(i, 1) = myAds
                 Next
