@@ -14,6 +14,7 @@ Public Class Models
     Protected WithEvents category_rd As System.Web.UI.WebControls.RadioButtonList
     Protected WithEvents brand_ddl As System.Web.UI.WebControls.DropDownList
     Protected WithEvents txtModel As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnAdd As System.Web.UI.WebControls.Button
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -34,26 +35,28 @@ Public Class Models
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Put user code to initialize the page here
         myconn = New OleDbConnection(Session("conn"))
+        Dim brand As String = Request.QueryString("brand")
 
         If Page.IsPostBack = False Then
             bind_cat()
             category_rd.SelectedIndex = 0
             bind_brand()
-            brand_ddl.SelectedIndex = 0
+
+            If brand <> "" Then
+                brand_ddl.SelectedValue = brand
+            Else
+                brand_ddl.SelectedIndex = 0
+            End If
+
             Bind()
 
 
         End If
     End Sub
 
-    Public Sub MyDataGrid_Paging(ByVal Sender As Object, ByVal E As DataGridPageChangedEventArgs)
-       
-        Datagrid1.CurrentPageIndex = E.NewPageIndex
-        Bind()
-    End Sub
-
     Private Sub Bind()
-        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name FROM Model INNER JOIN Category ON Model.Category = Category.Category INNER JOIN Brand ON Model.Brand = Brand.Brand WHERE (Model.Category = " & category_rd.SelectedValue & ") GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model"
+        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name FROM Model INNER JOIN Category ON Model.Category = Category.Category INNER JOIN Brand ON Model.Brand = Brand.Brand WHERE (Model.Category = " & category_rd.SelectedValue & ") AND Brand.Brand = " & brand_ddl.SelectedValue
+        strsql &= " GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Model")
         
@@ -71,7 +74,11 @@ Public Class Models
         category_rd.SelectedValue = 1
     End Sub
     Private Sub bind_brand()
-        strsql = "SELECT Brand.Brand,Brand.Brand_name FROM Brand "
+        strsql = "SELECT DISTINCT Brand.Brand_name, Brand.Brand"
+        strsql &= " FROM  Model INNER JOIN "
+        strsql &= " Brand ON dbo.Model.Brand = dbo.Brand.Brand"
+        strsql &= " WHERE Model.Category = " & category_rd.SelectedValue
+        strsql &= " ORDER BY Brand_name"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Brand")
         brand_ddl.DataSource = ds.Tables("Brand")
@@ -125,24 +132,32 @@ Public Class Models
 
     End Function
 
-    Private Sub AddBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddBTN.Click
-        If IsPostBack Then
-            If txtModel.Text <> "" Then
+    'Private Sub AddBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddBTN.Click
+    '    If IsPostBack Then
+    '        If txtModel.Text <> "" Then
 
-                strsql = "Insert into Model Values(" & getNewmodel() & "," & category_rd.SelectedValue & "," & brand_ddl.SelectedValue & ",'" & txtModel.Text & "') "
-                mycommand = New OleDbCommand(strsql, myconn)
-                myconn.Open()
-                mycommand.ExecuteNonQuery()
-                myconn.Close()
-                Bind()
-                txtModel.Text = ""
-            End If
-        End If
-    End Sub
+    '            strsql = "Insert into Model Values(" & getNewmodel() & "," & category_rd.SelectedValue & "," & brand_ddl.SelectedValue & ",'" & txtModel.Text & "') "
+    '            mycommand = New OleDbCommand(strsql, myconn)
+    '            myconn.Open()
+    '            mycommand.ExecuteNonQuery()
+    '            myconn.Close()
+    '            Bind()
+    '            txtModel.Text = ""
+    '        End If
+    '    End If
+    'End Sub
 
     Private Sub category_rd_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles category_rd.SelectedIndexChanged
-        Datagrid1.CurrentPageIndex = 1
+        bind_brand()
+        brand_ddl.SelectedIndex = 0
         Bind()
     End Sub
 
+    Private Sub brand_ddl_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles brand_ddl.SelectedIndexChanged
+        Bind()
+    End Sub
+
+    Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+        Response.Redirect("AddModel.aspx?brand=" & brand_ddl.SelectedValue)
+    End Sub
 End Class

@@ -5631,6 +5631,21 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "parameters\AddModel.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "parameters\AddModel.aspx.vb"
+                    DependentUpon = "AddModel.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "parameters\AddModel.aspx.resx"
+                    DependentUpon = "AddModel.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "parameters\Admin_User.aspx"
                     BuildAction = "Content"
                 />

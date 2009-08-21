@@ -22,14 +22,14 @@
 					<TD style="WIDTH: 73px; HEIGHT: 32px"><FONT face="Tahoma">ยี่ห้อรถ</FONT></TD>
 					<TD style="HEIGHT: 32px">
 						<P><asp:dropdownlist id="brand_ddl" runat="server" DataValueField="Brand" DataTextField="Brand_name"
-								Width="288px"></asp:dropdownlist></P>
+								Width="288px" AutoPostBack="True"></asp:dropdownlist></P>
 					</TD>
 				</TR>
-				<TR>
-					<TD style="WIDTH: 73px"><FONT face="Tahoma">รุ่นรถ</FONT></TD>
-					<TD><asp:textbox id="txtModel" runat="server" Height="24px"></asp:textbox>
-						<asp:button id="AddBTN" runat="server" Text="Add"></asp:button></TD>
-				</TR>
+				<tr>
+					<td>
+					</td>
+					<td><asp:Button id="btnAdd" runat="server" Text="ADD"></asp:Button></td>
+				</tr>
 			</TABLE>
 			<asp:datagrid id="Datagrid1" runat="server" Width="550" AutoGenerateColumns="False" OnUpdateCommand="UpdateBook"
 				OnCancelCommand="CancelBook" OnEditCommand="EditBook" DataKeyField="Model">

@@ -44,7 +44,7 @@ Public Class Cars
     End Sub
 
     Private Sub Bind()
-        strsql = "SELECT Brand.Brand, Brand.Brand_name FROM Brand "
+        strsql = "SELECT Brand.Brand, Brand.Brand_name FROM Brand ORDER BY Brand"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Brand")
         Datagrid1.DataSource = ds.Tables("Brand")
