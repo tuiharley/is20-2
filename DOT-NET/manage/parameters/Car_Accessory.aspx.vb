@@ -1,0 +1,135 @@
+Imports System.Data
+Imports System.Data.OleDb
+Public Class Car_Accessory
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents Datagrid1 As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents AddBTN As System.Web.UI.WebControls.Button
+    Protected WithEvents Acc_type As System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents accs_name As System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label1 As System.Web.UI.WebControls.Label
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+    Dim myconn As OleDbConnection
+    Dim da As OleDbDataAdapter
+    Dim mycommand As OleDbCommand
+    Dim ds As New DataSet
+    Dim strsql As String
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Put user code to initialize the page here
+        Label1.Text = "CAR"
+        myconn = New OleDbConnection(Session("conn"))
+
+        If Page.IsPostBack = False Then
+            Bind_Type()
+            Acc_type.SelectedIndex = 0
+            Bind()
+
+        End If
+    End Sub
+
+    Public Sub MyDataGrid_Paging(ByVal Sender As Object, ByVal E As DataGridPageChangedEventArgs)
+        DataGrid1.CurrentPageIndex = E.NewPageIndex
+        Bind()
+    End Sub
+    Private Sub Bind()
+        strsql = "SELECT Car_Accessory.Accessory, Car_AccessoryType.AccessoryType_Name, Car_Accessory.Accessory_Name FROM Car_Accessory INNER JOIN Car_AccessoryType ON Car_Accessory.Accessory_Type = Car_AccessoryType.AccessoryType WHERE Car_AccessoryType.AccessoryType = " & Acc_type.SelectedValue
+        da = New OleDbDataAdapter(strsql, myconn)
+        da.Fill(ds, "Car_Accessory")
+        Datagrid1.DataSource = ds.Tables("Car_Accessory")
+        Datagrid1.DataBind()
+        myconn.Close()
+    End Sub
+    Private Sub Bind_Type()
+        strsql = "SELECT AccessoryType, AccessoryType_Name FROM Car_AccessoryType"
+        da = New OleDbDataAdapter(strsql, myconn)
+        da.Fill(ds, "Car_AccessoryType")
+        Acc_type.DataSource = ds.Tables("Car_AccessoryType")
+        Acc_type.DataBind()
+        myconn.Close()
+        'Acc_type.SelectedValue = 1
+    End Sub
+
+    Public Sub EditBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Datagrid1.EditItemIndex = E.Item.ItemIndex
+        Bind()
+    End Sub
+    Public Sub CancelBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        Datagrid1.EditItemIndex = -1
+        Bind()
+    End Sub
+    Public Sub UpdateBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+
+        Dim title As TextBox = CType(E.Item.Cells(2).Controls(0), TextBox)
+        'Dim category As DropDownList = CType(E.Item.Cells(4).Controls(0), DropDownList)
+        strsql = "Update Car_Accessory Set Accessory_Name = '" & title.Text & "' Where Accessory = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
+        mycommand = New OleDbCommand(strsql, myconn)
+        myconn.Open()
+        mycommand.ExecuteNonQuery()
+        myconn.Close()
+        Datagrid1.EditItemIndex = -1
+        Bind()
+    End Sub
+
+    Private Function getNewCarAccs() As Integer
+        Dim myconn2 As New OleDbConnection(Session("conn"))
+        myconn2.Open()
+
+        Dim mycommand As OleDbCommand
+        Dim businessid As Integer
+        strsql = "SELECT Max(Accessory) as Accessory FROM Car_Accessory"
+        mycommand = New OleDbCommand(strsql, myconn2)
+        Dim BUZ_ID As OleDbDataReader = mycommand.ExecuteReader()
+        If BUZ_ID.Read Then
+            If Not BUZ_ID.IsDBNull(0) Then
+                businessid = BUZ_ID.Item("Accessory") + 1
+            Else
+                businessid = 1
+            End If
+        End If
+        mycommand.Dispose()
+        BUZ_ID.Close()
+
+        myconn.Close()
+
+        Return businessid
+
+    End Function
+
+    Private Sub AddBTN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddBTN.Click
+        If IsPostBack Then
+            If accs_name.Text <> "" Then
+
+                strsql = "Insert into Car_Accessory Values(" & getNewCarAccs() & "," & Acc_type.SelectedValue & ",'" & accs_name.Text & "') "
+                'Response.Write(strsql)
+                mycommand = New OleDbCommand(strsql, myconn)
+                myconn.Open()
+                mycommand.ExecuteNonQuery()
+                myconn.Close()
+                Bind()
+                accs_name.Text = ""
+                '  bind_brand(category_rd.SelectedValue)
+            End If
+        End If
+    End Sub
+
+    Private Sub Acc_type_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Acc_type.SelectedIndexChanged
+        Bind()
+    End Sub
+End Class
