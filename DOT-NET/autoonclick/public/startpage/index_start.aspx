@@ -451,7 +451,7 @@
 			<!--		<start_footer:start_footer id="start_footer" ></start_footer:start_footer>--></div>
 		<script language="javascript">
 		
-		startSponsor();
+		startRandom();
 		
 		//startSponsor();
 		function startSponsor(){
@@ -472,6 +472,7 @@
 		function txtRandom(response){
 			var show1 = document.getElementById("randomShow");
 			show1.innerHTML = response.value;
+			//show1.innerHTML ="";
 		}
 		//Random
 		

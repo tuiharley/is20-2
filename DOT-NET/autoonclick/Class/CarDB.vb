@@ -1088,7 +1088,7 @@ Module CarDB
             carInfo.FuelTank = String_chk.checkNullDBNum(Ans_ID.Item("Car_FuelTank"))
             carInfo.LastCheck = String_chk.checkNullDBstr(Ans_ID.Item("Car_LastCheck"))
             carInfo.Insurrance = String_chk.checkNullDBbit(Ans_ID.Item("Car_Insurrance"))
-            carInfo.Price = String_chk.checkNullDBNum(Ans_ID.Item("Car_Price"))
+            carInfo.Price = String_chk.checkNullDBPrice(Ans_ID.Item("Car_Price"))
             carInfo.Accident = String_chk.checkNullDBbit(Ans_ID.Item("Car_Accident"))
             carInfo.Accessory = String_chk.checkNullDBstr(Ans_ID.Item("Car_Accessory"))
             carInfo.Information = String_chk.checkNullDBstr(Ans_ID.Item("Car_Information"))

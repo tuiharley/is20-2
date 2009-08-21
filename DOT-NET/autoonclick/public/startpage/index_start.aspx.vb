@@ -194,42 +194,212 @@ Public Class index_start
         Dim xResult As Integer
         Dim ArrAds(2, 5) As Ads
         Dim myAds As Ads
-        Dim i As Integer
+        Dim i As Integer, n As Integer
 
         myDS = RandomAds.IndexPGRandom()
         Try
             'Car
-            If myDS.Tables("Car").Rows.Count > 1 Then
-                For i = 1 To 2
+            If myDS.Tables("Car").Rows.Count > 0 Then
+                If myDS.Tables("Car").Rows.Count > 1 Then
+                    n = 2
+                Else
+                    n = 1
+                End If
+
+                For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
                     myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
                     myAds.Brand = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
                     myAds.Model = myDS.Tables("Car").Rows(xResult - 1).Item("Model_Name")
-                    myAds.Status = myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name")
-                    myAds.Price = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")
-                    myAds.Yearr = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year")
-                    myAds.Image1 = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
+                    If myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
+                        myAds.Status = "<span>" & myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                    Else
+                        myAds.Status = "ปี " & myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year_Ord")
+                    End If
+
+                    If checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")) = 0 Then
+                        myAds.Price = "-"
+                    Else
+                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")), 0, , , TriState.True)
+                    End If
+
+                    myAds.Image1 = checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Image1"))
 
                     myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
                     ArrAds(i, 1) = myAds
                 Next
             Else
-                myAds.id = myDS.Tables("Car").Rows(0).Item("Car_Id")
+                myAds.id = 0
+                myAds.Brand = "-"
+                myAds.Model = "-"
+                myAds.Status = "-"
+                myAds.Price = 0
+                myAds.Yearr = "-"
+                myAds.Image1 = "-"
+
                 ArrAds(1, 1) = myAds
+                ArrAds(2, 1) = myAds
             End If
 
 
             'Bike
-            If myDS.Tables("Bike").Rows.Count > 1 Then
-                For i = 1 To 2
+            If myDS.Tables("Bike").Rows.Count > 0 Then
+                If myDS.Tables("Bike").Rows.Count > 1 Then
+                    n = 2
+                Else
+                    n = 1
+                End If
+
+                For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Bike").Rows.Count)
                     myAds.id = myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Id")
+                    myAds.Brand = myDS.Tables("Bike").Rows(xResult - 1).Item("Brand_name")
+                    myAds.Model = myDS.Tables("Bike").Rows(xResult - 1).Item("Model_Name")
+                    If myDS.Tables("Bike").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
+                        myAds.Status = "<span>" & myDS.Tables("Bike").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                    Else
+                        myAds.Status = "ปี " & myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Year_Ord")
+                    End If
+
+                    If checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")) = 0 Then
+                        myAds.Price = "-"
+                    Else
+                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")), 0, , , TriState.True)
+                    End If
+
+                    myAds.Image1 = checkNullDBstr(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Image1"))
+
                     myDS.Tables("Bike").Rows.RemoveAt(xResult - 1)
                     ArrAds(i, 2) = myAds
                 Next
             Else
-                myAds.id = myDS.Tables("Bike").Rows(0).Item("Bike_Id")
+                myAds.id = 0
+                myAds.Brand = "-"
+                myAds.Model = "-"
+                myAds.Status = "-"
+                myAds.Price = 0
+                myAds.Yearr = "-"
+                myAds.Image1 = "-"
+
                 ArrAds(1, 2) = myAds
+                ArrAds(2, 2) = myAds
+            End If
+
+
+            'Truck
+            If myDS.Tables("Truck").Rows.Count > 0 Then
+                If myDS.Tables("Truck").Rows.Count > 1 Then
+                    n = 2
+                Else
+                    n = 1
+                End If
+
+                For i = 1 To n
+                    xResult = x.Next(1, myDS.Tables("Truck").Rows.Count)
+                    myAds.id = myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Id")
+                    myAds.Brand = myDS.Tables("Truck").Rows(xResult - 1).Item("Brand_name")
+                    myAds.Model = myDS.Tables("Truck").Rows(xResult - 1).Item("Model_Name")
+
+                    If myDS.Tables("Truck").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
+                        myAds.Status = "<span>" & myDS.Tables("Truck").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                    Else
+                        myAds.Status = "ปี " & myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Year_Ord")
+                    End If
+
+                    If checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")) = 0 Then
+                        myAds.Price = "-"
+                    Else
+                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")), 0, , , TriState.True)
+                    End If
+
+                    myAds.Image1 = checkNullDBstr(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Image1"))
+
+                    myDS.Tables("Truck").Rows.RemoveAt(xResult - 1)
+                    ArrAds(i, 3) = myAds
+                Next
+            Else
+                myAds.id = 0
+                myAds.Brand = "-"
+                myAds.Model = "-"
+                myAds.Status = "-"
+                myAds.Price = 0
+                myAds.Yearr = "-"
+                myAds.Image1 = "-"
+
+                ArrAds(1, 3) = myAds
+                ArrAds(2, 3) = myAds
+            End If
+
+            'Part
+            If myDS.Tables("Part").Rows.Count > 0 Then
+                If myDS.Tables("Part").Rows.Count > 1 Then
+                    n = 2
+                Else
+                    n = 1
+                End If
+
+                For i = 1 To n
+                    xResult = x.Next(1, myDS.Tables("Part").Rows.Count)
+                    myAds.id = myDS.Tables("Part").Rows(xResult - 1).Item("Part_Id")
+                    myAds.Brand = myDS.Tables("Part").Rows(xResult - 1).Item("Category_Name")
+                    myAds.Model = myDS.Tables("Part").Rows(xResult - 1).Item("PartsType_Name")
+
+                    If myDS.Tables("Part").Rows(xResult - 1).Item("Status_Name") = "สินค้าใหม่" Then
+                        myAds.Status = "<span>" & myDS.Tables("Part").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                    Else
+                        myAds.Status = "ปี " & myDS.Tables("Part").Rows(xResult - 1).Item("Part_Year_Ord")
+                    End If
+
+                    If checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")) = 0 Then
+                        myAds.Price = "-"
+                    Else
+                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")), 0, , , TriState.True)
+                    End If
+
+                    myAds.Image1 = checkNullDBstr(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Image"))
+
+                    myDS.Tables("Part").Rows.RemoveAt(xResult - 1)
+                    ArrAds(i, 4) = myAds
+                Next
+            Else
+                myAds.id = 0
+                myAds.Brand = "-"
+                myAds.Model = "-"
+                myAds.Status = "-"
+                myAds.Price = 0
+                myAds.Yearr = "-"
+                myAds.Image1 = "-"
+
+                ArrAds(1, 4) = myAds
+                ArrAds(2, 4) = myAds
+            End If
+
+            'Customer
+            If myDS.Tables("Customer").Rows.Count > 0 Then
+                If myDS.Tables("Customer").Rows.Count > 1 Then
+                    n = 2
+                Else
+                    n = 1
+                End If
+
+                For i = 1 To n
+                    xResult = x.Next(1, myDS.Tables("Customer").Rows.Count)
+                    myAds.id = myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Id")
+                    myAds.Brand = myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Name")
+                    myAds.Province = myDS.Tables("Customer").Rows(xResult - 1).Item("Province_Name")
+                    myAds.Image1 = checkNullDBstr(myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Logo"))
+
+                    myDS.Tables("Customer").Rows.RemoveAt(xResult - 1)
+                    ArrAds(i, 5) = myAds
+                Next
+            Else
+                myAds.id = 0
+                myAds.Brand = "-"
+                myAds.Province = "-"
+                myAds.Image1 = "-"
+
+                ArrAds(1, 5) = myAds
+                ArrAds(2, 5) = myAds
             End If
 
         Catch ex As Exception
@@ -256,10 +426,12 @@ Public Class index_start
         txt &= "			<th>"
         txt &= "				<span>"
         txt &= "					<A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>Toyota Camry, <span>ใหม่</span>, ฿ 1,200,000</A></p>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 1).Brand & " " & ArrAds(1, 1).Model & ", "
+        txt &= "        " & ArrAds(1, 1).Status & ", ฿ " & ArrAds(1, 1).Price & "</A></p>"
         txt &= "			</th>"
         txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 2).Brand & " " & ArrAds(1, 2).Model & ", " & ArrAds(1, 2).Status & ""
+        txt &= ", ฿ " & ArrAds(1, 2).Price & "</A></p>"
         txt &= "			</td>"
         txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
         txt &= "				<p><A href='#'>Make Model, <span>new</span>-year, price</A></p>"

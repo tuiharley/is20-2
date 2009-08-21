@@ -15,7 +15,7 @@ Module RandomAds
 
             myconn.Open()
             sql = "SELECT     Notice.Notice_Id, NoticeDetail.NoticeDetail_Id, Car.Car_Id, Brand.Brand_name, Model.Model_Name, Status.Status_Name, "
-            sql &= " Customer.Customer_Username,Car.Car_Price,Car.Car_Year"
+            sql &= " Customer.Customer_Username,Car.Car_Price,Car.Car_Year_Ord,Car.Car_Image1"
             sql &= " FROM         Notice INNER JOIN"
             sql &= " NoticeDetail ON Notice.Notice_Id = NoticeDetail.NoticeDetail_NoticeId INNER JOIN"
             sql &= " Car ON NoticeDetail.NoticeDetail_DataId = Car.Car_Id INNER JOIN"
@@ -35,7 +35,7 @@ Module RandomAds
 
 
             sql = "SELECT     Notice.Notice_Id, NoticeDetail.NoticeDetail_Id,Bike.Bike_id, Brand.Brand_name, Model.Model_Name, Status.Status_Name,"
-            sql &= "Customer.Customer_Username, Bike.Bike_Price, Bike.Bike_Year"
+            sql &= "Customer.Customer_Username, Bike.Bike_Price, Bike.Bike_Year_Ord,Bike.Bike_Image1"
             sql &= " FROM         Notice INNER JOIN"
             sql &= " NoticeDetail ON Notice.Notice_Id = NoticeDetail.NoticeDetail_NoticeId INNER JOIN"
             sql &= " Customer ON Notice.Notice_MemberId = Customer.Customer_Id INNER JOIN"
@@ -55,7 +55,7 @@ Module RandomAds
 
 
             sql = "SELECT     Notice.Notice_Id, NoticeDetail.NoticeDetail_Id,Truck.Truck_Id, Brand.Brand_name, Status.Status_Name, Customer.Customer_Username,  "
-            sql &= " Truck.Truck_Price,Truck.Truck_Year"
+            sql &= " Truck.Truck_Price,Truck.Truck_Year_Ord,Truck.Truck_Image1"
             sql &= " FROM         Notice INNER JOIN"
             sql &= " NoticeDetail ON Notice.Notice_Id = NoticeDetail.NoticeDetail_NoticeId INNER JOIN"
             sql &= " Customer ON Notice.Notice_MemberId = Customer.Customer_Id INNER JOIN"
@@ -72,18 +72,18 @@ Module RandomAds
             da.Fill(ds, "Truck")
 
 
-            sql = "SELECT     Notice.Notice_Id, NoticeDetail.NoticeDetail_Id, Parts.Part_Id,Parts.Part_Name,Status.Status_Name, Customer.Customer_Username,    "
-            sql &= " Parts.Part_Price,Parts.Part_Year"
+            sql = "SELECT     Notice.Notice_Id, NoticeDetail.NoticeDetail_Id, Parts.Part_Id, Status.Status_Name, Customer.Customer_Username, Parts.Part_Price, Parts.Part_Year_Ord, "
+            sql &= " Parts.Part_Image, Category.Category_Name, PartsType.PartsType_Name"
             sql &= " FROM         Notice INNER JOIN"
             sql &= " NoticeDetail ON Notice.Notice_Id = NoticeDetail.NoticeDetail_NoticeId INNER JOIN"
             sql &= " Customer ON Notice.Notice_MemberId = Customer.Customer_Id INNER JOIN"
             sql &= " Parts ON NoticeDetail.NoticeDetail_DataId = Parts.Part_Id INNER JOIN"
-            sql &= " Status ON Parts.Part_Status = Status.Status"
-            sql &= " WHERE     (Notice.Notice_Category = 4)"
-            sql &= " AND (Notice.Notice_Status IN (2, 3))"
-            sql &= " AND (NoticeDetail.Detail_show = 1) "
-            sql &= " AND (Notice.Notice_Show = 1) "
-            sql &= " AND (NoticeDetail.Detail_delete IS NULL OR NoticeDetail.Detail_delete <> 1) "
+            sql &= " Status ON Parts.Part_Status = Status.Status INNER JOIN"
+            sql &= " PartsType ON Parts.Part_Type = PartsType.PartsType INNER JOIN"
+            sql &= " Category ON PartsType.PartsType_Category = Category.Category"
+            sql &= " WHERE     (Notice.Notice_Category = 4) AND (Notice.Notice_Status IN (2, 3)) AND (NoticeDetail.Detail_show = 1) AND (Notice.Notice_Show = 1) AND "
+            sql &= " (NoticeDetail.Detail_delete IS NULL OR"
+            sql &= " NoticeDetail.Detail_delete <> 1)"
 
             da = New OleDbDataAdapter(sql, myconn)
             da.Fill(ds, "Part")
@@ -116,7 +116,7 @@ Module RandomAds
         Dim Status As String
         Dim Yearr As String
         Dim Province As String
-        Dim Price As Double
+        Dim Price As String
         Dim Image1 As String
 
         Dim Noticeid As Integer
