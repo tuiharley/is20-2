@@ -55,8 +55,9 @@ Public Class Models
     End Sub
 
     Private Sub Bind()
-        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name FROM Model INNER JOIN Category ON Model.Category = Category.Category INNER JOIN Brand ON Model.Brand = Brand.Brand WHERE (Model.Category = " & category_rd.SelectedValue & ") AND Brand.Brand = " & brand_ddl.SelectedValue
-        strsql &= " GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model"
+        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name,REPLACE(REPLACE(Model.Show, 1, 'Show'), 0, 'NotShow') AS Status_Name"
+        strsql &= " FROM Model INNER JOIN Category ON Model.Category = Category.Category INNER JOIN Brand ON Model.Brand = Brand.Brand WHERE (Model.Category = " & category_rd.SelectedValue & ") AND Brand.Brand = " & brand_ddl.SelectedValue
+        strsql &= " GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model,REPLACE(REPLACE(Model.Show, 1, 'Show'), 0, 'NotShow')"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Model")
         
@@ -106,6 +107,15 @@ Public Class Models
         Datagrid1.EditItemIndex = -1
         Bind()
     End Sub
+    Sub DelBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        strsql = "Update Model set Show=0 Where Model = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
+        mycommand = New OleDbCommand(strsql, myconn)
+        myconn.Open()
+        mycommand.ExecuteNonQuery()
+        myconn.Close()
+        Bind()
+    End Sub
+
 
     Private Function getNewmodel() As Integer
         Dim myconn2 As New OleDbConnection(Session("conn"))

@@ -1,5 +1,5 @@
-<%@ Page Language="vb" AutoEventWireup="false" Codebehind="editBanner.aspx.vb" Inherits="manage.editBanner"%>
 <%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
+<%@ Page Language="vb" AutoEventWireup="false" Codebehind="editBanner.aspx.vb" Inherits="manage.editBanner"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 	<HEAD>
@@ -31,8 +31,18 @@
 							<asp:Label id="picErr" runat="server"></asp:Label></FONT></TD>
 				</TR>
 				<TR>
-					<TD><FONT face="Tahoma">Text</FONT></TD>
+					<TD><FONT face="Tahoma">Text/Headline</FONT></TD>
 					<TD><FONT face="Tahoma" color="#ff3333"><asp:textbox id="btxt" runat="server" MaxLength="60" Height="80px" TextMode="MultiLine"></asp:textbox>(60 
+							ตัวอักษร)</FONT></TD>
+				</TR>
+				<TR>
+					<TD><FONT face="Tahoma">Email</FONT></TD>
+					<TD><FONT face="Tahoma" color="#ff3333"><asp:textbox id="bemail" runat="server" MaxLength="60"></asp:textbox>(60 
+							ตัวอักษร)</FONT></TD>
+				</TR>
+				<TR>
+					<TD><FONT face="Tahoma">More Text</FONT></TD>
+					<TD><FONT face="Tahoma" color="#ff3333"><asp:textbox id="bdesc" runat="server" MaxLength="100" Height="80px" TextMode="MultiLine"></asp:textbox>(100 
 							ตัวอักษร)</FONT></TD>
 				</TR>
 				<TR>

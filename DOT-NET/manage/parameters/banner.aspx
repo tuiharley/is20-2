@@ -1,5 +1,5 @@
-<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="banner.aspx.vb" Inherits="manage.bannerPage" %>
+<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 	<HEAD>
@@ -16,7 +16,7 @@
 					<td><menu:header_manage id="header_manage" runat="server"></menu:header_manage></td>
 				</tr>
 			</table>
-			<div id='bann'>
+			<div id='bann'><FONT face="Tahoma"></FONT>
 			</div>
 		</form>
 		<script type="text/javascript">

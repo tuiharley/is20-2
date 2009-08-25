@@ -28,6 +28,9 @@ Module Bannerdb
             myTxt.Banner_txt = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_txt"))
             myTxt.BWidth = Ans_ID.Item("BWidth")
             myTxt.BHeight = Ans_ID.Item("BHeight")
+            myTxt.BEmail = String_chk.checkNullDBstr_Ln(Ans_ID.Item("BEmail"))
+            myTxt.Banner_Desc = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_Desc"))
+
         End If
 
 
@@ -61,6 +64,8 @@ Module Bannerdb
             myTxt.Banner_txt = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_txt"))
             myTxt.BWidth = Ans_ID.Item("BWidth")
             myTxt.BHeight = Ans_ID.Item("BHeight")
+            myTxt.BEmail = String_chk.checkNullDBstr_Ln(Ans_ID.Item("BEmail"))
+            myTxt.Banner_Desc = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_Desc"))
         End If
 
 
@@ -95,6 +100,8 @@ Module Bannerdb
             myTxt.Banner_txt = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_txt"))
             myTxt.BWidth = Ans_ID.Item("BWidth")
             myTxt.BHeight = Ans_ID.Item("BHeight")
+            myTxt.BEmail = String_chk.checkNullDBstr_Ln(Ans_ID.Item("BEmail"))
+            myTxt.Banner_Desc = String_chk.checkNullDBstr_Ln(Ans_ID.Item("Banner_Desc"))
 
             myQBanner.Enqueue(myTxt)
         End While
@@ -117,6 +124,8 @@ Module Bannerdb
         sql = "Update BANNER_TXT "
         sql = sql & " SET Banner_link = " & cleanNullDBstr_Ln(myBanner.Banner_link)
         sql = sql & " ,Banner_Txt = " & cleanNullDBstr_Ln(myBanner.Banner_txt)
+        sql = sql & " ,BEmail = " & cleanNullDBstr_Ln(myBanner.BEmail)
+        sql = sql & " ,Banner_Desc = " & cleanNullDBstr_Ln(myBanner.Banner_Desc)
         sql = sql & " WHERE Banner_name = '" & myBanner.Banner_Name & "'"
 
 
@@ -138,6 +147,8 @@ Module Bannerdb
         sql = "Update BANNER_TXT "
         sql = sql & " SET Banner_link = null"
         sql = sql & " ,Banner_Txt = null"
+        sql = sql & " ,BEmail = null"
+        sql = sql & " ,Banner_Desc = null"
         sql = sql & " WHERE Banner_Id = " & myBannerid
 
 
@@ -161,6 +172,7 @@ Module Bannerdb
         Dim Banner_txt As String
         Dim BWidth As Integer
         Dim BHeight As Integer
-
+        Dim BEmail As String
+        Dim Banner_Desc As String
     End Structure
 End Module

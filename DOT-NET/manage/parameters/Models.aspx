@@ -32,15 +32,17 @@
 				</tr>
 			</TABLE>
 			<asp:datagrid id="Datagrid1" runat="server" Width="550" AutoGenerateColumns="False" OnUpdateCommand="UpdateBook"
-				OnCancelCommand="CancelBook" OnEditCommand="EditBook" DataKeyField="Model">
+				OnCancelCommand="CancelBook" OnEditCommand="EditBook" OnDeleteCommand="DelBook" DataKeyField="Model">
 				<HeaderStyle BackColor="#aaaaa"></HeaderStyle>
 				<ItemStyle BackColor="#FF9933"></ItemStyle>
 				<AlternatingItemStyle BackColor="#FFCC00"></AlternatingItemStyle>
 				<Columns>
 					<asp:EditCommandColumn EditText="Edit" UpdateText="Update" CancelText="Cancel" />
+					<asp:ButtonColumn CommandName="Delete" Text="NotShow" ButtonType="LinkButton" />
 					<asp:BoundColumn HeaderText="ประเภทรถ" DataField="Category_Name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="ยี่ห้อรถ" DataField="Brand_name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="รุ่นรถ" DataField="Model_Name" />
+					<asp:BoundColumn HeaderText="สถานะ" DataField="Status_Name" />
 				</Columns>
 			</asp:datagrid></form>
 	</body>

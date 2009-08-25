@@ -44,7 +44,7 @@ Public Class Cars
     End Sub
 
     Private Sub Bind()
-        strsql = "SELECT Brand.Brand, Brand.Brand_name FROM Brand ORDER BY Brand"
+        strsql = "SELECT Brand.Brand, Brand.Brand_name,REPLACE(REPLACE(Show, 1, 'Show'), 0, 'NotShow') AS Status_Name FROM Brand ORDER BY Brand"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Brand")
         Datagrid1.DataSource = ds.Tables("Brand")
@@ -70,6 +70,15 @@ Public Class Cars
         Datagrid1.EditItemIndex = -1
         Bind()
     End Sub
+    Public Sub DelBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        strsql = "Update Brand Set Show = 0 Where Brand = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
+        mycommand = New OleDbCommand(strsql, myconn)
+        myconn.Open()
+        mycommand.ExecuteNonQuery()
+        myconn.Close()
+        Bind()
+    End Sub
+
 
     Private Function getNewbrand() As Integer
         Dim myconn2 As New OleDbConnection(Session("conn"))
@@ -107,5 +116,5 @@ Public Class Cars
         txtBrand.Text = ""
     End Sub
 
-    
+
 End Class

@@ -15,6 +15,8 @@ Public Class editBanner
     Protected WithEvents bPIC As System.Web.UI.WebControls.Label
     Protected WithEvents bimage As System.Web.UI.HtmlControls.HtmlInputFile
     Protected WithEvents picErr As System.Web.UI.WebControls.Label
+    Protected WithEvents bemail As System.Web.UI.WebControls.TextBox
+    Protected WithEvents bdesc As System.Web.UI.WebControls.TextBox
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -56,6 +58,9 @@ Public Class editBanner
         IUrl = picURL & "images/banner/" & myBanner.Banner_img & "?" & Now
         IUrl = "<img id='bannerimg' name='bannerimg' src='" & IUrl & "' width='" & myBanner.BWidth & "' height='" & myBanner.BHeight & "' >"
         bPIC.Text = IUrl
+
+        bemail.Text = myBanner.BEmail
+        bdesc.Text = myBanner.Banner_Desc
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.Click
@@ -69,6 +74,8 @@ Public Class editBanner
         newBanner.Banner_Name = myBanner.Banner_Name
         newBanner.Banner_link = bLink.Text
         newBanner.Banner_txt = btxt.Text
+        newBanner.BEmail = bemail.Text
+        newBanner.Banner_Desc = bdesc.Text
         Bannerdb.updateBanner(newBanner)
 
         If bimage.PostedFile.FileName = "" Then
