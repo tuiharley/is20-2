@@ -15,6 +15,21 @@ Public Class index_start
     Protected WithEvents err As System.Web.UI.WebControls.Label
     Protected WithEvents form1 As System.Web.UI.HtmlControls.HtmlForm
     Protected WithEvents doSearch As System.Web.UI.WebControls.LinkButton
+    Protected WithEvents banner1 As System.Web.UI.WebControls.Label
+    Protected WithEvents banner1_headline As System.Web.UI.WebControls.Label
+    Protected WithEvents banner1_txt As System.Web.UI.WebControls.Label
+    Protected WithEvents banner2 As System.Web.UI.WebControls.Label
+    Protected WithEvents banner2_headline As System.Web.UI.WebControls.Label
+    Protected WithEvents banner2_txt As System.Web.UI.WebControls.Label
+    Protected WithEvents banner3 As System.Web.UI.WebControls.Label
+    Protected WithEvents banner3_headline As System.Web.UI.WebControls.Label
+    Protected WithEvents banner3_txt As System.Web.UI.WebControls.Label
+    Protected WithEvents banner4 As System.Web.UI.WebControls.Label
+    Protected WithEvents banner4_headline As System.Web.UI.WebControls.Label
+    Protected WithEvents banner4_txt As System.Web.UI.WebControls.Label
+    Protected WithEvents banner5 As System.Web.UI.WebControls.Label
+    Protected WithEvents banner5_headline As System.Web.UI.WebControls.Label
+    Protected WithEvents banner5_txt As System.Web.UI.WebControls.Label
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -38,10 +53,10 @@ Public Class index_start
 
 
         showBanner()
+
         AjaxPro.Utility.RegisterTypeForAjax(GetType(index_start))
         AjaxPro.Utility.RegisterTypeForAjax(GetType(showBrands))
     End Sub
-
     Private Sub showBanner()
         Dim mybanner As Banner
 
@@ -52,137 +67,84 @@ Public Class index_start
             halfBanner.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='234' ></a>"
         End If
 
+
+        '==== 1 =======
+        mybanner = Bannerdb.getBanner("Sponsors 1")
+        If mybanner.Banner_link = "" Then
+            banner1.Text = "<A href='#'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></A>"
+        Else
+            banner1.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></a>"
+        End If
+        banner1_headline.Text = "<A class='text' href='#'>" & mybanner.Banner_txt & "</A>"
+
+        banner1_txt.Text = "<A class='email' href='#'>"
+        banner1_txt.Text &= mybanner.BEmail
+        banner1_txt.Text &= "</A> <A class='intro' href='#'> - "
+        banner1_txt.Text &= mybanner.Banner_desc
+        banner1_txt.Text &= "</A>"
+
+
+        '==== 2 =======
+        mybanner = Bannerdb.getBanner("Sponsors 2")
+        If mybanner.Banner_link = "" Then
+            banner2.Text = "<A href='#'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></A>"
+        Else
+            banner2.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></a>"
+        End If
+        banner2_headline.Text = "<A class='text' href='#'>" & mybanner.Banner_txt & "</A>"
+
+        banner2_txt.Text = "<A class='email' href='#'>"
+        banner2_txt.Text &= mybanner.BEmail
+        banner2_txt.Text &= "</A> <A class='intro' href='#'> - "
+        banner2_txt.Text &= mybanner.Banner_desc
+        banner2_txt.Text &= "</A>"
+
+        '==== 3 =======
+        mybanner = Bannerdb.getBanner("Sponsors 3")
+        If mybanner.Banner_link = "" Then
+            banner3.Text = "<A href='#'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></A>"
+        Else
+            banner3.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></a>"
+        End If
+        banner3_headline.Text = "<A class='text' href='#'>" & mybanner.Banner_txt & "</A>"
+
+        banner3_txt.Text = "<A class='email' href='#'>"
+        banner3_txt.Text &= mybanner.BEmail
+        banner3_txt.Text &= "</A> <A class='intro' href='#'> - "
+        banner3_txt.Text &= mybanner.Banner_desc
+        banner3_txt.Text &= "</A>"
+        '==== 4 =======
+        mybanner = Bannerdb.getBanner("Sponsors 4")
+        If mybanner.Banner_link = "" Then
+            banner4.Text = "<A href='#'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></A>"
+        Else
+            banner4.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></a>"
+        End If
+        banner4_headline.Text = "<A class='text' href='#'>" & mybanner.Banner_txt & "</A>"
+
+        banner4_txt.Text = "<A class='email' href='#'>"
+        banner4_txt.Text &= mybanner.BEmail
+        banner4_txt.Text &= "</A> <A class='intro' href='#'> - "
+        banner4_txt.Text &= mybanner.Banner_desc
+        banner4_txt.Text &= "</A>"
+        '==== 5 =======
+        mybanner = Bannerdb.getBanner("Sponsors 5")
+        If mybanner.Banner_link = "" Then
+            banner5.Text = "<A href='#'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></A>"
+        Else
+            banner5.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='45' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='60' ></a>"
+        End If
+
+        banner5_headline.Text = "<A class='text' href='#'>" & mybanner.Banner_txt & "</A>"
+
+        banner5_txt.Text = "<A class='email' href='#'>"
+        banner5_txt.Text &= mybanner.BEmail
+        banner5_txt.Text &= "</A> <A class='intro' href='#'> - "
+        banner5_txt.Text &= mybanner.Banner_desc
+        banner5_txt.Text &= "</A>"
+
     End Sub
 
-
-    <AjaxPro.AjaxMethod()> _
-    Public Function showSponsor() As String
-        Dim x As Random = New Random
-        Dim ranCust As Integer
-        Dim myCust As Queue
-        Dim ShowTxt As String
-
-
-        myCust = CustomerDB.getRanCust(1, "saleCar")
-        If myCust.Count <> 0 Then
-            ranCust = x.Next(1, myCust.Count + 1)
-            ShowTxt = "!1!car!2!" & getPic(myCust, ranCust)
-        Else
-            ShowTxt = "!1!car!2!" & getPicEmpty() & "!3!-!4!-"
-        End If
-        myCust.Clear()
-
-        myCust = CustomerDB.getRanCust(1, "serviceCar")
-        If myCust.Count <> 0 Then
-            ranCust = x.Next(1, myCust.Count + 1)
-            ShowTxt = ShowTxt & "!1!sv!2!" & getPic(myCust, ranCust)
-        Else
-            ShowTxt = ShowTxt & "!1!sv!2!" & getPicEmpty() & "!3!-!4!-"
-        End If
-        myCust.Clear()
-
-        myCust = CustomerDB.getRanCust(1, "salePart")
-        If myCust.Count <> 0 Then
-            ranCust = x.Next(1, myCust.Count + 1)
-            ShowTxt = ShowTxt & "!1!part!2!" & getPic(myCust, ranCust)
-        Else
-            ShowTxt = ShowTxt & "!1!part!2!" & getPicEmpty() & "!3!-!4!-"
-        End If
-        myCust.Clear()
-
-        myCust = CustomerDB.getRanCust(1, "carRent")
-        If myCust.Count <> 0 Then
-            ranCust = x.Next(1, myCust.Count + 1)
-            ShowTxt = ShowTxt & "!1!rent!2!" & getPic(myCust, ranCust)
-        Else
-            ShowTxt = ShowTxt & "!1!rent!2!" & getPicEmpty() & "!3!-!4!-"
-        End If
-        myCust.Clear()
-
-        myCust = CustomerDB.getRanCust(1, "carWash")
-        If myCust.Count <> 0 Then
-            ranCust = x.Next(1, myCust.Count + 1)
-            ShowTxt = ShowTxt & "!1!cl!2!" & getPic(myCust, ranCust)
-        Else
-            ShowTxt = ShowTxt & "!1!cl!2!" & getPicEmpty() & "!3!-!4!-"
-        End If
-        myCust.Clear()
-
-
-
-
-
-
-        '<li>
-        '									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-        '									<A class="text" href="#">Headline Text (only 1. line)</A>
-        '									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-        '											Text (rest of line)</A></p>
-        '								</li>
-
-
-
-
-        Return ShowTxt
-    End Function
-    
-    Private Function getPic(ByVal ranCust As Queue, ByVal ranNo As Integer) As String
-        Dim show As String
-        Dim myCust As RandCustomer
-        Dim i As Integer = 1
-        Dim nTxt As String = ""
-
-        show = "<A href='../search/business_homepage/dealer_business_web_start.aspx"
-        For Each myCust In ranCust
-            If ranNo = i Then
-                ' Response.Write(ranNo)
-                show = show & "?cust_id=" & myCust.id & "' target='_blank'>" & showPictures(myCust)
-                nTxt = myCust.districName & "!4!" & myCust.provinceName
-                Exit For
-            End If
-            i = i + 1
-        Next
-        show = show & "</A>!3!" & nTxt
-
-        Return show
-    End Function
-    Private Function showPictures(ByRef myCust As RandCustomer) As String
-
-        Dim a As Bitmap
-        Dim imageWidth As Integer
-        Dim imageHeight As Integer
-        Dim IUrl As String
-        Dim result As String
-        Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
-
-        If myCust.logo_txt <> "" Then
-            'a = New Bitmap(Server.MapPath("/userData/" & myCust.username & "/logo/" & myCust.logo_txt))
-            'resize.doResize(a.Width, a.Height, imageWidth, imageHeight, 120)
-            'IUrl = "/userData/" & myCust.username & "/logo/" & myCust.logo_txt
-
-            result = "<img border='0' style=""CURSOR: hand"" src='" & picUrl & "/public/test/WebForm10.aspx?custid=" & myCust.id & "&w=120&h=c&h2=90'>"
-        Else
-            'result = Server.MapPath("../images/objects/no_image_60x45.gif")
-            a = New Bitmap(Server.MapPath("../images/objects/no_image_120x90.gif"))
-            resize.doResize(a.Width, a.Height, imageWidth, imageHeight, 120)
-            IUrl = "../../images/objects/no_image_120x90.gif"
-            result = "<IMG height='90' src='" & IUrl & "' width='" & imageWidth & "' border='0'>"
-        End If
-        'result = "<img style=""CURSOR: hand"" src='" & IUrl & "' width='" & imageWidth & "' height='" & imageHeight & "' onclick='changeMainPic(1,this.src);'>"
-        '
-
-
-
-
-
-        Return result
-    End Function
-    '<li>
-    '									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-    '									<A class="text" href="#">Headline Text (only 1. line)</A>
-    '									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-    '											Text (rest of line)</A></p>
-    '</li>
 
 
     <AjaxPro.AjaxMethod()> _
@@ -204,38 +166,45 @@ Public Class index_start
                     n = 2
                 Else
                     n = 1
+                    myAds.id = 0
+                    myAds.Brand = "-"
+                    myAds.Model = "-"
+                    myAds.Status = "-"
+                    myAds.Price = 0
+                    myAds.Yearr = "-"
+                    myAds.Image1 = ""
+                    ArrAds(2, 1) = myAds
                 End If
 
                 For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
                     myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
+                    myAds.Detailid = myDS.Tables("Car").Rows(xResult - 1).Item("NoticeDetail_Id")
                     myAds.Brand = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
                     myAds.Model = myDS.Tables("Car").Rows(xResult - 1).Item("Model_Name")
                     If myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>" & myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                        myAds.Status = "<span>New</span>"
                     Else
-                        myAds.Status = "ปี " & myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year_Ord")
+                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year_Ord"))
                     End If
 
-                    If checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")) = 0 Then
-                        myAds.Price = "-"
-                    Else
-                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")), 0, , , TriState.True)
-                    End If
-
+                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")), 2, , , TriState.True)
                     myAds.Image1 = checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Image1"))
 
                     myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
                     ArrAds(i, 1) = myAds
                 Next
+
+
             Else
                 myAds.id = 0
+                myAds.Detailid = 0
                 myAds.Brand = "-"
                 myAds.Model = "-"
                 myAds.Status = "-"
                 myAds.Price = 0
                 myAds.Yearr = "-"
-                myAds.Image1 = "-"
+                myAds.Image1 = ""
 
                 ArrAds(1, 1) = myAds
                 ArrAds(2, 1) = myAds
@@ -248,25 +217,30 @@ Public Class index_start
                     n = 2
                 Else
                     n = 1
+                    myAds.id = 0
+                    myAds.Brand = "-"
+                    myAds.Model = "-"
+                    myAds.Status = "-"
+                    myAds.Price = 0
+                    myAds.Yearr = "-"
+                    myAds.Image1 = ""
+                    ArrAds(2, 2) = myAds
                 End If
 
                 For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Bike").Rows.Count)
                     myAds.id = myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Id")
+                    myAds.Detailid = myDS.Tables("Bike").Rows(xResult - 1).Item("NoticeDetail_Id")
                     myAds.Brand = myDS.Tables("Bike").Rows(xResult - 1).Item("Brand_name")
                     myAds.Model = myDS.Tables("Bike").Rows(xResult - 1).Item("Model_Name")
+
                     If myDS.Tables("Bike").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>" & myDS.Tables("Bike").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                        myAds.Status = "<span>New</span>"
                     Else
-                        myAds.Status = "ปี " & myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Year_Ord")
+                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Year_Ord"))
                     End If
 
-                    If checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")) = 0 Then
-                        myAds.Price = "-"
-                    Else
-                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")), 0, , , TriState.True)
-                    End If
-
+                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")), 2, , , TriState.True)
                     myAds.Image1 = checkNullDBstr(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Image1"))
 
                     myDS.Tables("Bike").Rows.RemoveAt(xResult - 1)
@@ -279,7 +253,7 @@ Public Class index_start
                 myAds.Status = "-"
                 myAds.Price = 0
                 myAds.Yearr = "-"
-                myAds.Image1 = "-"
+                myAds.Image1 = ""
 
                 ArrAds(1, 2) = myAds
                 ArrAds(2, 2) = myAds
@@ -292,26 +266,30 @@ Public Class index_start
                     n = 2
                 Else
                     n = 1
+                    myAds.id = 0
+                    myAds.Brand = "-"
+                    myAds.Model = "-"
+                    myAds.Status = "-"
+                    myAds.Price = 0
+                    myAds.Yearr = "-"
+                    myAds.Image1 = ""
+                    ArrAds(2, 3) = myAds
                 End If
 
                 For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Truck").Rows.Count)
                     myAds.id = myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Id")
+                    myAds.Detailid = myDS.Tables("Truck").Rows(xResult - 1).Item("NoticeDetail_Id")
                     myAds.Brand = myDS.Tables("Truck").Rows(xResult - 1).Item("Brand_name")
                     myAds.Model = myDS.Tables("Truck").Rows(xResult - 1).Item("Model_Name")
 
                     If myDS.Tables("Truck").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>" & myDS.Tables("Truck").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                        myAds.Status = "<span>New</span>"
                     Else
-                        myAds.Status = "ปี " & myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Year_Ord")
+                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Year_Ord"))
                     End If
 
-                    If checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")) = 0 Then
-                        myAds.Price = "-"
-                    Else
-                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")), 0, , , TriState.True)
-                    End If
-
+                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")), 2, , , TriState.True)
                     myAds.Image1 = checkNullDBstr(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Image1"))
 
                     myDS.Tables("Truck").Rows.RemoveAt(xResult - 1)
@@ -324,7 +302,7 @@ Public Class index_start
                 myAds.Status = "-"
                 myAds.Price = 0
                 myAds.Yearr = "-"
-                myAds.Image1 = "-"
+                myAds.Image1 = ""
 
                 ArrAds(1, 3) = myAds
                 ArrAds(2, 3) = myAds
@@ -336,26 +314,30 @@ Public Class index_start
                     n = 2
                 Else
                     n = 1
+                    myAds.id = 0
+                    myAds.Brand = "-"
+                    myAds.Model = "-"
+                    myAds.Status = "-"
+                    myAds.Price = 0
+                    myAds.Yearr = "-"
+                    myAds.Image1 = ""
+                    ArrAds(2, 4) = myAds
                 End If
 
                 For i = 1 To n
                     xResult = x.Next(1, myDS.Tables("Part").Rows.Count)
                     myAds.id = myDS.Tables("Part").Rows(xResult - 1).Item("Part_Id")
+                    myAds.Detailid = myDS.Tables("Part").Rows(xResult - 1).Item("NoticeDetail_Id")
                     myAds.Brand = myDS.Tables("Part").Rows(xResult - 1).Item("Category_Name")
                     myAds.Model = myDS.Tables("Part").Rows(xResult - 1).Item("PartsType_Name")
 
                     If myDS.Tables("Part").Rows(xResult - 1).Item("Status_Name") = "สินค้าใหม่" Then
-                        myAds.Status = "<span>" & myDS.Tables("Part").Rows(xResult - 1).Item("Status_Name") & "</span>"
+                        myAds.Status = "<span>New</span>"
                     Else
-                        myAds.Status = "ปี " & myDS.Tables("Part").Rows(xResult - 1).Item("Part_Year_Ord")
+                        myAds.Status = "Used"
                     End If
 
-                    If checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")) = 0 Then
-                        myAds.Price = "-"
-                    Else
-                        myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")), 0, , , TriState.True)
-                    End If
-
+                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")), 2, , , TriState.True)
                     myAds.Image1 = checkNullDBstr(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Image"))
 
                     myDS.Tables("Part").Rows.RemoveAt(xResult - 1)
@@ -368,7 +350,7 @@ Public Class index_start
                 myAds.Status = "-"
                 myAds.Price = 0
                 myAds.Yearr = "-"
-                myAds.Image1 = "-"
+                myAds.Image1 = ""
 
                 ArrAds(1, 4) = myAds
                 ArrAds(2, 4) = myAds
@@ -380,6 +362,11 @@ Public Class index_start
                     n = 2
                 Else
                     n = 1
+                    myAds.id = 0
+                    myAds.Brand = "-"
+                    myAds.Province = "-"
+                    myAds.Image1 = ""
+                    ArrAds(2, 5) = myAds
                 End If
 
                 For i = 1 To n
@@ -396,7 +383,7 @@ Public Class index_start
                 myAds.id = 0
                 myAds.Brand = "-"
                 myAds.Province = "-"
-                myAds.Image1 = "-"
+                myAds.Image1 = ""
 
                 ArrAds(1, 5) = myAds
                 ArrAds(2, 5) = myAds
@@ -405,7 +392,7 @@ Public Class index_start
         Catch ex As Exception
             debugTxt = ex.Message
         End Try
-        
+
 
 
 
@@ -425,22 +412,21 @@ Public Class index_start
         txt &= "		<tr>"
         txt &= "			<th>"
         txt &= "				<span>"
-        txt &= "					<A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>" & ArrAds(1, 1).Brand & " " & ArrAds(1, 1).Model & ", "
-        txt &= "        " & ArrAds(1, 1).Status & ", ฿ " & ArrAds(1, 1).Price & "</A></p>"
+        txt &= "					<A href='#'>" & showPictures2(ArrAds(1, 1)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 1).Brand & " " & ArrAds(1, 1).Model & ", " & ArrAds(1, 1).Status
+        txt &= ", ฿ " & ArrAds(1, 1).Price & "</A></p>"
         txt &= "			</th>"
-        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>" & ArrAds(1, 2).Brand & " " & ArrAds(1, 2).Model & ", " & ArrAds(1, 2).Status & ""
-        txt &= ", ฿ " & ArrAds(1, 2).Price & "</A></p>"
+        txt &= "			<td><span><A href='#'>" & showPictures2(ArrAds(1, 2)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 2).Brand & " " & ArrAds(1, 2).Model & ", " & ArrAds(1, 2).Status & ", ฿ " & ArrAds(1, 2).Price & "</A></p>"
         txt &= "			</td>"
-        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>Make Model, <span>new</span>-year, price</A></p>"
+        txt &= "			<td><span><A href='#'>" & showPictures2(ArrAds(1, 3)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 3).Brand & " " & ArrAds(1, 3).Model & ", " & ArrAds(1, 3).Status & ", ฿ " & ArrAds(1, 3).Price & "</A></p>"
         txt &= "			</td>"
-        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>Product Name, <span>new</span>-used, price</A></p>"
+        txt &= "			<td><span><A href='#'>" & showPictures2(ArrAds(1, 4)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 4).Brand & " " & ArrAds(1, 4).Model & ", " & ArrAds(1, 4).Status & ", ฿ " & ArrAds(1, 4).Price & "</A></p>"
         txt &= "			</td>"
-        txt &= "			<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "				<p><A href='#'>Company Name, Province</A></p>"
+        txt &= "			<td><span><A href='#'>" & showPictures(ArrAds(1, 5)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 5).Brand & ", " & ArrAds(1, 5).Province & "</A></p>"
         txt &= "			</td>"
         txt &= "		</tr>"
         txt &= "	</tbody>"
@@ -449,20 +435,20 @@ Public Class index_start
         txt &= "			<tr>"
         txt &= "				<th>"
         txt &= "					<span>"
-        txt &= "						<A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "					<p><A href='#'>Toyota Camry, <span>ใหม่</span>, ฿ 1,200,000</A></p>"
+        txt &= "						<A href='#'>" & showPictures2(ArrAds(2, 1)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 1).Brand & " " & ArrAds(2, 1).Model & ", " & ArrAds(2, 1).Status & ", ฿ " & ArrAds(2, 1).Price & "</A></p>"
         txt &= "				</th>"
-        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "					<p><A href='#'>Harley Davidson Big Star, ปี 2000, ฿ 1,200,000</A></p>"
+        txt &= "				<td><span><A href='#'>" & showPictures2(ArrAds(2, 2)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 2).Brand & " " & ArrAds(2, 2).Model & ", " & ArrAds(2, 2).Status & ", ฿ " & ArrAds(2, 2).Price & "</A></p>"
         txt &= "				</td>"
-        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "					<p><A href='#'>Make Model, <span>new</span>-year, price</A></p>"
+        txt &= "				<td><span><A href='#'>" & showPictures2(ArrAds(2, 3)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 3).Brand & " " & ArrAds(2, 3).Model & ", " & ArrAds(2, 3).Status & ", ฿ " & ArrAds(2, 3).Price & "</A></p>"
         txt &= "				</td>"
-        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "					<p><A href='#'>Product Name, <span>new</span>-used, price</A></p>"
+        txt &= "				<td><span><A href='#'>" & showPictures2(ArrAds(2, 4)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 4).Brand & " " & ArrAds(2, 4).Model & ", " & ArrAds(2, 4).Status & ", ฿ " & ArrAds(2, 4).Price & "</A></p>"
         txt &= "				</td>"
-        txt &= "				<td><span><A href='#'><IMG alt='' src='../scripts+pics/images/pic_80x60.gif'></A></span>"
-        txt &= "					<p><A href='#'>Company Name, Province</A></p>"
+        txt &= "				<td><span><A href='#'>" & showPictures(ArrAds(2, 5)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 5).Brand & ", " & ArrAds(2, 5).Province & "</A></p>"
         txt &= "				</td>"
         txt &= "			</tr>"
         txt &= "		</tfoot>"
@@ -471,6 +457,48 @@ Public Class index_start
         Return txt
     End Function
 
+    Private Function showPictures2(ByRef myAds As Ads) As String
+
+        Dim a As Bitmap
+        Dim imageWidth As Integer
+        Dim imageHeight As Integer
+        Dim IUrl As String
+        Dim result As String
+
+        Dim sContents As String, sErr As String
+        Dim bAns As Boolean
+        Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
+
+        If myAds.Image1 <> "" Then
+            result = "<img border='0' style=""CURSOR: hand""  src='" & picUrl & "/public/test/WebForm10.aspx?custid=" & myAds.Detailid & "&w=80&h=v&h2=60'>"
+        Else
+            a = New Bitmap(Server.MapPath("../images/objects/no_image_80x60.gif"))
+            resize.doResize(a.Width, a.Height, imageWidth, imageHeight, 80)
+            IUrl = "../../images/objects/no_image_80x60.gif"
+            result = "<IMG  src='" & IUrl & "' width='" & imageWidth & "' height='60' border='0'>"
+        End If
+        Return result
+    End Function
+    Private Function showPictures(ByRef myAds As Ads) As String
+
+        Dim a As Bitmap
+        Dim imageWidth As Integer
+        Dim imageHeight As Integer
+        Dim IUrl As String
+        Dim result As String
+        Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
+
+        If myAds.Image1 <> "" Then
+            result = "<img border='0' style=""CURSOR: hand"" src='" & picUrl & "/public/test/WebForm10.aspx?custid=" & myAds.id & "&w=80&h=c&h2=60'>"
+        Else
+            a = New Bitmap(Server.MapPath("../images/objects/no_image_80x60.gif"))
+            resize.doResize(a.Width, a.Height, imageWidth, imageHeight, 80)
+            IUrl = "../../images/objects/no_image_80x60.gif"
+            result = "<IMG height='60' src='" & IUrl & "' width='" & imageWidth & "' border='0'>"
+        End If
+
+        Return result
+    End Function
 
     Private Function getPicEmpty() As String
         Dim show As String

@@ -38,6 +38,7 @@ Public Class showBrands
         sql = sql & " FROM         Model INNER JOIN"
         sql = sql & " Brand ON Model.Brand = Brand.Brand"
         sql = sql & " WHERE     (Model.Category = " & cat & ")"
+        sql &= " AND Brand.show=1"
         sql = sql & " ORDER BY Brand.Brand_name"
 
         mycommand = New OleDbCommand(sql, myconn)
@@ -68,6 +69,7 @@ Public Class showBrands
         sql = sql & " FROM         Model INNER JOIN"
         sql = sql & " Brand ON Model.Brand = Brand.Brand"
         sql = sql & " WHERE     (Model.Category = " & cat & ") AND (Brand.Brand = " & brand & ")"
+        sql &= " AND Model.show=1"
         sql = sql & " ORDER BY Brand.Brand_name,Model.Model_Name"
 
         mycommand = New OleDbCommand(sql, myconn)

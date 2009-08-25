@@ -1,8 +1,8 @@
-<%@Register TagPrefix="righter" TagName="righter_bar" Src="../search/right_menu/sky1.ascx"%>
-<%@Register TagPrefix="start_footer" TagName="start_footer" Src="../menu/start_footer.ascx"%>
-<%@Register TagPrefix="start_left" TagName="start_left" Src="../menu/start_left.ascx"%>
-<%@Register TagPrefix="start_top" TagName="start_top" Src="../menu/start_top.ascx"%>
 <%@ Page CodeBehind="index_start.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="autoonclick.index_start" %>
+<%@Register TagPrefix="start_top" TagName="start_top" Src="../menu/start_top.ascx"%>
+<%@Register TagPrefix="start_left" TagName="start_left" Src="../menu/start_left.ascx"%>
+<%@Register TagPrefix="start_footer" TagName="start_footer" Src="../menu/start_footer.ascx"%>
+<%@Register TagPrefix="righter" TagName="righter_bar" Src="../search/right_menu/sky1.ascx"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <HTML>
 	<HEAD>
@@ -385,34 +385,29 @@
 						<ul>
 							<div id="sponsor">
 								<li>
-									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-									<A class="text" href="#">Headline Text (only 1. line)</A>
-									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-											Text (rest of line)</A></p>
+									<div><asp:Label id="banner1" runat="server"></asp:Label></div>
+									<asp:Label id="banner1_headline" runat="server"></asp:Label>
+									<p><asp:Label id="banner1_txt" runat="server"></asp:Label></p>
 								</li>
 								<li>
-									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-									<A class="text" href="#">Headline Text (only 1. line)</A>
-									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-											Text (rest of line)</A></p>
+									<div><asp:Label id="banner2" runat="server"></asp:Label></div>
+									<asp:Label id="banner2_headline" runat="server"></asp:Label>
+									<p><asp:Label id="banner2_txt" runat="server"></asp:Label></p>
 								</li>
 								<li>
-									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-									<A class="text" href="#">Headline Text (only 1. line)</A>
-									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-											Text (rest of line)</A></p>
+									<div><asp:Label id="banner3" runat="server"></asp:Label></div>
+									<asp:Label id="banner3_headline" runat="server"></asp:Label>
+									<p><asp:Label id="banner3_txt" runat="server"></asp:Label></p>
 								</li>
 								<li>
-									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-									<A class="text" href="#">Headline Text (only 1. line)</A>
-									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-											Text (rest of line)</A></p>
+									<div><asp:Label id="banner4" runat="server"></asp:Label></div>
+									<asp:Label id="banner4_headline" runat="server"></asp:Label>
+									<p><asp:Label id="banner4_txt" runat="server"></asp:Label></p>
 								</li>
 								<li>
-									<div><A href="#"><IMG alt="" src="../scripts+pics/images/pic_60x45.gif"></A></div>
-									<A class="text" href="#">Headline Text (only 1. line)</A>
-									<p><A class="email" href="#">www.email.com</A> <A class="intro" href="#">- Introduction 
-											Text (rest of line)</A></p>
+									<div><asp:Label id="banner5" runat="server"></asp:Label></div>
+									<asp:Label id="banner5_headline" runat="server"></asp:Label>
+									<p><asp:Label id="banner5_txt" runat="server"></asp:Label></p>
 								</li>
 							</div>
 							<li class="banner">

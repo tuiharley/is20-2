@@ -10,7 +10,13 @@ Module ModelDB
         Dim sql As String
         Dim search_statement(total_brand + 1) As String
 
-        sql = "SELECT brand , model , model_name FROM model where category = " & cat & " Order by brand,model_name"
+        'sql = "SELECT brand , model , model_name ,brand_name FROM model where category = " & cat & " Order by brand_name,model_name"
+        sql = "SELECT m.brand , m.model , m.model_name ,b.brand_name "
+        sql &= " FROM model m,brand b"
+        sql &= " where m.brand = b.brand"
+        sql &= " AND m.category = " & cat
+        sql &= " Order by b.brand_name,m.model_name"
+
 
         mycommand = New OleDbCommand(sql, myconn)
         Dim Ans_ID As OleDbDataReader = mycommand.ExecuteReader()

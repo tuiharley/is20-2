@@ -24,6 +24,9 @@ Module Bannerdb
             myTxt.Banner_link = String_chk.checkNullDBstr(Ans_ID.Item("Banner_link"))
             myTxt.Banner_original = Ans_ID.Item("Banner_original")
             myTxt.Banner_txt = String_chk.checkNullDBstr(Ans_ID.Item("Banner_txt"))
+            myTxt.BEmail = String_chk.checkNullDBstr(Ans_ID.Item("BEmail"))
+            myTxt.Banner_desc = String_chk.checkNullDBstr(Ans_ID.Item("Banner_desc"))
+
         End If
 
 
@@ -41,6 +44,8 @@ Module Bannerdb
         Dim Banner_link As String
         Dim Banner_original As String
         Dim Banner_txt As String
+        Dim BEmail As String
+        Dim Banner_desc As String
 
     End Structure
 End Module
