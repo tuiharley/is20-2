@@ -1,16 +1,16 @@
 <%@ Page CodeBehind="index_start.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="autoonclick.index_start" %>
-<%@Register TagPrefix="start_top" TagName="start_top" Src="../menu/start_top.ascx"%>
-<%@Register TagPrefix="start_left" TagName="start_left" Src="../menu/start_left.ascx"%>
-<%@Register TagPrefix="start_footer" TagName="start_footer" Src="../menu/start_footer.ascx"%>
+<%@Register TagPrefix="starttop" TagName="starttop" Src="../menu/start_top.ascx"%>
+<%@Register TagPrefix="startleft" TagName="startleft" Src="../menu/start_left.ascx"%>
+<%@Register TagPrefix="startfooter" TagName="startfooter" Src="../menu/start_footer.ascx"%>
 <%@Register TagPrefix="righter" TagName="righter_bar" Src="../search/right_menu/sky1.ascx"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <HTML>
 	<HEAD>
-		<title>Unbenanntes Dokument</title>
+		<title>AUTO-ONCLICK .explore Mobility</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=window-874">
 		<LINK href="../scripts+pics/style/style.css" type="text/css" rel="stylesheet">
 			<script src="../scripts+pics/style/jquery.js" type="text/javascript"></script>
-			<script src="../index/cmxform.js" type="text/javascript"></script>
+			<script src="../scripts+pics/style/cmxform.js" type="text/javascript"></script>
 			<script src="../scripts+pics/style/footer.js" type="text/javascript"></script>
 	</HEAD>
 	<body>
@@ -19,115 +19,9 @@
 				<div id="head">
 					<!--Head--><IMG id="logo_head" height="99" alt="" src="../scripts+pics/images/head_logo.jpg" width="202"><IMG id="banner_head" height="60" alt="" src="../scripts+pics/images/full-banner-468-60.gif"
 						width="468"></div>
-				<div id="search">
-					<!--HoriNavi-->
-					<div id="hn">
-						<ul>
-							<li class="sl">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_left.gif" width="155">
-							</li>
-							<li>
-								<A class="offer" href="#">ลงประกาศ</A>
-							</li>
-							<li class="s">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-							</li>
-							<li>
-								<A class="search" href="#">ค้นหา</A>
-							</li>
-							<li class="s">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-							</li>
-							<li>
-								<A class="so" href="#">โฆษณาพิเศษ</A>
-							</li>
-							<li class="s">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-							</li>
-							<li>
-								<A class="dealer" href="#">ผู้ประกอบการ</A>
-							</li>
-							<li class="s">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-							</li>
-							<li>
-								<A class="magazine" href="#">แมกกะซีน</A>
-							</li>
-							<li class="s">
-								<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-							</li>
-							<li>
-								<A class="about" href="#">เกี่ยวกับเรา</A>
-							</li>
-							<li>
-								<A class="login" href="#">Login</A>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--		<start_top:start_top id="start_top" ></start_top:start_top>-->
-				<div id="startpage">
-					<!--VerticalNavi-->
-					<div id="vn">
-						<ul>
-							<li class="s">
-								<IMG height="22" alt="" src="../scripts+pics/images/vn_top_155x22.GIF" width="155">
-							</li>
-							<li>
-								<A class="search_car" href="#">ค้นหารถยนต์</A>
-							</li>
-							<li>
-								<A class="search_moto" href="#">ค้นหารถจักรยานยนต์</A>
-							</li>
-							<li>
-								<A class="search_truck" href="#">ค้นหารถบรรทุก</A>
-							</li>
-							<li>
-								<A class="search_part big" href="#">ค้นหาชิ้นส่วน/ อะไหล่/ ประดับยนต์</A>
-							</li>
-							<li class="s">
-								<IMG height="22" alt="" src="../scripts+pics/images/vn_dividing_140x22.gif" width="140">
-							</li>
-							<li>
-								<A class="search_business" href="#">ค้นหาผู้ประกอบการ</A>
-							</li>
-							<li>
-								<A class="search_job" href="#">ค้นหางาน</A>
-							</li>
-							<li class="s">
-								<IMG height="22" alt="" src="../scripts+pics/images/vn_dividing_140x22.gif" width="140">
-							</li>
-							<li>
-								<A class="search_request" href="#">ฝากค้นหากับเรา</A>
-							</li>
-							<li>
-								<A class="parking" href="#">รายการบันทึกประกาศ</A>
-							</li>
-							<li class="s">
-								<IMG height="22" alt="" src="../scripts+pics/images/vn_dividing_140x22.gif" width="140">
-							</li>
-							<li>
-								<A class="startpage" href="#">หน้าแรก</A>
-							</li>
-							<li>
-								<A class="info_1" href="#">ติดต่อเรา</A>
-							</li>
-							<li>
-								<A class="info_2" href="#">โฆษณาออนไลน์</A>
-							</li>
-							<li>
-								<A class="info_3" href="#">แผนผังเว็บไซต์</A>
-							</li>
-							<li>
-								<A class="info_4" href="#">ช่วยเหลือ</A>
-							</li>
-							<li class="sb">
-								<IMG height="40" alt="" src="../scripts+pics/images/vn_bottom_140x40.gif" width="140">
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--		<start_left:start_left id="start_left" ></start_left:start_left>--><righter:righter_bar id="righter_bar" runat="server"></righter:righter_bar>
+				<starttop:starttop id="starttop" runat="server"></starttop:starttop>
+				<startleft:startleft id="startleft" runat="server"></startleft:startleft>
+				<righter:righter_bar id="righter_bar" runat="server"></righter:righter_bar>
 				<div id="inner_box">
 					<!--PageContent-->
 					<h1 class="intro"><!--Inroduction Headline--> - 
@@ -142,11 +36,11 @@
 							<thead>
 								<tr>
 									<th>
-										<A href="#">"รถยนต์"</A></th>
-									<td><A href="#">"รถจักรยานยนต์"</A></td>
-									<td><A href="#">"รถบรรทุก"</A></td>
-									<td><A href="#">"อะไหล่/ประดับยนต์"</A></td>
-									<td><A href="#">"ผู้ประกอบการ"</A></td>
+										<A href="/public_area/index/car_start.aspx">"รถยนต์"</A></th>
+									<td><A href="/public_area/index/car_start.aspx">"รถจักรยานยนต์"</A></td>
+									<td><A href="/public_area/index/car_start.aspx">"รถบรรทุก"</A></td>
+									<td><A href="/public_area/index/car_start.aspx">"อะไหล่/ประดับยนต์"</A></td>
+									<td><A href="/public_area/index/car_start.aspx">"ผู้ประกอบการ"</A></td>
 								</tr>
 							</thead>
 							<tbody>
@@ -412,38 +306,27 @@
 							</div>
 							<li class="banner">
 								<span>
-									<A href="#"><IMG alt="" src="../scripts+pics/images/banner_button_120x60.gif"></A></span><span><A href="#"><IMG alt="" src="../scripts+pics/images/banner_button_120x60.gif"></A></span><span><A href="#"><IMG alt="" src="../scripts+pics/images/banner_button_120x60.gif"></A></span><span><A href="#"><IMG alt="" src="../scripts+pics/images/banner_button_120x60.gif"></A></span><span><A href="#"><IMG alt="" src="../scripts+pics/images/banner_button_120x60.gif"></A></span>
+									<asp:Label id="ads1" runat="server"></asp:Label>
+								</span>
+								<span>
+									<asp:Label id="ads2" runat="server"></asp:Label>
+								</span>
+								<span>
+									<asp:Label id="ads3" runat="server"></asp:Label>
+								</span>
+								<span>
+									<asp:Label id="ads4" runat="server"></asp:Label>
+								</span>
+								<span>
+									<asp:Label id="ads5" runat="server"></asp:Label>
+								</span>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div id="footer">
-				<ul>
-					<li class="s">
-						<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-					</li>
-					<li>
-						<A href="#">Terms &amp; Condition</A>
-					</li>
-					<li class="s">
-						<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-					</li>
-					<li>
-						<A href="#">Imprint</A>
-					</li>
-					<li class="s">
-						<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-					</li>
-					<li>
-						<A href="#">Online-Marketing</A>
-					</li>
-					<li class="s">
-						<IMG height="21" alt="" src="../scripts+pics/images/hn_s.gif" width="1">
-					</li>
-				</ul>
-			</div>
-			<!--		<start_footer:start_footer id="start_footer" ></start_footer:start_footer>--></div>
+			<startfooter:startfooter id="startfooter" runat="server"></startfooter:startfooter>
+		</div>
 		<script language="javascript">
 		
 		startRandom();

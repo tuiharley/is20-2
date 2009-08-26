@@ -30,6 +30,11 @@ Public Class index_start
     Protected WithEvents banner5 As System.Web.UI.WebControls.Label
     Protected WithEvents banner5_headline As System.Web.UI.WebControls.Label
     Protected WithEvents banner5_txt As System.Web.UI.WebControls.Label
+    Protected WithEvents ads1 As System.Web.UI.WebControls.Label
+    Protected WithEvents ads2 As System.Web.UI.WebControls.Label
+    Protected WithEvents ads3 As System.Web.UI.WebControls.Label
+    Protected WithEvents ads4 As System.Web.UI.WebControls.Label
+    Protected WithEvents ads5 As System.Web.UI.WebControls.Label
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -142,6 +147,48 @@ Public Class index_start
         banner5_txt.Text &= "</A> <A class='intro' href='#'> - "
         banner5_txt.Text &= mybanner.Banner_desc
         banner5_txt.Text &= "</A>"
+
+
+        '==== Ads 1 =======
+        mybanner = Bannerdb.getBanner("Sponsors Banner1")
+        If mybanner.Banner_link = "" Then
+            ads1.Text = "<A href='#'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></A>"
+        Else
+            ads1.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></a>"
+        End If
+
+
+        '==== Ads 2 =======
+        mybanner = Bannerdb.getBanner("Sponsors Banner1")
+        If mybanner.Banner_link = "" Then
+            ads2.Text = "<A href='#'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></A>"
+        Else
+            ads2.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></a>"
+        End If
+
+        '==== Ads 3 =======
+        mybanner = Bannerdb.getBanner("Sponsors Banner1")
+        If mybanner.Banner_link = "" Then
+            ads3.Text = "<A href='#'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></A>"
+        Else
+            ads3.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></a>"
+        End If
+
+        '==== Ads 4 =======
+        mybanner = Bannerdb.getBanner("Sponsors Banner1")
+        If mybanner.Banner_link = "" Then
+            ads4.Text = "<A href='#'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></A>"
+        Else
+            ads4.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></a>"
+        End If
+
+        '==== Ads 5 =======
+        mybanner = Bannerdb.getBanner("Sponsors Banner1")
+        If mybanner.Banner_link = "" Then
+            ads5.Text = "<A href='#'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></A>"
+        Else
+            ads5.Text = "<a href='" & mybanner.Banner_link & "' target='_blank'><IMG border='0' height='60' src='../../images/banner/" & mybanner.Banner_img & "?" & Now & "' width='120' ></a>"
+        End If
 
     End Sub
 
@@ -393,7 +440,7 @@ Public Class index_start
             debugTxt = ex.Message
         End Try
 
-
+        'Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
 
 
         txt = "<table class='index_ads' cellSpacing='0' >"
@@ -401,11 +448,11 @@ Public Class index_start
         txt &= " <thead>"
         txt &= "		<tr>"
         txt &= "			<th>"
-        txt &= "				<A href='#'>""รถยนต์""</A></th>"
-        txt &= "			<td><A href='#'>""รถจักรยานยนต์""</A></td>"
-        txt &= "			<td><A href='#'>""รถบรรทุก""</A></td>"
-        txt &= "			<td><A href='#'>""อะไหล่/ประดับยนต์""</A></td>"
-        txt &= "			<td><A href='#'>""ผู้ประกอบการ""</A></td>"
+        txt &= "				<A href='../index/car_start.aspx'>""รถยนต์""</A></th>"
+        txt &= "			<td><A href='../index/moto_start.aspx'>""รถจักรยานยนต์""</A></td>"
+        txt &= "			<td><A href='../index/truck_start.aspx'>""รถบรรทุก""</A></td>"
+        txt &= "			<td><A href='../index/part_start.aspx'>""อะไหล่/ประดับยนต์""</A></td>"
+        txt &= "			<td><A href='../index/business_start.aspx'>""ผู้ประกอบการ""</A></td>"
         txt &= "		</tr>"
         txt &= "	</thead>"
         txt &= "	<tbody>"

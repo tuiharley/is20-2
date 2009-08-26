@@ -9556,6 +9556,341 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "public\index\business_rl.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\business_rl+banner.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\business_start.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\business_start.aspx.vb"
+                    DependentUpon = "business_start.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\business_start.aspx.resx"
+                    DependentUpon = "business_start.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\index\business_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dt_search.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dt_search2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dv_dealer.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dv_private.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_rl+top_offers.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_start.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_start.aspx.vb"
+                    DependentUpon = "car_start.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\car_start.aspx.resx"
+                    DependentUpon = "car_start.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\index\car_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\empty_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\job_dv.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\job_rl.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\job_rl+banner.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\job_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_dt_search.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_dt_search2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_dv_dealer.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_dv_private.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_rl+top_offers.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_start.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\moto_start.aspx.vb"
+                    DependentUpon = "moto_start.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\moto_start.aspx.resx"
+                    DependentUpon = "moto_start.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\index\moto_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\part_dv_dealer.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\part_dv_private.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\part_rl+top_offers.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\part_start.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\part_start.aspx.vb"
+                    DependentUpon = "part_start.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\part_start.aspx.resx"
+                    DependentUpon = "part_start.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\index\part_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_car_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_car_dealer_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_car_private_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_moto_dealer_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_moto_private_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_part_dealer_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_part_private_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_truck_dealer_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_dv_truck_private_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_example_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_intro_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_moto_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_part_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pd_truck_01.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\so_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\sr_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\sr_deletion.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\sr_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\sr_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\sr_truck.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\tip_sending.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_dt_search.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_dt_search2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_dv_dealer.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_dv_private.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_rl+top_offers.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_start.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\truck_start.aspx.vb"
+                    DependentUpon = "truck_start.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\truck_start.aspx.resx"
+                    DependentUpon = "truck_start.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\index\truck_start.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\business_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\car_rl_v2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\car_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\index_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\job_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\moto_rl_v2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\moto_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\part_rl_v2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\part_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\so_rl_v2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\so_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\so_vn.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\truck_rl_v2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\pre_design\truck_start_without_tables.htm"
+                    BuildAction = "Content"
+                />
+                <File
                     RelPath = "public\left_menu\left_menubar.ascx"
                     BuildAction = "Content"
                 />
@@ -15363,6 +15698,158 @@
                 />
                 <File
                     RelPath = "public\webfile\tail.txt"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\company\company_intro.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_bottom.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_set_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_set_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_set_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_set_truck.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_top_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_top_vehicle.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\compare\compare_truck.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_intro.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_pl_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_pl_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_pl_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_pl_so.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_pl_truck.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_reg_step1.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_reg_step2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_reg_step3.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_reg_step4.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\dealer\dealer_reg_step5.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\login\forgotten_password.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\login\login.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\access.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\conclusion.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\contact.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_car_vertiN_2.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_intro.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\offer_truck.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\pv_car.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\pv_moto.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\pv_part.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public_area\offer\pv_truck.htm"
                     BuildAction = "Content"
                 />
             </Include>
