@@ -1,0 +1,6 @@
+AUTOMATIC_IPC = OFF
+TRACE_LEVEL_CLIENT = OFF
+names.directory_path = (TNSNAMES)
+names.default_domain = world
+name.default_zone = world
+names.default_domain=world
