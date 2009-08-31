@@ -3,7 +3,7 @@ Imports System.Threading
 Imports System.Data
 Imports System.Data.OleDb
 
-Public Class addNewCheck
+Public Class check_records
     Inherits System.Web.UI.Page
 
 #Region " Web Form Designer Generated Code "
@@ -17,9 +17,9 @@ Public Class addNewCheck
     Protected WithEvents chkMonth As System.Web.UI.WebControls.DropDownList
     Protected WithEvents chkYear As System.Web.UI.WebControls.DropDownList
     Protected WithEvents chkCust As System.Web.UI.WebControls.DropDownList
-    Protected WithEvents chkAmount As System.Web.UI.WebControls.TextBox
     Protected WithEvents chkNo As System.Web.UI.WebControls.TextBox
-    Protected WithEvents chkDetail As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnSearch As System.Web.UI.WebControls.Button
+    Protected WithEvents chkStatus As System.Web.UI.WebControls.DropDownList
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -34,16 +34,13 @@ Public Class addNewCheck
 #End Region
 
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         'Put user code to initialize the page here
-        bindBank()
-        Session("pageName") = "addNewCheck.aspx"
-        AjaxPro.Utility.RegisterTypeForAjax(GetType(addNewCheck))
+        AjaxPro.Utility.RegisterTypeForAjax(GetType(check_records))
     End Sub
 
-
     <AjaxPro.AjaxMethod()> _
-    Public Function showCheck(ByVal st As String) As String
+    Public Function showCheck(ByVal bankCode As Integer, ByVal d As String, ByVal m As String, ByVal y As String, ByVal cust As String, ByVal chkNo As String, ByVal chkStatus As String) As String
+        Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
         Dim str As String
         Dim txt As String
         Dim myQ As New Queue
@@ -51,9 +48,15 @@ Public Class addNewCheck
         Dim myCust As A_Customer
         Dim MyDs As DataSet
 
-        myQ = CheckDB.getChecks("")
+        myCheck.BANK_CODE = bankCode
+        myCheck.CHECK_DATE = m & "/" & d & "/" & y
+        myCheck.CUST_ID = cust
+        myCheck.CK_NO = chkNo
+        myCheck.CK_STATUS = chkStatus
 
-        str = str & showPage(myQ.Count)
+
+        myQ = CheckDB.getChecks(makeSQL(myCheck))
+
 
         If myQ.Count > 0 Then
             For Each myCheck In myQ
@@ -102,8 +105,6 @@ Public Class addNewCheck
         End If
 
 
-        str = str & showPage(myQ.Count)
-
 
         txt = txt & str
         'test()
@@ -111,71 +112,30 @@ Public Class addNewCheck
         Return txt
     End Function
 
-    <AjaxPro.AjaxMethod()> _
-    Public Function addCheck(ByVal bankCode As String, ByVal d As String, ByVal m As String, ByVal y As String, ByVal cust As String, ByVal amount As String, ByVal chkNo As String, ByVal chkDetail As String) As String
+    Private Function makeSQL(ByVal MyCheck As CheckSt) As String
         Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
         Dim ans As String
-        Dim myCheck As CheckSt
+        'MyCheck.BANK_CODE = bankCode
+        'MyCheck.CHECK_DATE = m & "/" & d & "/" & y
+        'MyCheck.CUST_ID = cust
+        'MyCheck.CK_NO = chkNo
+        'MyCheck.CK_STATUS = chkStatus
 
-        myCheck.CHECK_DATE = m & "/" & d & "/" & y
-        myCheck.CUST_ID = cust
-        myCheck.CK_STATUS = 1
-        myCheck.AMOUNT = checkNullNum(amount)
-        myCheck.BANK_CODE = bankCode
-        myCheck.CK_NO = chkNo
-        myCheck.CK_DETAIL = chkDetail
-        CheckDB.addNewCheck(myCheck)
+        ans = " CHECK_DATE >= CONVERT(datetime, '" & MyCheck.CHECK_DATE.ToString("dd/MM/yyyy") & " 00:00:00', 103) AND CHECK_DATE <= CONVERT(datetime, '" & MyCheck.CHECK_DATE.ToString("dd/MM/yyyy") & " 23:59:59', 103)"
+        If MyCheck.BANK_CODE > -1 Then
+            ans &= " AND BANK_CODE = " & MyCheck.BANK_CODE
+        End If
+        If MyCheck.CUST_ID > 0 Then
+            ans &= " AND BANK_CODE = " & MyCheck.BANK_CODE
+        End If
+        If MyCheck.CK_NO <> "" Then
+            ans &= " AND CK_NO = '" & MyCheck.CK_NO & "'"
+        End If
+        If MyCheck.CK_STATUS > 0 Then
+            ans &= " AND CK_STATUS = " & MyCheck.CK_STATUS
+        End If
 
         Return ans
-    End Function
-
-    <AjaxPro.AjaxMethod()> _
-    Public Function delCheck(ByVal checkID As String) As String
-
-        CheckDB.delCheck(checkID)
-
-        Return "OK"
-    End Function
-
-    Private Sub bindBank()
-        Dim myDS As DataSet
-
-        myDS = BankDB.getBankDS(25)
-
-        With bankList
-            .DataTextField = "BANK_NAME"
-            .DataValueField = "BANK_CODE"
-            .RepeatDirection = RepeatDirection.Vertical
-            .RepeatColumns = 2
-            .DataSource = myDS
-            .DataBind()
-        End With
-        myDS.Dispose()
-
-    End Sub
-
-    Public Function showPage(ByVal numPage As Integer) As String
-        Dim str As String
-
-        str = str & "<table width='100%'>"
-        str = str & "<tr>"
-        str = str & "<td align='left' width='80%'><FONT face='Tahoma'>ทั้งหมด " & numPage & " รายการ</FONT></td>"
-        str = str & "<td width='20%'>"
-        str = str & "<table cellSpacing='5' cellPadding='5'>"
-        str = str & "<tr>"
-        str = str & "<td width='16%'>|&lt;</td>"
-        str = str & "<td width='16%'>&lt;</td>"
-        str = str & "<td width='16%'>1</td>"
-        str = str & "<td width='16%'>2</td>"
-        str = str & "<td width='16%'>&gt;</td>"
-        str = str & "<td width='16%'>&gt;&gt;|</td>"
-        str = str & "</tr>"
-        str = str & "</table>"
-        str = str & "</td>"
-        str = str & "</tr>"
-        str = str & "</table>"
-
-        Return str
     End Function
 
     Private Sub chkDate_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkDate.Init
@@ -243,7 +203,6 @@ Public Class addNewCheck
         chkYear.DataValueField = "YEAR"
         chkYear.DataSource = DTable
         chkYear.DataBind()
-        chkYear.SelectedValue = Year(Now) - ConstYear
 
         DTable.Dispose()
     End Sub
@@ -263,7 +222,7 @@ Public Class addNewCheck
 
         Dim DRow As DataRow = ds.Tables("status").NewRow()
         DRow.Item("CUST_ID") = 0
-        DRow.Item("CUST_NAME") = "โปรดระบุ"
+        DRow.Item("CUST_NAME") = "ทั้งหมด"
         ds.Tables("status").Rows.InsertAt(DRow, 0)
 
         chkCust.DataValueField = "CUST_ID"
@@ -275,6 +234,39 @@ Public Class addNewCheck
         da.Dispose()
         conn.Close()
     End Sub
+    Private Sub chkStatus_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkStatus.Init
+        Dim myDS As DataSet
 
-   
+        myDS = StatusDB.getStatusDS()
+
+        Dim DRow As DataRow = myDS.Tables("ck_status").NewRow()
+        DRow.Item("STATUS_ID") = 0
+        DRow.Item("STATUS_NAME") = "ทั้งหมด"
+        myDS.Tables("ck_status").Rows.InsertAt(DRow, 0)
+
+        With chkStatus
+            .DataTextField = "STATUS_NAME"
+            .DataValueField = "STATUS_ID"
+            .DataSource = myDS
+            .DataBind()
+
+        End With
+        myDS.Dispose()
+    End Sub
+    Private Sub bankList_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles bankList.Init
+        Dim myDS As DataSet
+
+        myDS = BankDB.getBankDS(25)
+
+        With bankList
+            .DataTextField = "BANK_NAME"
+            .DataValueField = "BANK_CODE"
+            .RepeatDirection = RepeatDirection.Vertical
+            .RepeatColumns = 2
+            .DataSource = myDS
+            .DataBind()
+
+        End With
+        myDS.Dispose()
+    End Sub
 End Class

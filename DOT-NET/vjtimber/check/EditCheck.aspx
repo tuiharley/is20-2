@@ -1,6 +1,6 @@
-<%@Register TagPrefix="MainMenu" TagName="MainM" Src="../Controls/MainMenu.ascx"%>
 <%@Register TagPrefix="LeftMenu" TagName="LeftM" Src="../Controls/LeftMenu.ascx"%>
-<%@ Page CodeBehind="addNewCheck.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="vjtimber.addNewCheck" %>
+<%@Register TagPrefix="MainMenu" TagName="MainM" Src="../Controls/MainMenu.ascx"%>
+<%@ Page CodeBehind="EditCheck.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="vjtimber.EditCheck" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <HTML>
@@ -8,7 +8,7 @@
 		<title>VJ TIMBER CO LTD</title>
 		<meta content="" name="keywords">
 		<meta content="" name="description">
-		<!--meta http-equiv="Content-Type" content="text/html; charset=utf-8" /-->
+		<meta http-equiv="Content-Type" content="text/html; charset=window-874">
 		<meta content="en" name="language">
 		<LINK media="screen" href="../style.css" type="text/css" rel="stylesheet">
 	</HEAD>
@@ -29,26 +29,8 @@
 					<div id="right">
 						<div id="right_top">
 							<h3 class="firsth3">เลือกธนาคาร</h3>
-							<asp:radiobuttonlist id="bankList" runat="server" RepeatColumns="2"></asp:radiobuttonlist>
-							<!--table border="0">
-								<tr>
-									<td><input type="radio" id="bank" name="bank" value="1"></td>
-									<td>K-Bank</td>
-								</tr>
-								<tr>
-									<td><input type="radio" id="bank" name="bank" value="1"></td>
-									<td>Bangkok Bank</td>
-								</tr>
-								<tr>
-									<td><input type="radio" id="bank" name="bank" value="1"></td>
-									<td>Krungsri Aydhaya Bank</td>
-								</tr>
-								<tr>
-									<td><input type="radio" id="bank" name="bank" value="1"></td>
-									<td>Siam Commercial Bank</td>
-								</tr>
-							</table-->
-							<h3 class="firsth3">รายละเอียดของ Check</h3>
+							<asp:radiobuttonlist id="bankList" RepeatColumns="2" runat="server"></asp:radiobuttonlist>
+							<h3>รายละเอียดของ Check</h3>
 							<table cellSpacing="10" border="0">
 								<tr>
 									<td>เช็คลงวันที่</td>
@@ -76,19 +58,13 @@
 									<td><asp:textbox id="chkDetail" runat="server" Width="328px"></asp:textbox></td>
 								</tr>
 								<tr>
-									<td></td>
-									<td><input class="btn" onclick="doAdd();" type="button" value="Save"> <input class="btn" type="reset" value="Clear"></td>
+									<td>สถานะ</td>
+									<td><asp:dropdownlist id="chkStatus" runat="server"></asp:dropdownlist></td>
 								</tr>
-							</table>
-							<table>
-								<tr height="1">
+								<tr>
 									<td></td>
-								</tr>
-							</table>
-							<div id="tableList"></div>
-							<table>
-								<tr height="1">
-									<td></td>
+									<td><asp:Label ID="btnSave" Runat="server"></asp:Label>
+										<input class="btn" type="button" onclick="goBack();" value="Back"></td>
 								</tr>
 							</table>
 						</div>
@@ -101,14 +77,7 @@
 		</form>
 		<script src="../jscript/bankradio.js"></script>
 		<script language="javascript">
-		vjtimber.addNewCheck.showCheck("1",tableBack);
-		function tableBack(response){
-					var tableList = document.getElementById("tableList");
-						tableList.innerHTML=response.value;
-						//autoonclick.package2_list.showNotice(noticeBack);
-		}
-		
-		function doAdd(){
+		function doEdit(chkID){
 			var bankList = get_radio_value();
 			var chkDate = document.getElementById("chkDate");
 			var chkMonth = document.getElementById("chkMonth");
@@ -117,9 +86,8 @@
 			var chkAmount = document.getElementById("chkAmount");
 			var chkNo = document.getElementById("chkNo");
 			var chkDetail = document.getElementById("chkDetail");
+			var chkStatus = document.getElementById("chkStatus");
 			var pass = true;
-			
-			//ByVal bankCode As String, ByVal d As String, ByVal m As String, ByVal y As String, ByVal cust As String, ByVal amount As String, ByVal chkNo As String, ByVal chkDetail As String
 			
 			if(bankList==-1){
 				alert("Bank?");
@@ -136,29 +104,23 @@
 				pass=false;
 				return;
 			}
-			
-			
 			if(pass){
-				vjtimber.addNewCheck.addCheck(bankList,chkDate.value,chkMonth.value,chkYear.value,chkCust.value,chkAmount.value,chkNo.value,chkDetail.value,addFinish);
+				vjtimber.EditCheck.editCheck(chkID,bankList,chkDate.value,chkMonth.value,chkYear.value,chkCust.value,chkAmount.value,chkNo.value,chkDetail.value,chkStatus.value,addFinish);
 			}
 			
 		}
 		function addFinish(response){
 					alert("Success !");
-					vjtimber.addNewCheck.showCheck("1",tableBack);
-					document.form1.reset();
+					window.location.href=response.value;
+					//vjtimber.EditCheck.showCheck("1",tableBack);
 		}
 		
-		function delCheck(checkid){
-			if(confirm("Confirm delete check ?")){
-				vjtimber.addNewCheck.delCheck(checkid,addFinish);
-			}
+		function goBack(){
+			vjtimber.EditCheck.getBackPage(backUrl);
 		}
-		
-		function goEdit(checkid){
-			window.location.href='EditCheck.aspx?checkid='+checkid;
+		function backUrl(response){
+			window.location.href=response.value;
 		}
-		
 		
 		</script>
 	</body>

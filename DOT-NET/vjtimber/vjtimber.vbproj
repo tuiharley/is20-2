@@ -193,8 +193,38 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "check\check_records.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\check_records.aspx.vb"
+                    DependentUpon = "check_records.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\check_records.aspx.resx"
+                    DependentUpon = "check_records.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "check\check_records.html"
                     BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\EditCheck.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\EditCheck.aspx.vb"
+                    DependentUpon = "EditCheck.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\EditCheck.aspx.resx"
+                    DependentUpon = "EditCheck.aspx.vb"
+                    BuildAction = "EmbeddedResource"
                 />
                 <File
                     RelPath = "check\EditCheck.html"
@@ -246,6 +276,51 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "Controls\GenUtil.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\GenUtil.ascx.vb"
+                    DependentUpon = "GenUtil.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\GenUtil.ascx.resx"
+                    DependentUpon = "GenUtil.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\LeftMenu.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\LeftMenu.ascx.vb"
+                    DependentUpon = "LeftMenu.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\LeftMenu.ascx.resx"
+                    DependentUpon = "LeftMenu.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Controls\MainMenu.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\MainMenu.ascx.vb"
+                    DependentUpon = "MainMenu.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\MainMenu.ascx.resx"
+                    DependentUpon = "MainMenu.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "images\go.gif"
                     BuildAction = "Content"
                 />
@@ -267,6 +342,10 @@
                 />
                 <File
                     RelPath = "images\top.jpg"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "jscript\bankradio.js"
                     BuildAction = "Content"
                 />
                 <File

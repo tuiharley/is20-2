@@ -26,5 +26,22 @@ Module StatusDB
 
         Return search_statement
     End Function
+    Function getStatusDS() As DataSet
+        Dim myconn As New OleDbConnection(connectDB)
+        myconn.Open()
 
+        Dim da As OleDbDataAdapter
+        Dim sql As String
+        Dim myDS As New DataSet
+
+        sql = "SELECT   * "
+        sql &= " FROM CK_STATUS "
+        da = New OleDbDataAdapter(sql, myconn)
+        da.Fill(myDS, "ck_status")
+
+        da.Dispose()
+        myconn.Close()
+
+        Return myDS
+    End Function
 End Module
