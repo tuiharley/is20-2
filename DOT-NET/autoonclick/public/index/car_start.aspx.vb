@@ -205,44 +205,50 @@ Protected WithEvents halfBanner As System.Web.UI.WebControls.Label
         Dim ArrAds(2, 5) As Ads
         Dim myAds As Ads
         Dim i As Integer, n As Integer
+        Dim cnt As Integer = 1
+        Dim totalRow As Integer
 
         myDS = RandomAds.IndexPGRandom()
         Try
             'Car
-            If myDS.Tables("Car").Rows.Count > 0 Then
-                If myDS.Tables("Car").Rows.Count > 1 Then
-                    n = 2
-                Else
-                    n = 1
-                    myAds.id = 0
-                    myAds.Brand = "-"
-                    myAds.Model = "-"
-                    myAds.Status = "-"
-                    myAds.Price = 0
-                    myAds.Yearr = "-"
-                    myAds.Image1 = ""
-                    ArrAds(2, 1) = myAds
-                End If
+            totalRow = myDS.Tables("Car").Rows.Count
+            If totalRow > 0 Then
 
-                For i = 1 To n
-                    xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
-                    myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
-                    myAds.Detailid = myDS.Tables("Car").Rows(xResult - 1).Item("NoticeDetail_Id")
-                    myAds.Brand = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
-                    myAds.Model = myDS.Tables("Car").Rows(xResult - 1).Item("Model_Name")
-                    If myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>New</span>"
-                    Else
-                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year_Ord"))
-                    End If
+                For i = 1 To 5
+                    For n = 1 To 2
+                        If cnt <= totalRow Then
+                            xResult = x.Next(1, myDS.Tables("Car").Rows.Count)
+                            myAds.id = myDS.Tables("Car").Rows(xResult - 1).Item("Car_Id")
+                            myAds.Detailid = myDS.Tables("Car").Rows(xResult - 1).Item("NoticeDetail_Id")
+                            myAds.Brand = myDS.Tables("Car").Rows(xResult - 1).Item("Brand_name")
+                            myAds.Model = myDS.Tables("Car").Rows(xResult - 1).Item("Model_Name")
+                            If myDS.Tables("Car").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
+                                myAds.Status = "<span>New</span>"
+                            Else
+                                myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Year_Ord"))
+                            End If
 
-                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")), 2, , , TriState.True)
-                    myAds.Image1 = checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Image1"))
+                            myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Price")), 2, , , TriState.True)
+                            myAds.Image1 = checkNullDBstr(myDS.Tables("Car").Rows(xResult - 1).Item("Car_Image1"))
+                            myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
+                            ArrAds(n, i) = myAds
+                        Else
+                            myAds.id = 0
+                            myAds.Detailid = 0
+                            myAds.Brand = "-"
+                            myAds.Model = "-"
+                            myAds.Status = "-"
+                            myAds.Price = 0
+                            myAds.Yearr = "-"
+                            myAds.Image1 = ""
+                            ArrAds(n, i) = myAds
 
-                    myDS.Tables("Car").Rows.RemoveAt(xResult - 1)
-                    ArrAds(i, 1) = myAds
+                        End If
+
+                        cnt += 1
+
+                    Next
                 Next
-
 
             Else
                 myAds.id = 0
@@ -254,209 +260,26 @@ Protected WithEvents halfBanner As System.Web.UI.WebControls.Label
                 myAds.Yearr = "-"
                 myAds.Image1 = ""
 
-                ArrAds(1, 1) = myAds
-                ArrAds(2, 1) = myAds
-            End If
-
-
-            'Bike
-            If myDS.Tables("Bike").Rows.Count > 0 Then
-                If myDS.Tables("Bike").Rows.Count > 1 Then
-                    n = 2
-                Else
-                    n = 1
-                    myAds.id = 0
-                    myAds.Brand = "-"
-                    myAds.Model = "-"
-                    myAds.Status = "-"
-                    myAds.Price = 0
-                    myAds.Yearr = "-"
-                    myAds.Image1 = ""
-                    ArrAds(2, 2) = myAds
-                End If
-
-                For i = 1 To n
-                    xResult = x.Next(1, myDS.Tables("Bike").Rows.Count)
-                    myAds.id = myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Id")
-                    myAds.Detailid = myDS.Tables("Bike").Rows(xResult - 1).Item("NoticeDetail_Id")
-                    myAds.Brand = myDS.Tables("Bike").Rows(xResult - 1).Item("Brand_name")
-                    myAds.Model = myDS.Tables("Bike").Rows(xResult - 1).Item("Model_Name")
-
-                    If myDS.Tables("Bike").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>New</span>"
-                    Else
-                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Year_Ord"))
-                    End If
-
-                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Price")), 2, , , TriState.True)
-                    myAds.Image1 = checkNullDBstr(myDS.Tables("Bike").Rows(xResult - 1).Item("Bike_Image1"))
-
-                    myDS.Tables("Bike").Rows.RemoveAt(xResult - 1)
-                    ArrAds(i, 2) = myAds
+                For i = 1 To 5
+                    For n = 1 To 2
+                        ArrAds(n, i) = myAds
+                    Next
                 Next
-            Else
-                myAds.id = 0
-                myAds.Brand = "-"
-                myAds.Model = "-"
-                myAds.Status = "-"
-                myAds.Price = 0
-                myAds.Yearr = "-"
-                myAds.Image1 = ""
 
-                ArrAds(1, 2) = myAds
-                ArrAds(2, 2) = myAds
             End If
 
 
-            'Truck
-            If myDS.Tables("Truck").Rows.Count > 0 Then
-                If myDS.Tables("Truck").Rows.Count > 1 Then
-                    n = 2
-                Else
-                    n = 1
-                    myAds.id = 0
-                    myAds.Brand = "-"
-                    myAds.Model = "-"
-                    myAds.Status = "-"
-                    myAds.Price = 0
-                    myAds.Yearr = "-"
-                    myAds.Image1 = ""
-                    ArrAds(2, 3) = myAds
-                End If
 
-                For i = 1 To n
-                    xResult = x.Next(1, myDS.Tables("Truck").Rows.Count)
-                    myAds.id = myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Id")
-                    myAds.Detailid = myDS.Tables("Truck").Rows(xResult - 1).Item("NoticeDetail_Id")
-                    myAds.Brand = myDS.Tables("Truck").Rows(xResult - 1).Item("Brand_name")
-                    myAds.Model = myDS.Tables("Truck").Rows(xResult - 1).Item("Model_Name")
-
-                    If myDS.Tables("Truck").Rows(xResult - 1).Item("Status_Name") = "รถใหม่" Then
-                        myAds.Status = "<span>New</span>"
-                    Else
-                        myAds.Status = "ปี " & checkNullDBstr(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Year_Ord"))
-                    End If
-
-                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Price")), 2, , , TriState.True)
-                    myAds.Image1 = checkNullDBstr(myDS.Tables("Truck").Rows(xResult - 1).Item("Truck_Image1"))
-
-                    myDS.Tables("Truck").Rows.RemoveAt(xResult - 1)
-                    ArrAds(i, 3) = myAds
-                Next
-            Else
-                myAds.id = 0
-                myAds.Brand = "-"
-                myAds.Model = "-"
-                myAds.Status = "-"
-                myAds.Price = 0
-                myAds.Yearr = "-"
-                myAds.Image1 = ""
-
-                ArrAds(1, 3) = myAds
-                ArrAds(2, 3) = myAds
-            End If
-
-            'Part
-            If myDS.Tables("Part").Rows.Count > 0 Then
-                If myDS.Tables("Part").Rows.Count > 1 Then
-                    n = 2
-                Else
-                    n = 1
-                    myAds.id = 0
-                    myAds.Brand = "-"
-                    myAds.Model = "-"
-                    myAds.Status = "-"
-                    myAds.Price = 0
-                    myAds.Yearr = "-"
-                    myAds.Image1 = ""
-                    ArrAds(2, 4) = myAds
-                End If
-
-                For i = 1 To n
-                    xResult = x.Next(1, myDS.Tables("Part").Rows.Count)
-                    myAds.id = myDS.Tables("Part").Rows(xResult - 1).Item("Part_Id")
-                    myAds.Detailid = myDS.Tables("Part").Rows(xResult - 1).Item("NoticeDetail_Id")
-                    myAds.Brand = myDS.Tables("Part").Rows(xResult - 1).Item("Category_Name")
-                    myAds.Model = myDS.Tables("Part").Rows(xResult - 1).Item("PartsType_Name")
-
-                    If myDS.Tables("Part").Rows(xResult - 1).Item("Status_Name") = "สินค้าใหม่" Then
-                        myAds.Status = "<span>New</span>"
-                    Else
-                        myAds.Status = "Used"
-                    End If
-
-                    myAds.Price = FormatNumber(checkNullDBPrice(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Price")), 2, , , TriState.True)
-                    myAds.Image1 = checkNullDBstr(myDS.Tables("Part").Rows(xResult - 1).Item("Part_Image"))
-
-                    myDS.Tables("Part").Rows.RemoveAt(xResult - 1)
-                    ArrAds(i, 4) = myAds
-                Next
-            Else
-                myAds.id = 0
-                myAds.Brand = "-"
-                myAds.Model = "-"
-                myAds.Status = "-"
-                myAds.Price = 0
-                myAds.Yearr = "-"
-                myAds.Image1 = ""
-
-                ArrAds(1, 4) = myAds
-                ArrAds(2, 4) = myAds
-            End If
-
-            'Customer
-            If myDS.Tables("Customer").Rows.Count > 0 Then
-                If myDS.Tables("Customer").Rows.Count > 1 Then
-                    n = 2
-                Else
-                    n = 1
-                    myAds.id = 0
-                    myAds.Brand = "-"
-                    myAds.Province = "-"
-                    myAds.Image1 = ""
-                    ArrAds(2, 5) = myAds
-                End If
-
-                For i = 1 To n
-                    xResult = x.Next(1, myDS.Tables("Customer").Rows.Count)
-                    myAds.id = myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Id")
-                    myAds.Brand = myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Name")
-                    myAds.Province = myDS.Tables("Customer").Rows(xResult - 1).Item("Province_Name")
-                    myAds.Image1 = checkNullDBstr(myDS.Tables("Customer").Rows(xResult - 1).Item("Customer_Logo"))
-
-                    myDS.Tables("Customer").Rows.RemoveAt(xResult - 1)
-                    ArrAds(i, 5) = myAds
-                Next
-            Else
-                myAds.id = 0
-                myAds.Brand = "-"
-                myAds.Province = "-"
-                myAds.Image1 = ""
-
-                ArrAds(1, 5) = myAds
-                ArrAds(2, 5) = myAds
-            End If
 
         Catch ex As Exception
             debugTxt = ex.Message
         End Try
 
-        'Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
-
 
         txt = "<table class='index_ads' cellSpacing='0' >"
         txt &= "	<caption>""รถยนต์"" ลงประกาศเมื่อเร็วๆนี้ บน AUTO-ONCLICK</caption>"
-        txt &= " <thead>"
-        txt &= "		<tr>"
-        txt &= "			<th>"
-        txt &= "				<A href='../index/car_start.aspx'>""รถยนต์""</A></th>"
-        txt &= "			<td><A href='../index/car_start.aspx'>""รถยนต์""</A></td>"
-        txt &= "			<td><A href='../index/car_start.aspx'>""รถยนต์""</A></td>"
-        txt &= "			<td><A href='../index/car_start.aspx'>""รถยนต์""</A></td>"
-        txt &= "			<td><A href='../index/car_start.aspx'>""รถยนต์""</A></td>"
-        txt &= "		</tr>"
-        txt &= "	</thead>"
-        txt &= "	<tbody>"
+       
+        txt &= "	<tfoot>"
         txt &= "		<tr>"
         txt &= "			<th>"
         txt &= "				<span>"
@@ -473,13 +296,10 @@ Protected WithEvents halfBanner As System.Web.UI.WebControls.Label
         txt &= "			<td><span><A href='#'>" & showPictures2(ArrAds(1, 4)) & "</A></span>"
         txt &= "				<p><A href='#'>" & ArrAds(1, 4).Brand & " " & ArrAds(1, 4).Model & ", " & ArrAds(1, 4).Status & ", ฿ " & ArrAds(1, 4).Price & "</A></p>"
         txt &= "			</td>"
-        txt &= "			<td><span><A href='#'>" & showPictures(ArrAds(1, 5)) & "</A></span>"
-        txt &= "				<p><A href='#'>" & ArrAds(1, 5).Brand & ", " & ArrAds(1, 5).Province & "</A></p>"
+        txt &= "			<td><span><A href='#'>" & showPictures2(ArrAds(1, 5)) & "</A></span>"
+        txt &= "				<p><A href='#'>" & ArrAds(1, 5).Brand & " " & ArrAds(1, 5).Model & ", " & ArrAds(1, 5).Status & ", ฿ " & ArrAds(1, 5).Price & "</A></p>"
         txt &= "			</td>"
         txt &= "		</tr>"
-        txt &= "	</tbody>"
-        txt &= "	<tbody>"
-        txt &= "		<tfoot>"
         txt &= "			<tr>"
         txt &= "				<th>"
         txt &= "					<span>"
@@ -495,12 +315,12 @@ Protected WithEvents halfBanner As System.Web.UI.WebControls.Label
         txt &= "				<td><span><A href='#'>" & showPictures2(ArrAds(2, 4)) & "</A></span>"
         txt &= "					<p><A href='#'>" & ArrAds(2, 4).Brand & " " & ArrAds(2, 4).Model & ", " & ArrAds(2, 4).Status & ", ฿ " & ArrAds(2, 4).Price & "</A></p>"
         txt &= "				</td>"
-        txt &= "				<td><span><A href='#'>" & showPictures(ArrAds(2, 5)) & "</A></span>"
-        txt &= "					<p><A href='#'>" & ArrAds(2, 5).Brand & ", " & ArrAds(2, 5).Province & "</A></p>"
+        txt &= "				<td><span><A href='#'>" & showPictures2(ArrAds(2, 5)) & "</A></span>"
+        txt &= "					<p><A href='#'>" & ArrAds(2, 5).Brand & " " & ArrAds(2, 5).Model & ", " & ArrAds(2, 5).Status & ", ฿ " & ArrAds(2, 5).Price & "</A></p>"
         txt &= "				</td>"
         txt &= "			</tr>"
         txt &= "		</tfoot>"
-        txt &= "	</tbody></table>"
+        txt &= "</table>"
 
         Return txt
     End Function
@@ -527,29 +347,6 @@ Protected WithEvents halfBanner As System.Web.UI.WebControls.Label
         End If
         Return result
     End Function
-    Private Function showPictures(ByRef myAds As Ads) As String
-
-        Dim a As Bitmap
-        Dim imageWidth As Integer
-        Dim imageHeight As Integer
-        Dim IUrl As String
-        Dim result As String
-        Dim picUrl As String = ConfigurationSettings.AppSettings("picURL")
-
-        If myAds.Image1 <> "" Then
-            result = "<img border='0' style=""CURSOR: hand"" src='" & picUrl & "/public/test/WebForm10.aspx?custid=" & myAds.id & "&w=80&h=c&h2=60'>"
-        Else
-            a = New Bitmap(Server.MapPath("../images/objects/no_image_80x60.gif"))
-            resize.doResize(a.Width, a.Height, imageWidth, imageHeight, 80)
-            IUrl = "../../images/objects/no_image_80x60.gif"
-            result = "<IMG height='60' src='" & IUrl & "' width='" & imageWidth & "' border='0'>"
-        End If
-
-        Return result
-    End Function
-
-
-
 
     Private Function isMax(ByVal price As Double, ByVal type As Integer) As Boolean
         Dim ans As Boolean

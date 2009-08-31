@@ -10168,7 +10168,6 @@
                     DependentUpon = "start_top.ascx.vb"
                     BuildAction = "EmbeddedResource"
                 />
-                <Folder RelPath = "public\NewFolder1\" />
                 <File
                     RelPath = "public\offer\offer1_car_datas.aspx"
                     BuildAction = "Content"
