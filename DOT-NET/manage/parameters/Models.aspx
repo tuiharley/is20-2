@@ -15,34 +15,41 @@
 			<TABLE id="Table1" cellSpacing="1" cellPadding="1" width="392" border="0">
 				<TR>
 					<TD style="WIDTH: 73px"><FONT face="Tahoma">ประเภทรถ</FONT></TD>
-					<TD><asp:radiobuttonlist id="category_rd" runat="server" DataValueField="Category" DataTextField="Category_Name"
-							AutoPostBack="True"></asp:radiobuttonlist></TD>
+					<TD><asp:radiobuttonlist id="category_rd" runat="server" AutoPostBack="True" DataTextField="Category_Name"
+							DataValueField="Category"></asp:radiobuttonlist></TD>
 				</TR>
 				<TR>
 					<TD style="WIDTH: 73px; HEIGHT: 32px"><FONT face="Tahoma">ยี่ห้อรถ</FONT></TD>
 					<TD style="HEIGHT: 32px">
-						<P><asp:dropdownlist id="brand_ddl" runat="server" DataValueField="Brand" DataTextField="Brand_name"
-								Width="288px" AutoPostBack="True"></asp:dropdownlist></P>
+						<P><asp:dropdownlist id="brand_ddl" runat="server" AutoPostBack="True" DataTextField="Brand_name" DataValueField="Brand"
+								Width="288px"></asp:dropdownlist></P>
 					</TD>
 				</TR>
 				<tr>
-					<td>
-					</td>
-					<td><asp:Button id="btnAdd" runat="server" Text="ADD"></asp:Button></td>
+					<td></td>
+					<td><asp:button id="btnAdd" runat="server" Text="ADD"></asp:button></td>
 				</tr>
 			</TABLE>
-			<asp:datagrid id="Datagrid1" runat="server" Width="550" AutoGenerateColumns="False" OnUpdateCommand="UpdateBook"
-				OnCancelCommand="CancelBook" OnEditCommand="EditBook" OnDeleteCommand="DelBook" DataKeyField="Model">
+			<asp:datagrid id="Datagrid1" runat="server" Width="550" DataKeyField="Model" OnEditCommand="EditBook"
+				OnCancelCommand="CancelBook" OnUpdateCommand="UpdateBook" AutoGenerateColumns="False">
 				<HeaderStyle BackColor="#aaaaa"></HeaderStyle>
 				<ItemStyle BackColor="#FF9933"></ItemStyle>
 				<AlternatingItemStyle BackColor="#FFCC00"></AlternatingItemStyle>
 				<Columns>
 					<asp:EditCommandColumn EditText="Edit" UpdateText="Update" CancelText="Cancel" />
-					<asp:ButtonColumn CommandName="Delete" Text="NotShow" ButtonType="LinkButton" />
 					<asp:BoundColumn HeaderText="ประเภทรถ" DataField="Category_Name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="ยี่ห้อรถ" DataField="Brand_name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="รุ่นรถ" DataField="Model_Name" />
-					<asp:BoundColumn HeaderText="สถานะ" DataField="Status_Name" />
+					<asp:TemplateColumn HeaderText="สถานะ">
+						<ItemTemplate>
+							<asp:Label id="lblStatusName" runat="server" Text='<%# Container.DataItem("status_name") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<EditItemTemplate>
+							<asp:DropDownList id="cmbStatus" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex" >
+							</asp:DropDownList>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
 				</Columns>
 			</asp:datagrid></form>
 	</body>

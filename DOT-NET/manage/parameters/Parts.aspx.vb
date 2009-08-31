@@ -30,28 +30,29 @@ Public Class Parts
     Dim mycommand As OleDbCommand
     Dim ds As New DataSet
     Dim strsql As String
+    Dim strstatus As String
+    Protected StatusView As DataTable
+
+
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Put user code to initialize the page here
         myconn = New OleDbConnection(Session("conn"))
 
         If Page.IsPostBack = False Then
-            Bind()
-            bind_Province()
+            province.SelectedIndex = 0
 
+            bind_Province()
+            Bind()
         End If
     End Sub
 
-    Public Sub MyDataGrid_Paging(ByVal Sender As Object, ByVal E As DataGridPageChangedEventArgs)
-        DataGrid1.CurrentPageIndex = E.NewPageIndex
-        Bind()
-    End Sub
-
     Private Sub Bind()
-        strsql = "SELECT     Category.Category_Name, PartsType.PartsType_Name, PartsType.PartsType"
+        strsql = "SELECT     Category.Category_Name, PartsType.PartsType_Name, PartsType.PartsType,REPLACE(REPLACE(PartsType.Show, 1, 'Show'), 0, 'NotShow') AS Status_Name"
         strsql = strsql & " FROM         CategoryType INNER JOIN"
         strsql = strsql & " Category ON CategoryType.CategoryType = Category.Category_CategoryType INNER JOIN"
         strsql = strsql & " PartsType ON Category.Category = PartsType.PartsType_Category"
         strsql = strsql & " WHERE     (CategoryType.CategoryType = 2)"
+        strsql &= " AND Category.Category = " & province.SelectedValue
         strsql = strsql & " Order by   PartsType.PartsType_Category "
 
 
@@ -78,6 +79,8 @@ Public Class Parts
     End Sub
 
     Public Sub EditBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        strstatus = CType(E.Item.FindControl("lblStatusName"), Label).Text
+        bindDropDown()
         Datagrid1.EditItemIndex = E.Item.ItemIndex
         Bind()
     End Sub
@@ -88,8 +91,11 @@ Public Class Parts
     Public Sub UpdateBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
 
         Dim title As TextBox = CType(E.Item.Cells(2).Controls(0), TextBox)
-        'Dim category As DropDownList = CType(E.Item.Cells(4).Controls(0), DropDownList)
-        strsql = "Update PartsType Set PartsType_Name = '" & title.Text & "' Where PartsType = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
+        Dim strstatus As String = CType(E.Item.FindControl("cmbStatus"), DropDownList).SelectedItem.Value
+
+        strsql = "Update PartsType Set PartsType_Name = '" & title.Text & "' "
+        strsql &= ",show=" & strstatus
+        strsql &= " Where  PartsType = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
         mycommand = New OleDbCommand(strsql, myconn)
         myconn.Open()
         mycommand.ExecuteNonQuery()
@@ -139,5 +145,39 @@ Public Class Parts
             End If
         End If
     End Sub
+    Public Sub bindDropDown()
+        Dim Dset As New DataSet
+        Dim DRow As DataRow
 
+        With Dset
+            .Tables.Add("status")
+            .Tables("status").Columns.Add("status_id")
+            .Tables("status").Columns.Add("status_desc")
+            DRow = .Tables("status").NewRow
+            DRow.Item("status_id") = 0
+            DRow.Item("status_desc") = "NotShow"
+            .Tables("status").Rows.InsertAt(DRow, 0)
+
+            DRow = .Tables("status").NewRow
+            DRow.Item("status_id") = 1
+            DRow.Item("status_desc") = "Show"
+            .Tables("status").Rows.InsertAt(DRow, 1)
+
+
+
+
+        End With
+        StatusView = Dset.Tables("status")
+
+    End Sub
+    Public Sub setIndex(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim ed As System.Web.UI.WebControls.DropDownList
+        ed = sender
+        ed.SelectedIndex = ed.Items.IndexOf(ed.Items.FindByText(strstatus))
+
+    End Sub
+
+    Private Sub province_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles province.SelectedIndexChanged
+        Bind()
+    End Sub
 End Class

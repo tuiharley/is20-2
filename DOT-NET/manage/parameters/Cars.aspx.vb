@@ -29,6 +29,10 @@ Public Class Cars
     Dim mycommand As OleDbCommand
     Dim ds As New DataSet
     Dim strsql As String
+    Dim strstatus As String
+    Protected StatusView As DataTable
+
+
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Put user code to initialize the page here
         myconn = New OleDbConnection(Session("conn"))
@@ -52,6 +56,8 @@ Public Class Cars
         myconn.Close()
     End Sub
     Public Sub EditBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
+        strstatus = CType(E.Item.FindControl("lblStatusName"), Label).Text
+        bindDropDown()
         Datagrid1.EditItemIndex = E.Item.ItemIndex
         Bind()
     End Sub
@@ -61,8 +67,11 @@ Public Class Cars
     End Sub
     Public Sub UpdateBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
         Dim title As TextBox = CType(E.Item.Cells(1).Controls(0), TextBox)
-        'Dim category As DropDownList = CType(E.Item.Cells(4).Controls(0), DropDownList)
-        strsql = "Update Brand Set Brand_Name = '" & title.Text & "' Where Brand = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
+        Dim strstatus As String = CType(E.Item.FindControl("cmbStatus"), DropDownList).SelectedItem.Value
+
+        strsql = "Update Brand Set Brand_Name = '" & title.Text & "' "
+        strsql &= " ,show=" & strstatus
+        strsql &= "  Where  Brand = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
         mycommand = New OleDbCommand(strsql, myconn)
         myconn.Open()
         mycommand.ExecuteNonQuery()
@@ -116,5 +125,35 @@ Public Class Cars
         txtBrand.Text = ""
     End Sub
 
+    Public Sub bindDropDown()
+        Dim Dset As New DataSet
+        Dim DRow As DataRow
 
+        With Dset
+            .Tables.Add("status")
+            .Tables("status").Columns.Add("status_id")
+            .Tables("status").Columns.Add("status_desc")
+            DRow = .Tables("status").NewRow
+            DRow.Item("status_id") = 0
+            DRow.Item("status_desc") = "NotShow"
+            .Tables("status").Rows.InsertAt(DRow, 0)
+
+            DRow = .Tables("status").NewRow
+            DRow.Item("status_id") = 1
+            DRow.Item("status_desc") = "Show"
+            .Tables("status").Rows.InsertAt(DRow, 1)
+
+
+
+
+        End With
+        StatusView = Dset.Tables("status")
+
+    End Sub
+    Public Sub setIndex(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim ed As System.Web.UI.WebControls.DropDownList
+        ed = sender
+        ed.SelectedIndex = ed.Items.IndexOf(ed.Items.FindByText(strstatus))
+
+    End Sub
 End Class

@@ -1,5 +1,5 @@
-<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Cars.aspx.vb" Inherits="manage.Cars" %>
+<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 	<HEAD>
@@ -22,16 +22,25 @@
 				</tr>
 				<tr>
 					<td>
-						<asp:datagrid id="Datagrid1" runat="server" DataKeyField="Brand" on OnDeleteCommand="DelBook" OnEditCommand="EditBook"
-							OnCancelCommand="CancelBook" OnUpdateCommand="UpdateBook" Width="450" AutoGenerateColumns="False">
+						<asp:datagrid id="Datagrid1" runat="server" DataKeyField="Brand" 
+							OnEditCommand="EditBook" OnCancelCommand="CancelBook" OnUpdateCommand="UpdateBook" Width="450"
+							AutoGenerateColumns="False">
 							<HeaderStyle BackColor="#aaaaa"></HeaderStyle>
 							<ItemStyle BackColor="#FF9933"></ItemStyle>
 							<AlternatingItemStyle BackColor="#FFCC00"></AlternatingItemStyle>
 							<Columns>
 								<asp:EditCommandColumn ButtonType="LinkButton" EditText="Edit" UpdateText="Update" CancelText="Cancel" />
-								<asp:ButtonColumn ButtonType="LinkButton" CommandName="Delete" Text="NotShow" />
 								<asp:BoundColumn HeaderText="ยี่ห้อรถ" DataField="Brand_Name" />
-								<asp:BoundColumn HeaderText="สถานะ" DataField="Status_Name" />
+								<asp:TemplateColumn HeaderText="สถานะ">
+									<ItemTemplate>
+										<asp:Label id="lblStatusName" runat="server" Text='<%# Container.DataItem("status_name") %>'>
+										</asp:Label>
+									</ItemTemplate>
+									<EditItemTemplate>
+										<asp:DropDownList id="cmbStatus" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex" >
+										</asp:DropDownList>
+									</EditItemTemplate>
+								</asp:TemplateColumn>
 							</Columns>
 						</asp:datagrid>
 					</td>

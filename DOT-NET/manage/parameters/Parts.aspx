@@ -19,7 +19,7 @@
 					<TD style="WIDTH: 73px; HEIGHT: 9px"><FONT face="Tahoma">หมวดหมู่</FONT></TD>
 					<TD style="HEIGHT: 9px">
 						<P><asp:dropdownlist id="province" runat="server" DataValueField="Category" DataTextField="Category_Name"
-								Width="208px"></asp:dropdownlist></P>
+								Width="208px" AutoPostBack="True"></asp:dropdownlist></P>
 					</TD>
 				</TR>
 				<TR>
@@ -27,10 +27,8 @@
 					<TD><asp:textbox id="district_txt" runat="server" Height="24px"></asp:textbox></TD>
 				</TR>
 			</TABLE>
-			<asp:datagrid id="Datagrid1" runat="server" Width="550" OnPageIndexChanged="MyDataGrid_Paging"
-				PageSize="20" AllowPaging="True" AutoGenerateColumns="False" OnUpdateCommand="UpdateBook"
+			<asp:datagrid id="Datagrid1" runat="server" Width="550" AutoGenerateColumns="False" OnUpdateCommand="UpdateBook"
 				OnCancelCommand="CancelBook" OnEditCommand="EditBook" DataKeyField="PartsType">
-				<PagerStyle Mode="NumericPages" />
 				<HeaderStyle BackColor="#aaaaa"></HeaderStyle>
 				<ItemStyle BackColor="#FF9933"></ItemStyle>
 				<AlternatingItemStyle BackColor="#FFCC00"></AlternatingItemStyle>
@@ -38,6 +36,16 @@
 					<asp:EditCommandColumn EditText="Edit" UpdateText="Update" CancelText="Cancel" />
 					<asp:BoundColumn HeaderText="หมวดหมู่" DataField="Category_Name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="ประเภท" DataField="PartsType_Name" />
+					<asp:TemplateColumn HeaderText="สถานะ">
+						<ItemTemplate>
+							<asp:Label id="lblStatusName" runat="server" Text='<%# Container.DataItem("status_name") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<EditItemTemplate>
+							<asp:DropDownList id="cmbStatus" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex" >
+							</asp:DropDownList>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
 				</Columns>
 			</asp:datagrid><asp:button id="AddBTN" style="Z-INDEX: 101; LEFT: 608px; POSITION: absolute; TOP: 448px" runat="server"
 				Width="88px" Height="32px" Text="Add"></asp:button></form>
