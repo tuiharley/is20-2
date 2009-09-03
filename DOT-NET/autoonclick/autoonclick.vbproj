@@ -9599,6 +9599,21 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "public\index\car_rl_top_offers.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_rl_top_offers.aspx.vb"
+                    DependentUpon = "car_rl_top_offers.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\car_rl_top_offers.aspx.resx"
+                    DependentUpon = "car_rl_top_offers.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "public\index\car_rl+top_offers.htm"
                     BuildAction = "Content"
                 />
