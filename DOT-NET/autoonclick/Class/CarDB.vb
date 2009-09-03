@@ -280,18 +280,18 @@ Module CarDB
         Dim mycommand As OleDbCommand
         Dim sql As String
 
-        sql = "SELECT Province.Province_Name, Car.Car_Year, Car.Car_Accident, Car.Car_Insurrance, Car.Car_Miles, Car.Car_MilesType, Car.Car_CC,  Car.Car_Power, Car.Car_PowerType, EngineType.EngineType_Name, Color.Color_Name, Car.Car_Metalic,Gear.Gear_Name, Car.Car_Accessory, Car.Car_Information FROM Car INNER JOIN NoticeDetail ON Car.Car_Id = NoticeDetail.NoticeDetail_DataId INNER JOIN Notice ON NoticeDetail.NoticeDetail_NoticeId = Notice.Notice_Id INNER JOIN Customer ON Notice.Notice_MemberId = Customer.Customer_Id INNER JOIN Province ON Customer.Customer_Province = Province.Province LEFT OUTER JOIN Gear ON Car.Car_Gears = Gear.Gear LEFT OUTER JOIN Color ON Car.Car_Color = Color.Color LEFT OUTER JOIN EngineType ON Car.Car_EngineType = EngineType.EngineType WHERE (Notice.Notice_Category = 1) and (Car.Car_Id = " & carid & ")"
+        sql = "SELECT Province.Province_Name, Car.Car_Accident, Car.Car_Insurrance, Car.Car_Miles, Car.Car_MilesType, Car.Car_CC,  Car.Car_Power, Car.Car_PowerType, EngineType.EngineType_Name, Color.Color_Name, Car.Car_Metalic,Gear.Gear_Name, Car.Car_Accessory, Car.Car_Information FROM Car INNER JOIN NoticeDetail ON Car.Car_Id = NoticeDetail.NoticeDetail_DataId INNER JOIN Notice ON NoticeDetail.NoticeDetail_NoticeId = Notice.Notice_Id INNER JOIN Customer ON Notice.Notice_MemberId = Customer.Customer_Id INNER JOIN Province ON Customer.Customer_Province = Province.Province LEFT OUTER JOIN Gear ON Car.Car_Gears = Gear.Gear LEFT OUTER JOIN Color ON Car.Car_Color = Color.Color LEFT OUTER JOIN EngineType ON Car.Car_EngineType = EngineType.EngineType WHERE (Notice.Notice_Category = 1) and (Car.Car_Id = " & carid & ")"
 
         mycommand = New OleDbCommand(sql, myconn)
         Dim Ans_ID As OleDbDataReader = mycommand.ExecuteReader()
 
         If Ans_ID.Read Then
             tmp_answer = Ans_ID.Item("Province_Name")
-            If Not IsDBNull(Ans_ID.Item("Car_Year")) Then
-                tmp_answer = tmp_answer & ", " & Right(Ans_ID.Item("Car_Year"), 4)
-            Else
-                tmp_answer = tmp_answer & ",<span class='Font_orange'> รถใหม่!</span>"
-            End If
+            'If Not IsDBNull(Ans_ID.Item("Car_Year")) Then
+            '    tmp_answer = tmp_answer & ", " & Right(Ans_ID.Item("Car_Year"), 4)
+            'Else
+            '    tmp_answer = tmp_answer & ",<span class='Font_orange'> รถใหม่!</span>"
+            'End If
 
             If Not IsDBNull(Ans_ID.Item("Car_Accident")) Then
                 If Ans_ID.Item("Car_Accident") = "1" Then
