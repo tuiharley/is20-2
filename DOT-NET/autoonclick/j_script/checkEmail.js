@@ -16,3 +16,15 @@ function check_email(e) {
 	}
 }
 
+function doValidateEmail(em,varname){
+				var objTXT = document.getElementById(varname);
+				
+				if(!check_email(em)){
+					objTXT.style.borderColor = "#ff9966";
+					objTXT.style.backgroundColor = "#ffff99";
+					//alert('ระบุ Email ไม่ถูกต้อง');
+				}else{
+					objTXT.style.borderColor = "#ffffff";
+					objTXT.style.backgroundColor = "#ffffff";
+				}
+			}
