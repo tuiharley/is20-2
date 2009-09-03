@@ -5601,6 +5601,10 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "j_script\checkEmail2.js"
+                    BuildAction = "Content"
+                />
+                <File
                     RelPath = "j_script\cookie.js"
                     BuildAction = "Content"
                 />
@@ -9591,8 +9595,38 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "public\index\car_dv_dealer.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dv_dealer.aspx.vb"
+                    DependentUpon = "car_dv_dealer.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\car_dv_dealer.aspx.resx"
+                    DependentUpon = "car_dv_dealer.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "public\index\car_dv_dealer.htm"
                     BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dv_private.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\index\car_dv_private.aspx.vb"
+                    DependentUpon = "car_dv_private.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\index\car_dv_private.aspx.resx"
+                    DependentUpon = "car_dv_private.aspx.vb"
+                    BuildAction = "EmbeddedResource"
                 />
                 <File
                     RelPath = "public\index\car_dv_private.htm"
@@ -15550,6 +15584,21 @@
                 <File
                     RelPath = "public\test\WebForm10.aspx.resx"
                     DependentUpon = "WebForm10.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "public\test\WebForm11.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "public\test\WebForm11.aspx.vb"
+                    DependentUpon = "WebForm11.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "public\test\WebForm11.aspx.resx"
+                    DependentUpon = "WebForm11.aspx.vb"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
