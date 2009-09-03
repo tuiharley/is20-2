@@ -82,6 +82,31 @@
                     AssemblyName = "AjaxPro"
                     HintPath = "bin\AjaxPro.dll"
                 />
+                <Reference
+                    Name = "Microsoft.Office.Core"
+                    Guid = "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"
+                    VersionMajor = "2"
+                    VersionMinor = "4"
+                    Lcid = "0"
+                    WrapperTool = "primary"
+                />
+                <Reference
+                    Name = "VBIDE"
+                    Guid = "{0002E157-0000-0000-C000-000000000046}"
+                    VersionMajor = "5"
+                    VersionMinor = "3"
+                    Lcid = "0"
+                    WrapperTool = "primary"
+                />
+                <Reference
+                    Name = "Microsoft.Office.Interop.Excel"
+                    Guid = "{00020813-0000-0000-C000-000000000046}"
+                    VersionMajor = "1"
+                    VersionMinor = "6"
+                    Lcid = "0"
+                    WrapperTool = "primary"
+                    Private = "False"
+                />
             </References>
             <Imports>
                 <Import Namespace = "Microsoft.VisualBasic" />
@@ -231,6 +256,51 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "check\Test1.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\Test1.aspx.vb"
+                    DependentUpon = "Test1.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\Test1.aspx.resx"
+                    DependentUpon = "Test1.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "check\Test2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\Test2.aspx.vb"
+                    DependentUpon = "Test2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\Test2.aspx.resx"
+                    DependentUpon = "Test2.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "check\Test3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\Test3.aspx.vb"
+                    DependentUpon = "Test3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\Test3.aspx.resx"
+                    DependentUpon = "Test3.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "Class\BankDB.vb"
                     SubType = "Code"
                     BuildAction = "Compile"
@@ -351,6 +421,10 @@
                 <File
                     RelPath = "manage\management.html"
                     BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Report\test.xls"
+                    BuildAction = "None"
                 />
             </Include>
         </Files>

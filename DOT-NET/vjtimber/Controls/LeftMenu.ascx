@@ -6,6 +6,8 @@
 			- <A href="./addNewCheck.aspx">บันทึกรับ Check ใหม่</A>
 		<li>
 			- <A href="./check_records.aspx">ดูรายการรับ Check ทั้งหมด</A>
+		<li>
+			- <A href="./check_report.aspx">รายงาน</A>
 		</li>
 	</ul>
 </div>

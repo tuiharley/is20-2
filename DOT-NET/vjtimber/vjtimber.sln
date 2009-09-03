@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "vjtimber", "http://localhost/vjtimber/vjtimber.vbproj", "{60EAB1F4-302D-4FF8-AABD-45391FE2B07E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{60EAB1F4-302D-4FF8-AABD-45391FE2B07E}.Debug.ActiveCfg = Debug|.NET
+		{60EAB1F4-302D-4FF8-AABD-45391FE2B07E}.Debug.Build.0 = Debug|.NET
+		{60EAB1F4-302D-4FF8-AABD-45391FE2B07E}.Release.ActiveCfg = Release|.NET
+		{60EAB1F4-302D-4FF8-AABD-45391FE2B07E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
