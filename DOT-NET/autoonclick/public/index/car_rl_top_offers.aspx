@@ -1,5 +1,5 @@
-<%@ Page CodeBehind="car_rl_top_offers.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="autoonclick.car_rl_top_offers" %>
 <%@Register TagPrefix="startfooter" TagName="startfooter" Src="../menu/start_footer.ascx"%>
+<%@ Page CodeBehind="car_rl_top_offers.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="autoonclick.car_rl_top_offers" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <HTML>
 	<HEAD>
@@ -11,7 +11,7 @@
 			<script src="../scripts+pics/style/footer.js" type="text/javascript"></script>
 	</HEAD>
 	<body>
-		<form id="form1" name="form1">
+		<form id="form1" name="form1" runat="server">
 			<div id="all">
 				<div id="content">
 					<div id="head">
@@ -202,15 +202,15 @@
 											<ul>
 												<li>
 													<label>เรียงลำดับโดย</label>
-													<asp:dropdownlist id="Order_By" runat="server" >
+													<asp:dropdownlist id="Order_By" runat="server">
 														<asp:ListItem Value="0" Selected="True">ราคา</asp:ListItem>
-														<asp:ListItem Value="1" >ปี</asp:ListItem>
-														<asp:ListItem Value="2" >ซีซี</asp:ListItem>
-														<asp:ListItem Value="3" >กำลังเครื่องยนต์</asp:ListItem>
-														<asp:ListItem Value="4" >เลขไมล์</asp:ListItem>
-														<asp:ListItem Value="5" >อายุประกาศ</asp:ListItem>
+														<asp:ListItem Value="1">ปี</asp:ListItem>
+														<asp:ListItem Value="2">ซีซี</asp:ListItem>
+														<asp:ListItem Value="3">กำลังเครื่องยนต์</asp:ListItem>
+														<asp:ListItem Value="4">เลขไมล์</asp:ListItem>
+														<asp:ListItem Value="5">อายุประกาศ</asp:ListItem>
 													</asp:dropdownlist>
-													<A class="b60" href="#">แสดงผล</A>
+													<asp:linkbutton id="doSort" runat="server" CssClass="b60">แสดงผล</asp:linkbutton>
 												</li>
 											</ul>
 										</fieldset>
@@ -241,7 +241,8 @@
 										</ul>
 									</span></div>
 								<div id="rl_box"><asp:label id="carResult" runat="server"></asp:label></div>
-								<div id="rl_b"><A class="b80" href="#">เปรียบเทียบ</A> <A class="b80" href="#">บันทึกประกาศ</A>
+								<div id="rl_b"><A class="b80" href="#">เปรียบเทียบ</A> <A class="b80" href="javascript:saveAllCook();">
+										บันทึกประกาศ</A>
 									<span>
 										<ul>
 											<li>
@@ -296,7 +297,8 @@
 					</div>
 				</div>
 				<startfooter:startfooter id="startfooter" runat="server"></startfooter:startfooter></div>
-			<DIV></DIV>
+			<INPUT id="want_comp" type="hidden" name="want_comp" runat="server">
+			<script src="../../j_script/cookie.js" type="text/javascript"></script>
 			<script language="javascript">
 			function picPopUp(carid){
 			//alert(carid);
@@ -306,6 +308,120 @@
 				prolong_win = window.open(url, 'Photos', 'width=' + winWidth + ',height=' + winHeight + ',toolbar=no,location=no,directories=no,status=no,menubar=no, scrollbars=no,resizable=no,copyhistory=no')
 			}
 			
+			
+			//  Cookies Things !! -----   START  COOKIES PART ----------
+			function saveAdv(carid){
+				if(noDup(carid)){
+					if(getCarNum()<20){
+						addCar(carid);
+						incSaveNum();
+						alert('บันทึกประกาศเรียบร้อย');
+					}else{
+						alert('ไม่สามารถบันทึกได้เกิน 20 ประกาศ');
+					}
+					
+				}
+			}
+			//   ---------------    NODUP ------------------
+			function noDup(carid) {
+				var oStringObject = new String(getCookie('saveCar'));
+				if(oStringObject.indexOf('car:'+carid+':')!=-1){
+					alert('คุณได้ทำการบันทึกประกาศไว้แล้ว');
+					return false;
+				}else{
+					return true;
+				}
+						
+			}
+			//   ---------------    GETCAR NUM ------------------
+			function getCarNum(){
+				var x = getCookie('saveCarNum');
+				var ans;
+					if(x==''){
+						ans = 0;
+					}else{
+						ans = x;
+					}
+				return ans;
+			}
+			//   ---------------    ADD  CAR ------------------
+			function addCar(carid) {
+					var x = getCookie('saveCar');
+					setCookie('saveCar', x+'car:'+carid+':,', getExpDate(60, 0, 0),'/');
+				}
+				
+			//   ---------------    INC SAVE NUM ------------------	
+		    function incSaveNum() {
+				var x = getCookie('saveCarNum');
+				if(x==''){
+					setCookie('saveCarNum', 1, getExpDate(60, 0, 0),'/');
+				}else{
+					if(x==20){
+						alert('ไม่สามารถบันทึกประกาศเกิน 20 ประกาศได้ค่ะ');
+					}else{
+						setCookie('saveCarNum', ++x, getExpDate(60, 0, 0),'/');
+					}
+				}
+			}
+			
+			
+			//   Cookies thing 2  ------ START  SAVE All COOKIES -----------
+			function saveAllCook(){
+			var checkT = false;
+				for(j=0;j<=document.form1.carCheck.length-1;j++){
+					if(document.form1.carCheck(j).checked){
+						checkT = true;
+					}
+				}
+				if(checkT){
+					var tmpStr;
+					var carID;
+					tmpStr = document.all['want_comp'].value;
+					tmpStr = tmpStr.substr(1,tmpStr.length);
+					carID = tmpStr.split(':');
+					for(i=0;i<=carID.length-1;i++){
+						saveAdv2(carID[i]);
+					}
+					alert('บันทึกประกาศเรียบร้อย');
+				}
+			}
+			//   ---------  SAVE ADV 2 -------------	
+			function saveAdv2(carid){
+				if(noDup2(carid)){
+					if(getCarNum()<20){
+						addCar(carid);
+						incSaveNum();
+					}else{
+						alert('ไม่สามารถบันทึกได้เกิน 20 ประกาศ');
+					}
+				}
+			}
+			// -------------- NO DUP 2 -----------------
+			function noDup2(carid) {
+				var oStringObject = new String(getCookie('saveCar'));
+				if(oStringObject.indexOf('car:'+carid+':')!=-1){
+					return false;
+				}else{
+					return true;
+				}
+						
+			}
+			
+			// -----------  Check Box things -------------//
+			function getCheckBox(TF,carid,curpage){		
+				var tmptxt;
+				var want_comp = document.getElementById("want_comp");
+				if(TF){
+						want_comp.value += ':' + carid;
+				}else{
+					want_comp.value = '';
+					for(i=0;i<document.form1.carCheck.length;i++){
+						if(document.form1.carCheck[i].checked){
+							want_comp.value += ':' + document.form1.carCheck[i].value;
+						}
+					}
+				}	
+			}
 			</script>
 		</form>
 	</body>

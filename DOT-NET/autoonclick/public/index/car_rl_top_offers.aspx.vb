@@ -12,6 +12,8 @@ Public Class car_rl_top_offers
     Protected WithEvents searchCond As System.Web.UI.WebControls.Label
     Protected WithEvents carResult As System.Web.UI.WebControls.Label
     Protected WithEvents Order_By As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents doSort As System.Web.UI.WebControls.LinkButton
+    Protected WithEvents want_comp As System.Web.UI.HtmlControls.HtmlInputHidden
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -52,6 +54,10 @@ Public Class car_rl_top_offers
 
 
         showSearchCond(Session("SearchCond"))
+        If Not IsPostBack Then
+            Order_By.SelectedValue = checkOrderBySelected(Session("searchOrderBY"))
+        End If
+
         makeList()
 
         AjaxPro.Utility.RegisterTypeForAjax(GetType(car_rl_top_offers))
@@ -74,13 +80,13 @@ Public Class car_rl_top_offers
 
 
         Dim KeyOrderBy As String
-        'KeyOrderBy = Session("searchOrderBY").GetValue(1)
-        KeyOrderBy = "Car_Post DESC"
-        Dim testtxt As String = "SELECT Car.* FROM Car INNER JOIN NoticeDetail ON Car.Car_Id = NoticeDetail.NoticeDetail_DataId INNER JOIN Notice ON NoticeDetail.NoticeDetail_NoticeId = Notice.Notice_Id INNER JOIN Customer ON Notice.Notice_MemberId = Customer.Customer_Id WHERE (Notice.Notice_Category = 1) AND (Notice.Notice_Show = 1) AND (Notice.Notice_Status IN (2, 3)) AND (DATEDIFF(Day, GETDATE(), Notice.Notice_StopDate) >= 0) AND (NoticeDetail.Detail_delete IS NULL OR NoticeDetail.Detail_delete <> 1) AND (NoticeDetail.Detail_show = 1) "
-        Dim testtxt2 As String = " ORDER BY Car_Post DESC"
+        KeyOrderBy = Session("searchOrderBY").GetValue(1)
+        'KeyOrderBy = "Car_Post DESC"
+        'Dim testtxt As String = "SELECT Car.* FROM Car INNER JOIN NoticeDetail ON Car.Car_Id = NoticeDetail.NoticeDetail_DataId INNER JOIN Notice ON NoticeDetail.NoticeDetail_NoticeId = Notice.Notice_Id INNER JOIN Customer ON Notice.Notice_MemberId = Customer.Customer_Id WHERE (Notice.Notice_Category = 1) AND (Notice.Notice_Show = 1) AND (Notice.Notice_Status IN (2, 3)) AND (DATEDIFF(Day, GETDATE(), Notice.Notice_StopDate) >= 0) AND (NoticeDetail.Detail_delete IS NULL OR NoticeDetail.Detail_delete <> 1) AND (NoticeDetail.Detail_show = 1) "
+        'Dim testtxt2 As String = " ORDER BY Car_Post DESC"
 
-        'da = SearchDB.getSearch(Session("searchSQL") & " " & Session("searchOrderBY").GetValue(0))
-        da = SearchDB.getSearch(testtxt & " " & testtxt2)
+        da = SearchDB.getSearch(Session("searchSQL") & " " & Session("searchOrderBY").GetValue(0))
+        'da = SearchDB.getSearch(testtxt & " " & testtxt2)
         '===========================Get Total page ==========================================
         da.Fill(ds, "All_Search_Car")
         all_records = ds.Tables("All_Search_Car").Rows.Count
@@ -165,7 +171,7 @@ Public Class car_rl_top_offers
 
         n &= " <li>"
         n &= " <div>"
-        n &= " <input id='carCheck_" & rowid & "' name='carCheck' type='checkbox' value='" & carid & "' onClick='getCheckBox(this.checked," & carid & "," & Session("CurPage") & ")'>"
+        n &= " <input  name='carCheck' type='checkbox' value='" & carid & "' onClick='getCheckBox(this.checked," & carid & "," & Session("CurPage") & ")'>"
         n &= " <h1><a href='search3_detail_car.aspx?curData=" & detailPage & "&fmp=result&carid=" & carid & "&cur_Page=" & Session("CurPage") & "' class=""A_H_bold_white_underline"">" & CarDB.getBrand(carid) & "</a></h1>"
 
         If myCar.Year <> "" Then
@@ -193,7 +199,7 @@ Public Class car_rl_top_offers
         n &= " <h3><a href='#'>" & myTxt & "</a></h3>"
         n &= " <h4>" & CarDB.getCarInfo(carid) & "</h4>"
         n &= " </span>"
-        n &= " <h5><a class='b100_2' href='#'>รายละเอียด</a> <a class='b100_2' href='#'>บันทึกประกาศ</a></h5>"
+        n &= " <h5><a class='b100_2' href='#'>รายละเอียด</a> <a class='b100_2' href='javascript:saveAdv(" & carid & ");'>บันทึกประกาศ</a></h5>"
         n &= " </div>"
 
         If CarDB.getNumPic(carid) > 1 Then
@@ -303,4 +309,65 @@ Public Class car_rl_top_offers
     End Function
 
 
+    Private Sub doSort_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles doSort.Click
+        Dim end_sql As String
+        Dim orderby As Array
+
+        end_sql = checkOrderBy(Order_By.SelectedValue)
+        orderby = Split(end_sql, ":")
+
+        Session("searchOrderBY") = orderby
+
+        Response.Redirect("car_rl_top_offers.aspx?cur_Page=" & cur_Page)
+    End Sub
+    Function checkOrderBy(ByVal orderby As Integer) As String
+        Dim Order_By_Condition As String
+        Dim KeyOrder_By As String
+
+        Select Case orderby
+            Case 0
+                Order_By_Condition = " ORDER BY Car_Price"
+                KeyOrder_By = "Car_Price"
+            Case 1
+                Order_By_Condition = " ORDER BY Car_Year_Ord DESC"
+                KeyOrder_By = "Car_Year_Ord DESC"
+            Case 2
+                Order_By_Condition = " ORDER BY Car_CC"
+                KeyOrder_By = "Car_CC"
+            Case 3
+                Order_By_Condition = " ORDER BY Car_Power"
+                KeyOrder_By = "Car_Power"
+            Case 4
+                Order_By_Condition = " ORDER BY Car_Miles"
+                KeyOrder_By = "Car_Miles"
+            Case 5
+                Order_By_Condition = " ORDER BY Car_Post DESC"
+                KeyOrder_By = "Car_Post DESC"
+
+        End Select
+
+        Return Order_By_Condition & ":" & KeyOrder_By
+    End Function
+    Function checkOrderBySelected(ByVal ArrOrdBy As Array) As Integer
+        Dim KeyOrder_By As Integer
+
+
+        Select Case ArrOrdBy.GetValue(1)
+            Case "Car_Price"
+                KeyOrder_By = 0
+            Case "Car_Year_Ord DESC"
+                KeyOrder_By = 1
+            Case "Car_CC"
+                KeyOrder_By = 2
+            Case "Car_Power"
+                KeyOrder_By = 3
+            Case "Car_Miles"
+                KeyOrder_By = 4
+            Case "Car_Post DESC"
+                KeyOrder_By = 5
+
+        End Select
+
+        Return KeyOrder_By
+    End Function
 End Class

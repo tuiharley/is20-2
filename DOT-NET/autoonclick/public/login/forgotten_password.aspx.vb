@@ -1,9 +1,4 @@
-Imports System.Data
-Imports System.Data.OleDb
 Imports System.Web.Mail
-Imports System.Text
-Imports System.Security.Cryptography
-Imports System.IO
 Public Class forgotten_password
     Inherits System.Web.UI.Page
 
@@ -13,11 +8,6 @@ Public Class forgotten_password
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
 
     End Sub
-    Protected WithEvents send_email As System.Web.UI.WebControls.Button
-    Protected WithEvents ValidationSummary1 As System.Web.UI.WebControls.ValidationSummary
-    Protected WithEvents email As System.Web.UI.WebControls.TextBox
-    Protected WithEvents label1 As System.Web.UI.WebControls.Label
-    Protected WithEvents EmailValidate As System.Web.UI.WebControls.RequiredFieldValidator
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -33,84 +23,48 @@ Public Class forgotten_password
 
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Put user code to initialize the page here
-        If IsPostBack() Then
-            EmailValidate.Validate()
 
-            If EmailValidate.IsValid Then
-                If existUser(email.Text) Then
-                    sendMailto(email.Text)
-                    'email.Text = ""
-                End If
+
+
+        AjaxPro.Utility.RegisterTypeForAjax(GetType(forgotten_password))
+    End Sub
+
+
+    <AjaxPro.AjaxMethod()> _
+    Public Function sendPwd(ByVal email As String) As String
+        Dim x As String
+        Dim MyDs As New DataSet
+
+        If Not Utilities.IsSQLInjected(email, "") Then
+
+            MyDs = CustomerDB.existUser(email)
+            If MyDs.Tables("CUSTOMER").Rows.Count > 0 Then
+                '###### Mail preparing --------###
+                Dim d As String
+                d = Utilities.decrypt(MyDs.Tables("CUSTOMER").Rows(0).Item("Customer_Passwd"))
+
+                Dim myMail As New MailMessage
+                Dim mailbody As String
+                myMail.To = email
+                myMail.From = "auto-onclick@autoonclick.com"
+                myMail.Subject = "Password Reminding"
+                myMail.BodyFormat = MailFormat.Html
+                mailbody = "Username ของท่านคือ : " & MyDs.Tables("CUSTOMER").Rows(0).Item("Customer_Username") & "<BR>"
+                mailbody = mailbody & "พาสเวิสด์ของท่านคือ :" & d
+                myMail.Body = mailbody
+                EmailDB.sendMail(myMail)
+                '######  Mail Sent #############
+
+                x = "ระบบได้ทำการส่ง User,Password ให้ท่านทาง Email: " & email & " แล้ว"
+            Else
+                x = "ไม่พบ Email นี้ในระบบ"
             End If
-        End If
-    End Sub
-    Private Function existUser(ByVal email As String) As Boolean
-        Dim myconn As New OleDbConnection(Session("conn"))
-        myconn.Open()
-        Dim sql As String
-
-        sql = "SELECT Customer_Id FROM Customer WHERE Customer_Email = '" & email & "'"
-        Dim mycommand As New OleDbCommand(sql, myconn)
-        Dim reader As OleDbDataReader = mycommand.ExecuteReader()
-
-        If reader.Read() Then
-            Return True
         Else
-            Label1.Text = "ไม่มี Email นี้ในระบบ"
-            Return False
-        End If
-    End Function
-    Private Sub sendMailto(ByVal email As String)
-        Dim myconn As New OleDbConnection(Session("conn"))
-        myconn.Open()
-        Dim sql As String
-
-        sql = "SELECT Customer_Username,Customer_Passwd FROM Customer WHERE Customer_Email = '" & email & "'"
-        Dim mycommand As New OleDbCommand(sql, myconn)
-        Dim reader As OleDbDataReader = mycommand.ExecuteReader()
-
-        If reader.Read() Then
-
-            Dim d As String
-            d = decrypt(reader.Item("Customer_Passwd"))
-
-            Dim myMail As New MailMessage
-            Dim mailbody As String
-            myMail.To = email
-            myMail.From = "auto-onclick@autoonclick.com"
-            myMail.Subject = "Password Reminding"
-            myMail.BodyFormat = MailFormat.Html
-            mailbody = "Username ของท่านคือ : " & reader.Item("Customer_Username") & "<BR>"
-            mailbody = mailbody & "พาสเวิสด์ของท่านคือ :" & d
-            myMail.Body = mailbody
-            SmtpMail.Send(myMail)
-            Label1.Text = "Password ได้ถูกส่งทางเมลล์เรียบร้อยแล้วครับ"
-
-            myMail = Nothing
+            x = "ไม่พบ Email นี้ในระบบ"
         End If
 
 
-        reader.Close()
-        mycommand.Dispose()
-        myconn.Close()
 
-    End Sub
-    Private Function decrypt(ByVal passwd As String) As String
-        Dim key As String = "onclick"
-        Dim decrypted As String
-        Dim decryptedPassword As New MemoryStream
-        Dim RC2 As New RC2CryptoServiceProvider
-        RC2.Key = Encoding.ASCII.GetBytes(key)
-        Dim iv() As Byte = {11, 12, 33, 50, 78, 25, 72, 84}
-        RC2.IV = iv
-        Dim myDecryptor As ICryptoTransform = RC2.CreateDecryptor()
-
-        Dim encryptedPassword() As Byte = Convert.FromBase64String(passwd)
-        Dim myCryptoStream As New CryptoStream(decryptedPassword, myDecryptor, CryptoStreamMode.Write)
-        myCryptoStream.Write(encryptedPassword, 0, encryptedPassword.Length)
-        myCryptoStream.Close()
-        decrypted = Encoding.ASCII.GetString(decryptedPassword.ToArray())
-
-        Return decrypted
+        Return x
     End Function
 End Class
