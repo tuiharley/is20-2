@@ -243,7 +243,7 @@ Public Class search2_result_car
         n = n & myTxt
         n = n & " 														</td>"
         n = n & " 														<td width=""11"" rowspan=""3""></td>"
-        n = n & " 														<td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid) & "</td>"
+        'n = n & " 														<td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid) & "</td>"
         n = n & " 														<td width=""11"" rowspan=""3""></td>"
         n = n & " 														<td width=""100"" rowspan=""3""><table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">"
         n = n & " 																<tr>"

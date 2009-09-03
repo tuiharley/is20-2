@@ -396,7 +396,7 @@ Public Class dealer_business_web_inventory
         n = n & " 														<td rowspan=""3"" width=""80"" height=""80""><div align=""center""><a href='dealer_business_web_inventory_detail.aspx?curData=" & detailPage & "&carid=" & carid & "&cur_Page=" & Session("CurPage") & "'><img src='" & Pics & "' height='" & imageHeight & "' width='" & imageWidth & "' border=""0""></a></div>"
         n = n & " 														</td>"
         n = n & " 														<td width=""11"" rowspan=""3""></td>"
-        n = n & " 														<td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid) & "</td>"
+        'n = n & " 														<td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid) & "</td>"
         n = n & " 														<td width=""11"" rowspan=""3""></td>"
         n = n & " 														<td width=""100"" rowspan=""3""><table width=""100%"" border=""0"" cellspacing=""0"" cellpadding=""0"">"
         n = n & " 																<tr>"

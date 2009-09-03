@@ -50,14 +50,17 @@ Public Class index_start
 
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Put user code to initialize the page here
+
         If Request.Form("cat") = "0" Then
             err.Text = "<li>กรุณาเลือกหมวดหมู่รถ</li>"
         Else
             err.Text = ""
         End If
 
+        If Not IsPostBack Then
+            showBanner()
+        End If
 
-        showBanner()
 
         AjaxPro.Utility.RegisterTypeForAjax(GetType(index_start))
         AjaxPro.Utility.RegisterTypeForAjax(GetType(showBrands))
@@ -1416,7 +1419,7 @@ Public Class index_start
                 orderby = Split(end_sql, ":")
                 Session("searchSQL") = sql
                 Session("searchOrderBY") = orderby
-                Response.Redirect("../search/search2_result_car.aspx")
+                Response.Redirect("../index/car_rl_top_offers.aspx")
             Case 2
                 sql = checkBrandBike(CInt(Request.Form("Brands")))
                 sql = sql & checkModelBike(CInt(Request.Form("Model")))

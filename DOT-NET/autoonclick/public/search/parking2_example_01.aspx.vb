@@ -157,7 +157,7 @@ Public Class parking2_example_01
 
         sql = sql & "     <td rowspan=""2"" width=""80"" height=""80"" ><div align=""center""><a href='parking3_example_detail_car_01.aspx?curData=" & detailPage & "&fmp=parking_result&carid=" & carid & "&cur_Page=" & Session("CurPage") & "'><img src='" & Pics & "' height='" & imageHeight & "' width='" & imageWidth & "' border=""0""></a></div></td>"
         sql = sql & "     <td width=""11"" rowspan=""2""></td>"
-        sql = sql & "     <td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid)
+        'sql = sql & "     <td width=""455"" valign=""top"">" & CarDB.getCarInfo(carid)
         sql = sql & "     </td>"
         sql = sql & "     <td width=""11"" rowspan=""2"" ></td>"
         sql = sql & "     <td width=""100"" rowspan=""2""><table width=""100%""  border=""0"" cellspacing=""0"" cellpadding=""0"">"
