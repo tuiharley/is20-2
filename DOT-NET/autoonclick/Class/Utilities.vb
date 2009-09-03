@@ -86,6 +86,25 @@ Public Class Utilities
 
         Return encrypted
     End Function
+    Public Shared Function decrypt(ByVal passwd As String) As String
+        Dim key As String = "onclick"
+        Dim decrypted As String
+        Dim decryptedPassword As New MemoryStream
+        Dim RC2 As New RC2CryptoServiceProvider
+        RC2.Key = Encoding.ASCII.GetBytes(key)
+        Dim iv() As Byte = {11, 12, 33, 50, 78, 25, 72, 84}
+        RC2.IV = iv
+        Dim myDecryptor As ICryptoTransform = RC2.CreateDecryptor()
+
+        Dim encryptedPassword() As Byte = Convert.FromBase64String(passwd)
+        Dim myCryptoStream As New CryptoStream(decryptedPassword, myDecryptor, CryptoStreamMode.Write)
+        myCryptoStream.Write(encryptedPassword, 0, encryptedPassword.Length)
+        myCryptoStream.Close()
+        decrypted = Encoding.ASCII.GetString(decryptedPassword.ToArray())
+
+        Return decrypted
+    End Function
+
 
     Public Shared Function checkDateMore7(ByVal inputDate As Date) As Boolean
         Dim x As Integer
@@ -100,7 +119,52 @@ Public Class Utilities
 
     End Function
 
-   
+    Public Shared Function IsSQLInjected(ByVal usr As String, ByVal pass As String) As Boolean
+
+        If InStr(usr, "'") Then
+            Return True
+        End If
+        If InStr(pass, "'") Then
+            Return True
+        End If
+
+        If InStr(usr, "=") Then
+            Return True
+        End If
+        If InStr(pass, "=") Then
+            Return True
+        End If
+
+        If InStr(usr, "OR") Then
+            Return True
+        End If
+        If InStr(pass, "OR") Then
+            Return True
+        End If
+
+        If InStr(usr, "or") Then
+            Return True
+        End If
+        If InStr(pass, "or") Then
+            Return True
+        End If
+
+        If InStr(usr, "/*") Then
+            Return True
+        End If
+        If InStr(pass, "/*") Then
+            Return True
+        End If
+
+        If InStr(usr, "//") Then
+            Return True
+        End If
+        If InStr(pass, "//*") Then
+            Return True
+        End If
+
+        Return False
+    End Function
 
 End Class
 

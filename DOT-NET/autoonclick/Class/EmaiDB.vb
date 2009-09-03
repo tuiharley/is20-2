@@ -6,6 +6,8 @@ Module EmailDB
 
         Dim myMail As New MailMessage
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = email
         myMail.From = "Question@auto-onclick.com"
         myMail.Subject = "Question about Advertise#" & NoticeDB.getNoticeCode2(carID, cat) & " from www.Auto-Onclick.com's member."
@@ -19,7 +21,7 @@ Module EmailDB
         myMail.Body = mailbody
 
         Try
-            SmtpMail.SmtpServer.Insert(0, "127.0.0.1")
+            SmtpMail.SmtpServer.Insert(0, MailServer)
             SmtpMail.Send(myMail)
         Catch ex As Exception
             Dim x As String
@@ -37,6 +39,8 @@ Module EmailDB
 
         Dim myMail As New MailMessage
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = mailDetail.mail
 
         myMail.From = mailDetail.mail_From
@@ -47,9 +51,21 @@ Module EmailDB
         mailbody = mailbody & "Email: " & mailDetail.mail_From & "<BR>"
         mailbody = mailbody & "คำถาม : " & mailDetail.question & "<BR>"
         myMail.Body = mailbody
-        SmtpMail.Send(myMail)
+
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(myMail)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
+
 
         myMail = Nothing
+
+
 
 
     End Sub
@@ -58,6 +74,8 @@ Module EmailDB
 
         Dim myMail As New MailMessage
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = mailDetail.mail
 
         myMail.From = mailDetail.mail_From
@@ -76,7 +94,16 @@ Module EmailDB
 
         mailbody = mailbody & "สาเหตุการแจ้งลบ : " & mailDetail.question & "<BR>"
         myMail.Body = mailbody
-        SmtpMail.Send(myMail)
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(myMail)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
+
 
         myMail = Nothing
 
@@ -86,6 +113,8 @@ Module EmailDB
 
         Dim myMail As New MailMessage
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = email
         myMail.From = "requestSearch@auto-onclick.com"
         myMail.Subject = "รายการฝากค้นหากับ Auto-Onclick.com"
@@ -106,7 +135,17 @@ Module EmailDB
         mailbody = mailbody & "</table>"
 
         myMail.Body = mailbody
-        SmtpMail.Send(myMail)
+
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(myMail)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
+
 
         myMail = Nothing
 
@@ -116,6 +155,8 @@ Module EmailDB
         Dim myMail As New MailMessage
         Dim myCust As A_Customer = CustomerDB.getA_customer(mailContact.reqTo)
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = myCust.email
         myMail.From = "Question@auto-onclick.com"
         myMail.Subject = "Question from www.Auto-Onclick.com's member."
@@ -131,7 +172,16 @@ Module EmailDB
 
 
         myMail.Body = mailbody
-        SmtpMail.Send(myMail)
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(myMail)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
+
 
         myMail = Nothing
 
@@ -141,6 +191,8 @@ Module EmailDB
         Dim picURL As String = ConfigurationSettings.AppSettings("picURL")
         Dim myMail As New MailMessage
         Dim mailbody As String
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
         myMail.To = mailDetail.send_Email
 
         myMail.From = mailDetail.send_EmailFrom
@@ -177,12 +229,36 @@ Module EmailDB
         'mailbody = mailbody & "เบอร์โทรเจ้าของประกาศ: " & mailWarn.Customer_Phone1 & "<BR>"
         'mailbody = mailbody & "สาเหตุการแจ้งลบ : " & mailDetail.question & "<BR>"
         myMail.Body = mailbody
-        SmtpMail.Send(myMail)
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(myMail)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
 
         myMail = Nothing
 
 
     End Sub
+    Public Sub sendMail(ByVal MailMsg As MailMessage)
+        Dim MailServer As String = ConfigurationSettings.AppSettings("MailServer")
+
+        Try
+            SmtpMail.SmtpServer.Insert(0, MailServer)
+            SmtpMail.Send(MailMsg)
+        Catch ex As Exception
+            Dim x As String
+            x = ex.Message
+
+        End Try
+
+        MailMsg = Nothing
+    End Sub
+
+
 
     Structure mailQuestion
         Dim name As String
@@ -192,7 +268,6 @@ Module EmailDB
         Dim question As String
         Dim topic As String
     End Structure
-
     Structure mailRequest
         Dim reqTo As Integer
         Dim title As String

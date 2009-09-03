@@ -297,7 +297,42 @@ Module CustomerDB
 
         Return has
     End Function
+    Function checkLogin(ByVal usr As String, ByVal pwd As String) As DataSet
+        Dim da As OleDbDataAdapter
+        Dim ds As New DataSet
+        Dim myconn As New OleDbConnection(connectDB)
+        Dim sql As String
 
+
+        myconn.Open()
+        sql = "SELECT * FROM CUSTOMER WHERE Customer_Username = '" & usr & "' and Customer_Passwd = '" & pwd & "'"
+
+        da = New OleDbDataAdapter(sql, myconn)
+        da.Fill(ds, "CUSTOMER")
+
+        da.Dispose()
+        myconn.Close()
+
+        Return ds
+    End Function
+    Function existUser(ByVal email As String) As DataSet
+        Dim da As OleDbDataAdapter
+        Dim ds As New DataSet
+        Dim myconn As New OleDbConnection(connectDB)
+        Dim sql As String
+
+
+        myconn.Open()
+        sql = "SELECT * FROM CUSTOMER WHERE Customer_Email = '" & email & "' "
+
+        da = New OleDbDataAdapter(sql, myconn)
+        da.Fill(ds, "CUSTOMER")
+
+        da.Dispose()
+        myconn.Close()
+
+        Return ds
+    End Function
 
     Sub updateCustomer(ByVal v_custid As String, ByVal v_title As String, ByVal v_name As String, ByVal v_surname As String, ByVal v_email As String, ByVal v_phone1 As String, ByVal v_phone2 As String, ByVal v_fax As String, ByVal v_addr As String, ByVal v_district As String, ByVal v_province As String, ByVal v_questionare As Boolean, ByVal v_advertise As Boolean, ByVal v_accept As Boolean)
         Dim connectDB As String = DBConnect.getStrDBConnect()
