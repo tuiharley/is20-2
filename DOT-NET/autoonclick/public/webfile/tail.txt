@@ -1,6 +1,0 @@
-	</form>
-	<script language='JavaScript'>
-		document.form1.submit();
-	</script>
-</body>
-</html>
