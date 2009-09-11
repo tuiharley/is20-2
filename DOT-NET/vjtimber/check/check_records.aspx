@@ -34,9 +34,16 @@
 							<table border="0" cellspacing="10">
 								<tr>
 									<td>เช็คลงวันที่</td>
-									<td><asp:dropdownlist id="chkDate" runat="server"></asp:dropdownlist>/
-										<asp:dropdownlist id="chkMonth" runat="server"></asp:dropdownlist>/
-										<asp:dropdownlist id="chkYear" runat="server"></asp:dropdownlist>(dd/mm/yyyy)
+									<td><asp:dropdownlist id="chkDateF" runat="server"></asp:dropdownlist>/
+										<asp:dropdownlist id="chkMonthF" runat="server"></asp:dropdownlist>/
+										<asp:dropdownlist id="chkYearF" runat="server"></asp:dropdownlist>(dd/mm/yyyy)
+									</td>
+								</tr>
+								<tr>
+									<td>ถึงวันที่</td>
+									<td><asp:dropdownlist id="chkDateT" runat="server"></asp:dropdownlist>/
+										<asp:dropdownlist id="chkMonthT" runat="server"></asp:dropdownlist>/
+										<asp:dropdownlist id="chkYearT" runat="server"></asp:dropdownlist>(dd/mm/yyyy)
 									</td>
 								</tr>
 								<tr>
@@ -55,8 +62,7 @@
 								</tr>
 								<tr>
 									<td></td>
-									<td><input type="button" class="btn" onclick="showCheck();" value="Search">
-										<input type="reset" class="btn" value="Clear"></td>
+									<td><input type="button" class="btn" onclick="showCheck();" value="Search"> <input type="reset" class="btn" value="Clear"></td>
 								</tr>
 							</table>
 							<table>
@@ -85,15 +91,20 @@
 			tableList.innerHTML="Wait...!";
 			
 			var bankList = get_radio_value();
-			var chkDate = document.getElementById("chkDate");
-			var chkMonth = document.getElementById("chkMonth");
-			var chkYear = document.getElementById("chkYear");
+			var chkDateF = document.getElementById("chkDateF");
+			var chkMonthF = document.getElementById("chkMonthF");
+			var chkYearF = document.getElementById("chkYearF");
+			var chkDateT = document.getElementById("chkDateT");
+			var chkMonthT = document.getElementById("chkMonthT");
+			var chkYearT = document.getElementById("chkYearT");
 			var chkCust = document.getElementById("chkCust");
 			var chkNo = document.getElementById("chkNo");
 			var chkStatus = document.getElementById("chkStatus");
 			
+			var Dfrom = chkMonthF.value+'-'+chkDateF.value+'-'+chkYearF.value;
+			var Dto = chkMonthT.value+'-'+chkDateT.value+'-'+chkYearT.value;
 					
-			vjtimber.check_records.showCheck(bankList,chkDate.value,chkMonth.value,chkYear.value,chkCust.value,chkNo.value,chkStatus.value,tableBack);
+			vjtimber.check_records.showCheck(bankList,Dfrom,Dto,chkCust.value,chkNo.value,chkStatus.value,tableBack);
 		}
 		function tableBack(response){
 					var tableList = document.getElementById("tableList");

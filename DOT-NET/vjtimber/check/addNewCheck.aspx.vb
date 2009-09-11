@@ -146,7 +146,7 @@ Public Class addNewCheck
             .DataTextField = "BANK_NAME"
             .DataValueField = "BANK_CODE"
             .RepeatDirection = RepeatDirection.Vertical
-            .RepeatColumns = 2
+            .RepeatColumns = 3
             .DataSource = myDS
             .DataBind()
         End With

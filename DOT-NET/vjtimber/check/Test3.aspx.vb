@@ -1,5 +1,5 @@
 Imports System.IO
-Imports Microsoft.Office.Interop
+'Imports Microsoft.Office.Interop
 
 Public Class Test3
     Inherits System.Web.UI.Page
@@ -23,32 +23,32 @@ Public Class Test3
 
 #End Region
 
-    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Put user code to initialize the page here
+    'Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    '    'Put user code to initialize the page here
 
-        ' Creates a new Excel Application Object
-        '*** Create Excel.Application ***'
-        Dim xlApp As New Excel.Application
-        Dim xlSheet1 As Excel.Worksheet
-        Dim xlBook As Excel.Workbook
-        Dim filename As String = Server.MapPath("../Report/test.xls")
+    '    ' Creates a new Excel Application Object
+    '    '*** Create Excel.Application ***'
+    '    Dim xlApp As New Excel.Application
+    '    Dim xlSheet1 As Excel.Worksheet
+    '    Dim xlBook As Excel.Workbook
+    '    Dim filename As String = Server.MapPath("../Report/test.xls")
 
-        xlBook = xlApp.Workbooks.Open(filename)
-        xlBook.Application.Visible = False
+    '    xlBook = xlApp.Workbooks.Open(filename)
+    '    xlBook.Application.Visible = False
 
-        xlApp.ScreenUpdating = False
-        xlSheet1 = xlBook.Worksheets(1)
-        xlSheet1.Cells.Item(1, 2).Value = "THIS IS A TEST2"
-        xlApp.ScreenUpdating = True
-        xlBook.Save()
+    '    xlApp.ScreenUpdating = False
+    '    xlSheet1 = xlBook.Worksheets(1)
+    '    xlSheet1.Cells.Item(1, 2).Value = "THIS IS A TEST2"
+    '    xlApp.ScreenUpdating = True
+    '    xlBook.Save()
 
-        xlApp.Quit()
+    '    xlApp.Quit()
 
-        '*** Quit and Clear Object ***'
-        xlSheet1 = Nothing
-        xlBook = Nothing
-        xlApp = Nothing
+    '    '*** Quit and Clear Object ***'
+    '    xlSheet1 = Nothing
+    '    xlBook = Nothing
+    '    xlApp = Nothing
 
-    End Sub
+    'End Sub
 
 End Class

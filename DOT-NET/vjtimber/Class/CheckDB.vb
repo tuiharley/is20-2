@@ -148,7 +148,6 @@ Module CheckDB
         Else
             sql = sql & "  AND (CHECK_DATE > GETDATE() - 1)"
         End If
-
         mycommand = New OleDbCommand(sql, myconn)
         Dim Ans_ID As OleDbDataReader = mycommand.ExecuteReader()
 
@@ -212,6 +211,7 @@ Module CheckDB
     Structure CheckSt
         Dim CHECK_ID As Integer
         Dim CHECK_DATE As DateTime
+        Dim CHECK_DATE_TO As DateTime
         Dim CUST_ID As Integer
         Dim CK_STATUS As Integer
         Dim AMOUNT As Double

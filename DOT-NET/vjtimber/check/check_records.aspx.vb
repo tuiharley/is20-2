@@ -13,13 +13,16 @@ Public Class check_records
 
     End Sub
     Protected WithEvents bankList As System.Web.UI.WebControls.RadioButtonList
-    Protected WithEvents chkDate As System.Web.UI.WebControls.DropDownList
-    Protected WithEvents chkMonth As System.Web.UI.WebControls.DropDownList
-    Protected WithEvents chkYear As System.Web.UI.WebControls.DropDownList
     Protected WithEvents chkCust As System.Web.UI.WebControls.DropDownList
     Protected WithEvents chkNo As System.Web.UI.WebControls.TextBox
     Protected WithEvents btnSearch As System.Web.UI.WebControls.Button
     Protected WithEvents chkStatus As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkDateF As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkMonthF As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkYearF As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkDateT As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkYearT As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents chkMonthT As System.Web.UI.WebControls.DropDownList
 
     'NOTE: The following placeholder declaration is required by the Web Form Designer.
     'Do not delete or move it.
@@ -39,7 +42,7 @@ Public Class check_records
     End Sub
 
     <AjaxPro.AjaxMethod()> _
-    Public Function showCheck(ByVal bankCode As Integer, ByVal d As String, ByVal m As String, ByVal y As String, ByVal cust As String, ByVal chkNo As String, ByVal chkStatus As String) As String
+    Public Function showCheck(ByVal bankCode As Integer, ByVal DFrom As String, ByVal DTo As String, ByVal cust As String, ByVal chkNo As String, ByVal chkStatus As String) As String
         Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
         Dim str As String
         Dim txt As String
@@ -49,7 +52,8 @@ Public Class check_records
         Dim MyDs As DataSet
 
         myCheck.BANK_CODE = bankCode
-        myCheck.CHECK_DATE = m & "/" & d & "/" & y
+        myCheck.CHECK_DATE = DFrom.Replace("-", "/")
+        myCheck.CHECK_DATE_TO = DTo.Replace("-", "/")
         myCheck.CUST_ID = cust
         myCheck.CK_NO = chkNo
         myCheck.CK_STATUS = chkStatus
@@ -121,7 +125,7 @@ Public Class check_records
         'MyCheck.CK_NO = chkNo
         'MyCheck.CK_STATUS = chkStatus
 
-        ans = " CHECK_DATE >= CONVERT(datetime, '" & MyCheck.CHECK_DATE.ToString("dd/MM/yyyy") & " 00:00:00', 103) AND CHECK_DATE <= CONVERT(datetime, '" & MyCheck.CHECK_DATE.ToString("dd/MM/yyyy") & " 23:59:59', 103)"
+        ans = " CHECK_DATE >= CONVERT(datetime, '" & MyCheck.CHECK_DATE.ToString("dd/MM/yyyy") & " 00:00:00', 103) AND CHECK_DATE <= CONVERT(datetime, '" & MyCheck.CHECK_DATE_TO.ToString("dd/MM/yyyy") & " 23:59:59', 103)"
         If MyCheck.BANK_CODE > -1 Then
             ans &= " AND BANK_CODE = " & MyCheck.BANK_CODE
         End If
@@ -138,74 +142,6 @@ Public Class check_records
         Return ans
     End Function
 
-    Private Sub chkDate_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkDate.Init
-        Dim DTable As New DataTable
-        Dim DRow As DataRow
-
-        DTable.Columns.Add(New DataColumn("DAY", GetType(String)))
-        DTable.Columns.Add(New DataColumn("DAY_NAME", GetType(String)))
-        Dim i As Int16
-        For i = 0 To 30
-            DRow = DTable.NewRow()
-            DRow.Item("DAY") = i + 1
-            DRow.Item("DAY_NAME") = Right("0" & i + 1, 2)
-            DTable.Rows.Add(DRow)
-        Next
-        chkDate.DataValueField = "DAY"
-        chkDate.DataTextField = "DAY_NAME"
-        chkDate.DataSource = DTable
-        chkDate.DataBind()
-        chkDate.SelectedValue = Day(Now)
-
-        DTable.Dispose()
-
-    End Sub
-    Private Sub chkMonth_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkMonth.Init
-        Dim DTable As New DataTable
-        Dim DRow As DataRow
-
-        DTable.Columns.Add(New DataColumn("MONTH", GetType(String)))
-        DTable.Columns.Add(New DataColumn("MONTH_NAME", GetType(String)))
-        Dim i As Int16
-        For i = 0 To 11
-            DRow = DTable.NewRow()
-            DRow.Item("MONTH") = i + 1
-            DRow.Item("MONTH_NAME") = Right("0" & i + 1, 2)
-            DTable.Rows.Add(DRow)
-        Next
-        chkMonth.DataValueField = "MONTH"
-        chkMonth.DataTextField = "MONTH_NAME"
-        chkMonth.DataSource = DTable
-        chkMonth.DataBind()
-        chkMonth.SelectedValue = Month(Now)
-
-        DTable.Dispose()
-
-    End Sub
-    Private Sub chkYear_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkYear.Init
-        Dim DTable As New DataTable
-        Dim DRow As DataRow
-        Dim ConstYear As String = ConfigurationSettings.AppSettings("ConstYear")
-
-        DTable.Columns.Add(New DataColumn("YEAR", GetType(String)))
-        DTable.Columns.Add(New DataColumn("YEAR_NAME", GetType(String)))
-        Dim i As Int16
-        Dim thisYear As Integer
-        Year(New Date)
-        thisYear = Year(Now()) - ConstYear
-        For i = 0 To thisYear - (thisYear - 5)
-            DRow = DTable.NewRow()
-            DRow.Item("YEAR") = Right(Str(thisYear - i), 4)
-            DRow.Item("YEAR_NAME") = Right(Str(thisYear - i), 4)
-            DTable.Rows.Add(DRow)
-        Next
-        chkYear.DataTextField = "YEAR_NAME"
-        chkYear.DataValueField = "YEAR"
-        chkYear.DataSource = DTable
-        chkYear.DataBind()
-
-        DTable.Dispose()
-    End Sub
     Private Sub chkCust_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkCust.Init
         Dim conn As OleDbConnection
         Dim da As OleDbDataAdapter
@@ -262,11 +198,142 @@ Public Class check_records
             .DataTextField = "BANK_NAME"
             .DataValueField = "BANK_CODE"
             .RepeatDirection = RepeatDirection.Vertical
-            .RepeatColumns = 2
+            .RepeatColumns = 3
             .DataSource = myDS
             .DataBind()
 
         End With
         myDS.Dispose()
     End Sub
+
+    Private Sub chkDateF_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkDateF.Init
+        Dim MyTable As DataTable = DateTable()
+
+        With chkDateF
+            .DataValueField = "DAY"
+            .DataTextField = "DAY_NAME"
+            .DataSource = MyTable
+            .DataBind()
+            .SelectedValue = Day(Now)
+        End With
+
+        MyTable.Dispose()
+
+    End Sub
+    Private Sub chkDateT_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkDateT.Init
+        Dim MyTable As DataTable = DateTable()
+
+        With chkDateT
+            .DataValueField = "DAY"
+            .DataTextField = "DAY_NAME"
+            .DataSource = MyTable
+            .DataBind()
+            .SelectedValue = Day(Now)
+        End With
+
+        MyTable.Dispose()
+    End Sub
+    Private Sub chkMonthF_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkMonthF.Init
+        Dim MyTable As DataTable = MonthTable()
+
+        With chkMonthF
+            .DataValueField = "MONTH"
+            .DataTextField = "MONTH_NAME"
+            .DataSource = MyTable
+            .DataBind()
+            .SelectedValue = Month(Now)
+        End With
+
+        MyTable.Dispose()
+    End Sub
+    Private Sub chkMonthT_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkMonthT.Init
+        Dim MyTable As DataTable = MonthTable()
+
+        With chkMonthT
+            .DataValueField = "MONTH"
+            .DataTextField = "MONTH_NAME"
+            .DataSource = MyTable
+            .DataBind()
+            .SelectedValue = Month(Now)
+        End With
+
+        MyTable.Dispose()
+    End Sub
+    Private Sub chkYearF_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkYearF.Init
+        Dim MyTable As DataTable = YearTable()
+
+        With chkYearF
+            .DataValueField = "YEAR"
+            .DataTextField = "YEAR_NAME"
+            .DataSource = MyTable
+            .DataBind()
+        End With
+
+        MyTable.Dispose()
+    End Sub
+    Private Sub chkYearT_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles chkYearT.Init
+        Dim MyTable As DataTable = YearTable()
+
+        With chkYearT
+            .DataValueField = "YEAR"
+            .DataTextField = "YEAR_NAME"
+            .DataSource = MyTable
+            .DataBind()
+        End With
+
+        MyTable.Dispose()
+    End Sub
+
+    Private Function DateTable() As DataTable
+        Dim DTable As New DataTable
+        Dim DRow As DataRow
+
+        DTable.Columns.Add(New DataColumn("DAY", GetType(String)))
+        DTable.Columns.Add(New DataColumn("DAY_NAME", GetType(String)))
+        Dim i As Int16
+        For i = 0 To 30
+            DRow = DTable.NewRow()
+            DRow.Item("DAY") = i + 1
+            DRow.Item("DAY_NAME") = Right("0" & i + 1, 2)
+            DTable.Rows.Add(DRow)
+        Next
+
+        Return DTable
+    End Function
+    Private Function MonthTable() As DataTable
+        Dim DTable As New DataTable
+        Dim DRow As DataRow
+
+        DTable.Columns.Add(New DataColumn("MONTH", GetType(String)))
+        DTable.Columns.Add(New DataColumn("MONTH_NAME", GetType(String)))
+        Dim i As Integer
+        For i = 0 To 11
+            DRow = DTable.NewRow()
+            DRow.Item("MONTH") = i + 1
+            DRow.Item("MONTH_NAME") = Right("0" & i + 1, 2)
+            DTable.Rows.Add(DRow)
+        Next
+
+        Return DTable
+    End Function
+    Private Function YearTable() As DataTable
+        Dim DTable As New DataTable
+        Dim DRow As DataRow
+        Dim ConstYear As String = ConfigurationSettings.AppSettings("ConstYear")
+
+        DTable.Columns.Add(New DataColumn("YEAR", GetType(String)))
+        DTable.Columns.Add(New DataColumn("YEAR_NAME", GetType(String)))
+        Dim i As Integer
+        Dim thisYear As Integer
+        Year(New Date)
+        thisYear = Year(Now()) - ConstYear
+        For i = 0 To thisYear - (thisYear - 5)
+            DRow = DTable.NewRow()
+            DRow.Item("YEAR") = Right(Str(thisYear - i), 4)
+            DRow.Item("YEAR_NAME") = Right(Str(thisYear - i), 4)
+            DTable.Rows.Add(DRow)
+        Next
+
+        Return DTable
+    End Function
 End Class

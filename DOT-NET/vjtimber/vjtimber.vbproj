@@ -83,6 +83,22 @@
                     HintPath = "bin\AjaxPro.dll"
                 />
                 <Reference
+                    Name = "stdole"
+                    Guid = "{00020430-0000-0000-C000-000000000046}"
+                    VersionMajor = "2"
+                    VersionMinor = "0"
+                    Lcid = "0"
+                    WrapperTool = "primary"
+                />
+                <Reference
+                    Name = "Excel"
+                    Guid = "{00020813-0000-0000-C000-000000000046}"
+                    VersionMajor = "1"
+                    VersionMinor = "5"
+                    Lcid = "0"
+                    WrapperTool = "tlbimp"
+                />
+                <Reference
                     Name = "Microsoft.Office.Core"
                     Guid = "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"
                     VersionMajor = "2"
@@ -97,15 +113,6 @@
                     VersionMinor = "3"
                     Lcid = "0"
                     WrapperTool = "primary"
-                />
-                <Reference
-                    Name = "Microsoft.Office.Interop.Excel"
-                    Guid = "{00020813-0000-0000-C000-000000000046}"
-                    VersionMajor = "1"
-                    VersionMinor = "6"
-                    Lcid = "0"
-                    WrapperTool = "primary"
-                    Private = "False"
                 />
             </References>
             <Imports>
@@ -421,6 +428,21 @@
                 <File
                     RelPath = "manage\management.html"
                     BuildAction = "Content"
+                />
+                <File
+                    RelPath = "manage\WebForm2.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "manage\WebForm2.aspx.vb"
+                    DependentUpon = "WebForm2.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "manage\WebForm2.aspx.resx"
+                    DependentUpon = "WebForm2.aspx.vb"
+                    BuildAction = "EmbeddedResource"
                 />
                 <File
                     RelPath = "Report\test.xls"
