@@ -28,7 +28,13 @@ Public Class WebForm2
 
     Private Sub showCalendar()
         Dim txt As String
-        Dim i As Integer
+        Dim i As Integer, y As Integer, x As Integer
+        Dim cal(,) As Integer
+        Dim week As Integer
+        Dim dayNo As Integer = 1
+        Dim FstDay As DateTime
+        Dim totalDay As Integer
+        Dim today As DateTime = Now
 
 
         txt = "<TABLE border=1 cellspacing=5>"
@@ -42,8 +48,40 @@ Public Class WebForm2
         txt &= "<TD>Sat</TD>"
         txt &= "</TR>"
 
+        totalDay = Now.DaysInMonth(Year(today), Month(today))
+        week = Math.Ceiling(totalDay / 7) + 1
 
-        txt &= "<TR><TD></TD></TR>"
+        ReDim cal(7, week)
+
+        FstDay = Month(Now) & "/1" & "/" & Year(Now)
+        x = FstDay.DayOfWeek() + 1
+
+        For i = 1 To week
+            For y = 1 To 7
+                If dayNo <= totalDay Then
+                    If y = x Then
+                        x = 0
+                    End If
+                    If x = 0 Then
+                        cal(y, i) = dayNo
+                        dayNo += 1
+                    End If
+                End If
+            Next
+        Next
+
+
+        txt &= "<TR>"
+        For i = 1 To week
+            For y = 1 To 7
+                If cal(y, i) = 0 Then
+                    txt &= "<TD>&nbsp</TD>"
+                Else
+                    txt &= "<TD>" & cal(y, i) & "</TD>"
+                End If
+            Next
+            txt &= "</TR>"
+        Next
 
 
         txt &= "</TABLE>"

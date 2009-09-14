@@ -26,7 +26,6 @@ Module TitleDB
 
         Return search_statement
     End Function
-
     Function getTitle() As Queue
         Dim myconn As New OleDbConnection(connectDB)
         myconn.Open()
@@ -54,6 +53,23 @@ Module TitleDB
         myconn.Close()
 
         Return search_statement
+    End Function
+    Function getTitleDS() As DataSet
+        Dim myconn As New OleDbConnection(connectDB)
+        myconn.Open()
+
+        Dim da As OleDbDataAdapter
+        Dim sql As String
+        Dim myDS As New DataSet
+
+        sql = "SELECT Title,Title_Name FROM Title "
+        da = New OleDbDataAdapter(sql, myconn)
+        da.Fill(myDS, "Title")
+
+        da.Dispose()
+        myconn.Close()
+
+        Return myDS
     End Function
 
     Structure title

@@ -3,7 +3,7 @@ Imports System.Threading
 Imports System.Data
 Imports System.Data.OleDb
 
-Public Class check_records
+Public Class check_report
     Inherits System.Web.UI.Page
 
 #Region " Web Form Designer Generated Code "
@@ -50,7 +50,6 @@ Public Class check_records
         Dim myCheck As CheckSt
         Dim myCust As A_Customer
         Dim MyDs As DataSet
-        Dim runNo As Integer = 1
 
         myCheck.BANK_CODE = bankCode
         myCheck.CHECK_DATE = DFrom.Replace("-", "/")
@@ -71,7 +70,6 @@ Public Class check_records
 
                 str = str & "<table  width='100%' border='2' cellpadding='10' cellspacing='0' bgcolor='#CCFF33' bordercolor='#7DB357' bordercolordark='#7DB357'>"
                 str = str & "<tr height='30'>"
-                str &= "<td rowspan=3 width='3%' align='center' bgcolor='#FFFF99'> " & runNo & " </td>"
                 str = str & "<td width='12%' bgcolor='#99FFFF'>วันที่</td>"
                 str = str & "<td width='17%' class='CheckData'>" & myCheck.CHECK_DATE.ToString("dd/MM/yyyy") & "</td>"
                 str = str & "<td width='13%' bgcolor='#99FFFF'>ผู้สั่งจ่าย</td>"
@@ -79,7 +77,7 @@ Public Class check_records
                 myCust = CustomerDB.getA_customer(myCheck.CUST_ID)
                 str = str & "<td width='23%' colspan='2' class='CheckData'>" & TitleDB.getTitleName(myCust.CUST_TITLE) & " " & myCust.CUST_NAME & " " & myCust.CUST_SURNAME & "</td>"
                 str = str & "<td width='10%' bgcolor='#99FFFF' >ธนาคาร</td>"
-                str = str & "<td width='22%' colspan='2' align='center' class='CheckData'>" & MyDs.Tables("bank").Rows(0).Item("BANK_NAME") & "</td>"
+                str = str & "<td width='25%' colspan='2' align='center' class='CheckData'>" & MyDs.Tables("bank").Rows(0).Item("BANK_NAME") & "</td>"
                 str = str & "</tr>"
                 str = str & "<tr height='30'>"
                 str = str & "<td bgcolor='#99FFFF'>เลขที่</td>"
@@ -104,7 +102,6 @@ Public Class check_records
                 str = str & "</table>"
 
                 MyDs.Dispose()
-                runNo += 1
             Next
         Else
             str = str & "<table width='100%' border='2' cellpadding='10' cellspacing='0' bgcolor='#CCFF33' bordercolor='#7DB357' bordercolordark='#7DB357'>"

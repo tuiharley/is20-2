@@ -91,28 +91,51 @@
                     WrapperTool = "primary"
                 />
                 <Reference
-                    Name = "Excel"
-                    Guid = "{00020813-0000-0000-C000-000000000046}"
-                    VersionMajor = "1"
-                    VersionMinor = "5"
-                    Lcid = "0"
-                    WrapperTool = "tlbimp"
+                    Name = "CrystalDecisions.Shared"
+                    AssemblyName = "CrystalDecisions.Shared"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.Shared.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
                 />
                 <Reference
-                    Name = "Microsoft.Office.Core"
-                    Guid = "{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}"
-                    VersionMajor = "2"
-                    VersionMinor = "4"
-                    Lcid = "0"
-                    WrapperTool = "primary"
+                    Name = "CrystalDecisions.ReportSource"
+                    AssemblyName = "CrystalDecisions.ReportSource"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.ReportSource.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
                 />
                 <Reference
-                    Name = "VBIDE"
-                    Guid = "{0002E157-0000-0000-C000-000000000046}"
-                    VersionMajor = "5"
-                    VersionMinor = "3"
-                    Lcid = "0"
-                    WrapperTool = "primary"
+                    Name = "CrystalDecisions.CrystalReports.Engine"
+                    AssemblyName = "CrystalDecisions.CrystalReports.Engine"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.CrystalReports.Engine.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "CrystalDecisions.Web"
+                    AssemblyName = "CrystalDecisions.Web"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalDecisions.Web.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "System.Web.Services"
+                    AssemblyName = "System.Web.Services"
+                    HintPath = "..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.Services.dll"
+                />
+                <Reference
+                    Name = "CrystalEnterpriseLib"
+                    AssemblyName = "CrystalEnterpriseLib"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalEnterpriseLib.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "CrystalReportPluginLib"
+                    AssemblyName = "CrystalReportPluginLib"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalReportPluginLib.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
+                />
+                <Reference
+                    Name = "CrystalInfoStoreLib"
+                    AssemblyName = "CrystalInfoStoreLib"
+                    HintPath = "..\..\..\Program Files\Common Files\Crystal Decisions\1.1\Managed\CrystalInfoStoreLib.dll"
+                    AssemblyFolderKey = "hklm\crystal.net"
                 />
             </References>
             <Imports>
@@ -242,6 +265,21 @@
                 <File
                     RelPath = "check\check_records.html"
                     BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\check_report.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "check\check_report.aspx.vb"
+                    DependentUpon = "check_report.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "check\check_report.aspx.resx"
+                    DependentUpon = "check_report.aspx.vb"
+                    BuildAction = "EmbeddedResource"
                 />
                 <File
                     RelPath = "check\EditCheck.aspx"
@@ -398,6 +436,21 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "Controls\MasterLeft.ascx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Controls\MasterLeft.ascx.vb"
+                    DependentUpon = "MasterLeft.ascx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Controls\MasterLeft.ascx.resx"
+                    DependentUpon = "MasterLeft.ascx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "images\go.gif"
                     BuildAction = "Content"
                 />
@@ -445,11 +498,58 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "master\customer.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "master\customer.aspx.vb"
+                    DependentUpon = "customer.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "master\customer.aspx.resx"
+                    DependentUpon = "customer.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Report\CheckByCust.rpt"
+                    BuildAction = "EmbeddedResource"
+                    Generator = "CrystalDecisions.VSShell.CodeGen.ReportCodeGenerator"
+                    LastGenOutput = "CheckByCust.vb"
+                />
+                <File
+                    RelPath = "Report\CheckByCust.vb"
+                    DependentUpon = "CheckByCust.rpt"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                    DesignTime = "True"
+                    AutoGen = "True"
+                />
+                <File
                     RelPath = "Report\test.xls"
                     BuildAction = "None"
                 />
+                <File
+                    RelPath = "Report\WebForm3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "Report\WebForm3.aspx.vb"
+                    DependentUpon = "WebForm3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Report\WebForm3.aspx.resx"
+                    DependentUpon = "WebForm3.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
             </Include>
         </Files>
+        <StartupServices>
+            <Service ID = "{CF845C55-C321-4742-B673-E6212D061ED9}" />
+        </StartupServices>
     </VisualBasic>
 </VisualStudioProject>
 

@@ -1,4 +1,4 @@
-<%@ Page CodeBehind="check_records.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="vjtimber.check_records" %>
+<%@ Page CodeBehind="check_report.aspx.vb" Language="vb" AutoEventWireup="false" Inherits="vjtimber.check_report" %>
 <%@Register TagPrefix="MainMenu" TagName="MainM" Src="../Controls/MainMenu.ascx"%>
 <%@Register TagPrefix="LeftMenu" TagName="LeftM" Src="../Controls/LeftMenu.ascx"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -12,7 +12,7 @@
 		<meta name="language" content="en">
 		<link href="../style.css" rel="stylesheet" type="text/css" media="screen">
 	</HEAD>
-	<body >
+	<body>
 		<form id="form1" name="form1" runat="server">
 			<div id="main">
 				<div id="top">

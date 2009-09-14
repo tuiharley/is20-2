@@ -10,7 +10,7 @@
 		<li>
 			<A href="#">Services</A>
 		<li>
-			<A href="#">จัดการข้อมูล</A>
+			<A href="./master/customer.aspx">จัดการข้อมูล</A>
 		<li>
 			<A href="#">Contact Us</A>
 		</li>
