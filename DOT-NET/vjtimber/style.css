@@ -327,3 +327,12 @@ img {
 	color: #095cd9;
 	font-family: Arial, Sans-Serif;
 }
+.CreateTask_Empty
+{
+	background-color: #FFFFFF;
+}
+.CreateTask
+{
+	cursor: hand;
+	background-color: #ffff00;
+}

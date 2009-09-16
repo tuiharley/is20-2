@@ -371,6 +371,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "Class\ScheduleDB.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "Class\StatusDB.vb"
                     SubType = "Code"
                     BuildAction = "Compile"
@@ -495,6 +500,36 @@
                 <File
                     RelPath = "manage\WebForm2.aspx.resx"
                     DependentUpon = "WebForm2.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "manage\WebForm4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "manage\WebForm4.aspx.vb"
+                    DependentUpon = "WebForm4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "manage\WebForm4.aspx.resx"
+                    DependentUpon = "WebForm4.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "manage\WebForm5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "manage\WebForm5.aspx.vb"
+                    DependentUpon = "WebForm5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "manage\WebForm5.aspx.resx"
+                    DependentUpon = "WebForm5.aspx.vb"
                     BuildAction = "EmbeddedResource"
                 />
                 <File
