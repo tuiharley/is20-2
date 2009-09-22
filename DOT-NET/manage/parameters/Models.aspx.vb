@@ -32,7 +32,8 @@ Public Class Models
     Dim mycommand As OleDbCommand
     Dim ds As New DataSet
     Dim strsql As String
-    Dim strstatus As String
+    Dim searchStatus As String
+    Dim offerStatus As String
     Protected StatusView As DataTable
 
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -58,9 +59,11 @@ Public Class Models
     End Sub
 
     Private Sub Bind()
-        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name,REPLACE(REPLACE(Model.Show, 1, 'Show'), 0, 'NotShow') AS Status_Name"
+        strsql = "SELECT Model.Model, Category.Category_Name, Brand.Brand_name, Model.Model_Name"
+        strsql &= " ,REPLACE(REPLACE(Model.SearchShow, 1, 'Show'), 0, 'NotShow') AS SearchShow"
+        strsql &= " ,REPLACE(REPLACE(Model.OfferShow, 1, 'Show'), 0, 'NotShow') AS OfferShow"
         strsql &= " FROM Model INNER JOIN Category ON Model.Category = Category.Category INNER JOIN Brand ON Model.Brand = Brand.Brand WHERE (Model.Category = " & category_rd.SelectedValue & ") AND Brand.Brand = " & brand_ddl.SelectedValue
-        strsql &= " GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model,REPLACE(REPLACE(Model.Show, 1, 'Show'), 0, 'NotShow')"
+        strsql &= " GROUP BY Category.Category_Name, Brand.Brand_name, Model.Model_Name, Model.Model,REPLACE(REPLACE(Model.SearchShow, 1, 'Show'), 0, 'NotShow'),REPLACE(REPLACE(Model.OfferShow, 1, 'Show'), 0, 'NotShow')"
         da = New OleDbDataAdapter(strsql, myconn)
         da.Fill(ds, "Model")
         
@@ -92,7 +95,8 @@ Public Class Models
     End Sub
 
     Public Sub EditBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
-        strstatus = CType(E.Item.FindControl("lblStatusName"), Label).Text
+        searchStatus = CType(E.Item.FindControl("lblSearchName"), Label).Text
+        offerStatus = CType(E.Item.FindControl("lblOfferName"), Label).Text
 
         bindDropDown()
         Datagrid1.EditItemIndex = E.Item.ItemIndex
@@ -105,11 +109,13 @@ Public Class Models
     Public Sub UpdateBook(ByVal Sender As Object, ByVal E As DataGridCommandEventArgs)
 
         Dim title As TextBox = CType(E.Item.Cells(3).Controls(0), TextBox)
-        Dim strstatus As String = CType(E.Item.FindControl("cmbStatus"), DropDownList).SelectedItem.Value
+        Dim searchSt As String = CType(E.Item.FindControl("cmbSearch"), DropDownList).SelectedItem.Value
+        Dim offerSt As String = CType(E.Item.FindControl("cmdOffer"), DropDownList).SelectedItem.Value
        
 
         strsql = "Update Model Set Model_Name = '" & title.Text & "' "
-        strsql &= " ,show=" & strstatus
+        strsql &= " ,SearchShow=" & searchSt
+        strsql &= " ,OfferShow=" & offerSt
         strsql &= "Where  Model = " & Datagrid1.DataKeys.Item(E.Item.ItemIndex)
         mycommand = New OleDbCommand(strsql, myconn)
         myconn.Open()
@@ -183,10 +189,16 @@ Public Class Models
         StatusView = Dset.Tables("status")
 
     End Sub
-    Public Sub setIndex(ByVal sender As Object, ByVal e As System.EventArgs)
+    Public Sub setIndex1(ByVal sender As Object, ByVal e As System.EventArgs)
         Dim ed As System.Web.UI.WebControls.DropDownList
         ed = sender
-        ed.SelectedIndex = ed.Items.IndexOf(ed.Items.FindByText(strstatus))
+        ed.SelectedIndex = ed.Items.IndexOf(ed.Items.FindByText(searchStatus))
+
+    End Sub
+    Public Sub setIndex2(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim ed As System.Web.UI.WebControls.DropDownList
+        ed = sender
+        ed.SelectedIndex = ed.Items.IndexOf(ed.Items.FindByText(offerStatus))
 
     End Sub
 End Class

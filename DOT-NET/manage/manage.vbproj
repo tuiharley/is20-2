@@ -9740,6 +9740,66 @@
                     BuildAction = "Content"
                 />
                 <File
+                    RelPath = "test\WebForm3.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "test\WebForm3.aspx.vb"
+                    DependentUpon = "WebForm3.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "test\WebForm3.aspx.resx"
+                    DependentUpon = "WebForm3.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "test\WebForm4.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "test\WebForm4.aspx.vb"
+                    DependentUpon = "WebForm4.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "test\WebForm4.aspx.resx"
+                    DependentUpon = "WebForm4.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "test\WebForm5.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "test\WebForm5.aspx.vb"
+                    DependentUpon = "WebForm5.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "test\WebForm5.aspx.resx"
+                    DependentUpon = "WebForm5.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "test\WebForm6.aspx"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "test\WebForm6.aspx.vb"
+                    DependentUpon = "WebForm6.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "test\WebForm6.aspx.resx"
+                    DependentUpon = "WebForm6.aspx.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "test\images\ext_1500_trx_phtgal_05.jpg"
                     BuildAction = "Content"
                 />

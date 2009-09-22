@@ -1,5 +1,5 @@
-<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <%@ Page Language="vb" AutoEventWireup="false" Codebehind="Models.aspx.vb" Inherits="manage.Models" %>
+<%@Register TagPrefix="menu" TagName="header_manage" Src="header_manage.ascx"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 	<HEAD>
@@ -40,13 +40,23 @@
 					<asp:BoundColumn HeaderText="ประเภทรถ" DataField="Category_Name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="ยี่ห้อรถ" DataField="Brand_name" ReadOnly="True" />
 					<asp:BoundColumn HeaderText="รุ่นรถ" DataField="Model_Name" />
-					<asp:TemplateColumn HeaderText="สถานะ">
+					<asp:TemplateColumn HeaderText="Search">
 						<ItemTemplate>
-							<asp:Label id="lblStatusName" runat="server" Text='<%# Container.DataItem("status_name") %>'>
+							<asp:Label id="lblSearchName" runat="server" Text='<%# Container.DataItem("SearchShow") %>'>
 							</asp:Label>
 						</ItemTemplate>
 						<EditItemTemplate>
-							<asp:DropDownList id="cmbStatus" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex" >
+							<asp:DropDownList id="cmbSearch" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex1" >
+							</asp:DropDownList>
+						</EditItemTemplate>
+					</asp:TemplateColumn>
+					<asp:TemplateColumn HeaderText="Offer">
+						<ItemTemplate>
+							<asp:Label id="lblOfferName" runat="server" Text='<%# Container.DataItem("OfferShow") %>'>
+							</asp:Label>
+						</ItemTemplate>
+						<EditItemTemplate>
+							<asp:DropDownList id="cmdOffer" runat="server" datavaluefield="status_id" datatextfield="status_desc" DataSource="<%#StatusView%>" OnPreRender="setIndex2" >
 							</asp:DropDownList>
 						</EditItemTemplate>
 					</asp:TemplateColumn>
