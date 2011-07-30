@@ -61,6 +61,7 @@
     <Compile Include="Check\CheckClearing.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Class\MAS_ACCOUNT.vb" />
     <Compile Include="Class\MAS_BANK.vb" />
     <Compile Include="Class\MAS_BANK_BRANCH.vb" />
     <Compile Include="Class\SysBankDB.vb" />

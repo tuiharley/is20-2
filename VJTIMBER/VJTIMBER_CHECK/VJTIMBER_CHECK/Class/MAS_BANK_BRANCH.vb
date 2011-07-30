@@ -128,7 +128,7 @@ Public Class MAS_BANK_BRANCH
     End Function
 
     Public Function GetDatasetSearch(ByVal strQuery As String, ByVal strType As String) As DataSet
-        strSql = "SELECT BANK_ID, BANK_DESC, BRANCH_ID, BRANCH_NAME, ACTIVE FROM MAS_BANK_BRANCH BB, MAS_BANK BK, MAS_BRANCH BR Where  BB.BANK_ID = BK.BANK_ID AND BB.BRANCH_ID = BR.BRANCH_ID AND " & strQuery
+        strSql = "SELECT BK.BANK_ID, BK.BANK_DESC, BR.BRANCH_ID, BR.BRANCH_NAME, BB.ACTIVE FROM MAS_BANK_BRANCH BB, MAS_BANK BK, MAS_BRANCH BR Where  BB.BANK_ID = BK.BANK_ID AND BB.BRANCH_ID = BR.BRANCH_ID AND " & strQuery
         Dim sqlds As New DataSet
         Dim sqlda As New SqlDataAdapter(strSql, sqlConnString)
         sqlda.Fill(sqlds)
